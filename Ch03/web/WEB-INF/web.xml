@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <context-param>
+        <description>전역값 PARAM1</description>
+        <param-name>PARAM1</param-name>
+        <param-value>1</param-value>
+    </context-param>
+    <context-param>
+        <description>전역값 PARAM2</description>
+        <param-name>PARAM2</param-name>
+        <param-value>2</param-value>
+    </context-param>
+
+    <!--에러페이지 설정-->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error/404.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error/500.jsp</location>
+    </error-page>
+
+
+</web-app>
