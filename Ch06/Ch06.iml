@@ -5,6 +5,7 @@
       <configuration>
         <descriptors>
           <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/WEB-INF/web.xml" />
+          <deploymentDescriptor name="context.xml" url="file://$MODULE_DIR$/web/META-INF/context.xml" />
         </descriptors>
         <webroots>
           <root url="file://$MODULE_DIR$/web" relative="/" />
@@ -29,5 +30,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jsp-api" level="project" />
     <orderEntry type="library" name="mysql-connector-j-8.0.32 (2)" level="project" />
+    <orderEntry type="library" name="gson-2.10.1" level="project" />
+    <orderEntry type="library" name="tomcat-dbcp" level="project" />
+    <orderEntry type="library" name="jdom2-2.0.6.1" level="project" />
   </component>
 </module>

@@ -2,7 +2,9 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="vo.User2VO" %>
-<%@ page import="setting.ConnSetting" %>
+<%@ page import="javax.naming.InitialContext" %>
+<%@ page import="javax.naming.Context" %>
+<%@ page import="javax.sql.DataSource" %>
 <%--
   Created by IntelliJ IDEA.
   User: Java
@@ -18,10 +20,16 @@
     List<User2VO> user2s = new ArrayList<>();
 
     try {
-        Connection conn = ConnSetting.conn();
+        //JNDI 서비스 객체 생성
+        Context initCtx = new InitialContext();
+        Context ctx = (Context) initCtx.lookup("java:comp/env"); //JNDI 기본 환경 이름
+
+        //커넥션 풀에서 커넥션 가져오기
+        DataSource ds = (DataSource) ctx.lookup("jdbc/userdb");
+        Connection conn = ds.getConnection();
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * from user2");
-        while (rs.next()){
+        while (rs.next()) {
             User2VO user2VO = new User2VO();
             user2VO.setUid(rs.getString(1));
             user2VO.setName(rs.getString(2));
@@ -34,7 +42,7 @@
         conn.close();
         rs.close();
 
-    }catch (Exception e){
+    } catch (Exception e) {
         e.printStackTrace();
     }
 
@@ -57,13 +65,18 @@
                 <th>나이</th>
                 <th>관리</th>
             </tr>
-            <%for(User2VO user2vo : user2s){
+            <%
+                for (User2VO user2vo : user2s) {
             %>
             <tr>
-                <td><%=user2vo.getUid()%></td>
-                <td><%=user2vo.getName()%></td>
-                <td><%=user2vo.getHp()%></td>
-                <td><%=user2vo.getAge()%></td>
+                <td><%=user2vo.getUid()%>
+                </td>
+                <td><%=user2vo.getName()%>
+                </td>
+                <td><%=user2vo.getHp()%>
+                </td>
+                <td><%=user2vo.getAge()%>
+                </td>
                 <td>
                     <a href="modify.jsp?uid=<%=user2vo.getUid()%>">수정</a>
                     <a href="delete.jsp?uid=<%=user2vo.getUid()%>">삭제</a>

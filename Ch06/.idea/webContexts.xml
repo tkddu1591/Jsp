@@ -3,6 +3,8 @@
   <component name="WebContextManager">
     <option name="state">
       <map>
+        <entry key="file://$PROJECT_DIR$/web/2_DBCP.jsp" value="file://$PROJECT_DIR$/web" />
+        <entry key="file://$PROJECT_DIR$/web/data/json2.jsp" value="file://$PROJECT_DIR$/web/data" />
         <entry key="file://$PROJECT_DIR$/web/user1/modifyProc.jsp" value="file://$PROJECT_DIR$/web/user1" />
         <entry key="file://$PROJECT_DIR$/web/user2/modify.jsp" value="file://$PROJECT_DIR$/web/user2" />
       </map>

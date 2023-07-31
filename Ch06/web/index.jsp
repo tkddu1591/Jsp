@@ -1,4 +1,4 @@
-<%@ page import="java.nio.charset.CharsetEncoder" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: Java
   Date: 2023-07-28
@@ -10,9 +10,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
-    <title>$Title$</title>
-  </head>
-  <body>
-      <a href="1_JDBC.jsp">1_JDBC</a><br>
-  </body>
+        <title>$Title$</title>
+    </head>
+    <body>
+        <a href="1_JDBC.jsp">1_JDBC</a><br>
+        <a href="2_DBCP.jsp">2_DBCP</a><br>
+        <a href="3_AJAX.jsp">3_AJAX</a><br>
+    </body>
 </html>

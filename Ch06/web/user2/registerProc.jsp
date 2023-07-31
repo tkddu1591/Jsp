@@ -1,8 +1,8 @@
 <%@ page import="java.sql.Connection" %>
-<%@ page import="java.sql.DriverManager" %>
-<%@ page import="java.sql.SQLException" %>
 <%@ page import="java.sql.PreparedStatement" %>
-<%@ page import="setting.ConnSetting" %><%--
+<%@ page import="javax.naming.Context" %>
+<%@ page import="javax.naming.InitialContext" %>
+<%@ page import="javax.sql.DataSource" %><%--
   Created by IntelliJ IDEA.
   User: Java
   Date: 2023-07-28
@@ -21,12 +21,19 @@
 
 
     try {
-        Connection conn = ConnSetting.conn();
+        //JNDI 서비스 객체 생성
+        Context initCtx = new InitialContext();
+        Context ctx = (Context) initCtx.lookup("java:comp/env"); //JNDI 기본 환경 이름
+
+        //커넥션 풀에서 커넥션 가져오기
+        DataSource ds = (DataSource) ctx.lookup("jdbc/userdb");
+        Connection conn = ds.getConnection();
+
         PreparedStatement psmt = conn.prepareStatement("INSERT INTO `user2` values (?,?,?,?)");
-        psmt.setString(1,uid);
-        psmt.setString(2,name);
-        psmt.setString(3,hp);
-        psmt.setString(4,age);
+        psmt.setString(1, uid);
+        psmt.setString(2, name);
+        psmt.setString(3, hp);
+        psmt.setString(4, age);
         psmt.executeUpdate();
         conn.close();
         psmt.close();
