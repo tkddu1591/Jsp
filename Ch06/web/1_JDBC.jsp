@@ -24,6 +24,8 @@
         <a href="/Ch06_war_exploded/user4/list.jsp">목록</a><br>
         <a href="/Ch06_war_exploded/user5/register.jsp">User5 CRUD</a>
         <a href="/Ch06_war_exploded/user5/list.jsp">목록</a><br>
+        <a href="/Ch06_war_exploded/user6/register.jsp">User6 CRUD</a>
+        <a href="/Ch06_war_exploded/user6/list.jsp">목록</a><br>
         <a href="index.jsp">홈</a>
     </body>
 
