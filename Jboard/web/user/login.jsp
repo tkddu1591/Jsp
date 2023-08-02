@@ -1,5 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+Created by IntelliJ IDEA.
+User: Java
+Date: 2023-08-02
+Time: 오전 9:09
+To change this template use File | Settings | File Templates.
+--%>
+
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<html>
     <head>
         <meta charset="UTF-8">
         <title>login</title>
@@ -13,7 +21,7 @@
                 </div>
             </header>
             <section id="user" class="login">
-                <form action="#">
+                <form action="../list.jsp">
                     <table border="0">
                         <tr>
                             <td><img src="../images/login_ico_id.png" alt="아이디"/></td>
@@ -32,7 +40,7 @@
                     <p>
                         아직 회원이 아니시면 회원으로 가입하세요.
                     </p>
-                    <a href="./terms.html">회원가입</a>
+                    <a href="/Jboard_war_exploded/user/terms.jsp">회원가입</a>
                 </div>
             </section>
 

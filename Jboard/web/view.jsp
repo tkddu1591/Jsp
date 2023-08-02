@@ -1,5 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+Created by IntelliJ IDEA.
+User: Java
+Date: 2023-08-02
+Time: 오전 9:09
+To change this template use File | Settings | File Templates.
+--%>
+
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<html>
     <head>
         <meta charset="UTF-8">
         <title>글보기</title>
@@ -10,11 +18,11 @@
         <div id="wrapper">
             <header>
                 <div>
-                <h3>Board System v1.0</h3>
-                <p>
-                    홍길동님 반갑습니다.
-                    <a href="./user/login.html" class="logout">[로그아웃]</a>
-                </p>
+                    <h3>Board System v1.0</h3>
+                    <p>
+                        OOO님 반갑습니다.
+                        <a href="web/user/login.jsp" class="logout">[로그아웃]</a>
+                    </p>
                 </div>
             </header>
             <section id="board" class="view">
@@ -40,8 +48,8 @@
                 </table>
                 <div>
                     <a href="#" class="btnDelete">삭제</a>
-                    <a href="./modify.html" class="btnModify">수정</a>
-                    <a href="./list.html" class="btnList">목록</a>
+                    <a href="modify.jsp" class="btnModify">수정</a>
+                    <a href="list.jsp" class="btnList">목록</a>
                 </div>
 
                 <!-- 댓글리스트 -->
@@ -78,7 +86,7 @@
             </section>
             <footer>
                 <div>
-                ⓒCopyleft by chhak.or.kr
+                    ⓒCopyleft by chhak.or.kr
                 </div>
             </footer>
         </div>

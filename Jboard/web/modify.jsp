@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+Created by IntelliJ IDEA.
+User: Java
+Date: 2023-08-02
+Time: 오전 9:09
+To change this template use File | Settings | File Templates.
+--%>
+
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<html>
     <head>
         <meta charset="UTF-8">
-        <title>글작성</title>
+        <title>글수정</title>
+        <link rel="stylesheet" href="css/style.css">
     </head>
-
-    <link rel="stylesheet" href="css/style.css">
-
-
-    </style>
     <body>
         <div id="wrapper">
             <header>
@@ -16,12 +20,12 @@
                     <h3>Board System v1.0</h3>
                     <p>
                         OOO님 반갑습니다.
-                        <a href="./user/login.html" class="logout">[로그아웃]</a>
+                        <a href="web/user/login.jsp" class="logout">[로그아웃]</a>
                     </p>
                 </div>
             </header>
-            <section id="board" class="write">
-                <h3>글쓰기</h3>
+            <section id="board" class="modify">
+                <h3>글수정</h3>
                 <article>
                     <form action="#">
                         <table>
@@ -32,7 +36,7 @@
                             <tr>
                                 <td>내용</td>
                                 <td>
-                                    <textarea name="content" ></textarea>
+                                    <textarea name="content"></textarea>
                                 </td>
                             </tr>
                             <tr>
@@ -41,17 +45,18 @@
                             </tr>
                         </table>
                         <div>
-                            <a href="./list.html" class="btnCancel">취소</a>
-                            <input type="submit" class="btnWrite" value="작성완료">
+                            <a href="list.jsp" class="btnCancel">취소</a>
+                            <input type="submit" class="btnWrite" value="수정완료">
                         </div>
                     </form>
                 </article>
             </section>
             <footer>
                 <div>
-                    ⓒCopyleft by chhak.or.kr
+                    ⓒCopyeft by chhak.or.kr
                 </div>
             </footer>
         </div>
+
     </body>
 </html>

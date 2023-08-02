@@ -1,11 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+Created by IntelliJ IDEA.
+User: Java
+Date: 2023-08-02
+Time: 오전 9:09
+To change this template use File | Settings | File Templates.
+--%>
+<%--아이디 비번 이름 별명 email 휴대폰--%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+
+<html>
     <head>
         <meta charset="UTF-8">
         <title>회원가입</title>
 
         <link href="../css/style.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script>
 
+            $(function () {
+                let idCheck = 0;
+                $('#btnCheckUid').click(function () {
+
+                    const uid = $('input[name=uid]').val();
+                    const jsonData = {
+                        "uid": uid
+                    }
+                    $.ajax({
+                        url: '/Jboard_war_exploded/user/checkUid.jsp',
+                        type: 'GET',
+                        data: jsonData,
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data.result >= 1) {
+                                $('.resultId').css('color', 'red').text('이미 사용중인 아이디입니다.')
+                            } else {
+                                $('.resultId').css('color', 'green').text('사용 가능한 아이디입니다..')
+                                idCheck = 1;
+                            }
+                        },
+                        error: function () {
+                        }
+                    })
+
+                })
+                $('.btnJoin').click(function () {
+                    const p1 = document.getElementsByName('pass1')[0].value;
+                    const p2 = document.getElementsByName('pass2')[0].value;
+                    if (idCheck === 0) {
+                        alert("아이디를 확인해 주세요")
+                        return false;
+                    } else if (p1 !== p2) {
+                        alert("비밀번호가 일치 하지 않습니다");
+                        return false;
+                    }
+                })
+
+            })
+        </script>
     </head>
     <body>
         <div id="wrapper">
@@ -15,14 +66,14 @@
                 </div>
             </header>
             <section id="user" class="register">
-                <form action="#" method="POST">
+                <form action="/Jboard_war_exploded/user/registerProc.jsp" method="POST">
                     <table border="0">
                         <caption>사이트 이용정보 입력</caption>
                         <tr>
                             <td>아이디</td>
                             <td>
                                 <input type="text" name="uid" placeholder="아이디 입력"/>
-                                <button><img src="../images/chk_id.gif" alt=""></button>
+                                <button type="button" id="btnCheckUid"><img src="../images/chk_id.gif" alt=""></button>
                                 <span class="resultId"></span>
                             </td>
                         </tr>
@@ -86,7 +137,7 @@
                     </table>
 
                     <div>
-                        <a href="./login.html" class="btnCancel">취소</a>
+                        <a href="login.jsp" class="btnCancel">취소</a>
                         <input type="submit" class="btnJoin" value="회원가입"/>
                     </div>
 
