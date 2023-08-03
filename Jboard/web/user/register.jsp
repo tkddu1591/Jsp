@@ -15,44 +15,61 @@ To change this template use File | Settings | File Templates.
 
         <link href="../css/style.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+        <script src="../js/zipCode.js"></script>
+        <script src="../js/checkUser.js"></script>
         <script>
+            //유효성 검증(Validation)
+
+            //폼 데이터 검증 결과 상태변수 생성
+            let idCheck = false;
+            let passCheck = false;
+            let nameCheck = false;
+            let nickCheck = false;
+            let emailCheck = false;
+            let hpCheck = false;
+            let addrCheck = false;
 
             $(function () {
-                let idCheck = 0;
-                $('#btnCheckUid').click(function () {
 
-                    const uid = $('input[name=uid]').val();
-                    const jsonData = {
-                        "uid": uid
-                    }
-                    $.ajax({
-                        url: '/Jboard_war_exploded/user/checkUid.jsp',
-                        type: 'GET',
-                        data: jsonData,
-                        dataType: 'json',
-                        success: function (data) {
-                            if (data.result >= 1) {
-                                $('.resultId').css('color', 'red').text('이미 사용중인 아이디입니다.')
-                            } else {
-                                $('.resultId').css('color', 'green').text('사용 가능한 아이디입니다..')
-                                idCheck = 1;
-                            }
-                        },
-                        error: function () {
-                        }
-                    })
 
-                })
-                $('.btnJoin').click(function () {
-                    const p1 = document.getElementsByName('pass1')[0].value;
-                    const p2 = document.getElementsByName('pass2')[0].value;
-                    if (idCheck === 0) {
+                //아이디 검사
+                const uid = document.getElementsByName('uid');
+
+                //비밀번호 검사
+                //이름 검사
+                //별명 검사
+                //이메일 검사
+                //휴대폰 검사
+
+                //최종 전송
+                $('#formUser').submit(function () {
+
+                    if (!idCheck) {
                         alert("아이디를 확인해 주세요")
                         return false;
-                    } else if (p1 !== p2) {
-                        alert("비밀번호가 일치 하지 않습니다");
+                    } else if (!passCheck) {
+                        alert("비밀번호를 확인해 주세요");
+                        return false;
+                    } else if (!nameCheck) {
+                        alert("이름을 확인해 주세요");
+                        return false;
+                    } else if (!nickCheck) {
+                        alert("별명을 확인해 주세요");
+                        return false;
+                    } else if (!emailCheck) {
+                        alert("이메일을 확인해 주세요");
+                        return false;
+                    } else if (!hpCheck) {
+                        alert("휴대폰번호를 확인해 주세요");
+                        return false;
+                    } else if (!addrCheck) {
+                        alert("주소를 입력해 주세요");
+                        resultAddr[0].innerText = '주소를 입력해 주세요'
+                        resultAddr[0].style.color = 'red'
                         return false;
                     }
+                    return false
                 })
 
             })
@@ -66,7 +83,7 @@ To change this template use File | Settings | File Templates.
                 </div>
             </header>
             <section id="user" class="register">
-                <form action="/Jboard_war_exploded/user/registerProc.jsp" method="POST">
+                <form id="formUser" action="/Jboard_war_exploded/user/registerProc.jsp" method="POST">
                     <table border="0">
                         <caption>사이트 이용정보 입력</caption>
                         <tr>
@@ -97,6 +114,7 @@ To change this template use File | Settings | File Templates.
                             <td>이름</td>
                             <td>
                                 <input type="text" name="name" placeholder="이름 입력"/>
+                                <span class="resultName"></span>
                             </td>
                         </tr>
                         <tr>
@@ -111,12 +129,23 @@ To change this template use File | Settings | File Templates.
                             <td>E-Mail</td>
                             <td>
                                 <input type="email" name="email" placeholder="이메일 입력"/>
+                                <span class="resultEmail"></span>
                             </td>
                         </tr>
                         <tr>
                             <td>휴대폰</td>
                             <td>
-                                <input type="text" name="hp" placeholder="- 포함 13자리 입력" minlength="13" maxlength="13"/>
+                                <script>
+                                    const hypenTel = (target) => {
+                                        target.value = target.value
+                                            .replace(/[^0-9]/g, '')
+                                            .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, "");
+                                    }
+
+                                </script>
+                                <input type="tel" oninput="hypenTel(this)" name="hp" placeholder="휴대폰 번호 입력"
+                                       minlength="13" maxlength="13"/>
+                                <span class="resultHp"></span>
                             </td>
                         </tr>
                         <tr>
@@ -124,7 +153,10 @@ To change this template use File | Settings | File Templates.
                             <td>
                                 <div>
                                     <input type="text" name="zip" placeholder="우편번호" readonly/>
-                                    <button class="btnZip"><img src="../images/chk_post.gif" alt=""></button>
+                                    <button type="button" onclick="zipCode()" class="btnZip"><img
+                                            src="../images/chk_post.gif" alt="">
+                                    </button>
+                                    <span class="resultAddr"></span>
                                 </div>
                                 <div>
                                     <input type="text" name="addr1" placeholder="주소를 검색하세요." readonly/>
@@ -142,6 +174,7 @@ To change this template use File | Settings | File Templates.
                     </div>
 
                 </form>
+
             </section>
 
             <footer>

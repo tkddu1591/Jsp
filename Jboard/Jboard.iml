@@ -26,5 +26,6 @@
     <orderEntry type="library" name="gson-2.10.1" level="project" />
     <orderEntry type="library" name="jdom2-2.0.6.1" level="project" />
     <orderEntry type="library" name="mysql-connector-j-8.0.32 (2)" level="project" />
+    <orderEntry type="library" name="postcode.v2" level="application" />
   </component>
 </module>
