@@ -1,4 +1,4 @@
-<%--
+<%@ page import="kr.co.jboard.vo.UserVO" %><%--
 Created by IntelliJ IDEA.
 User: Java
 Date: 2023-08-02
@@ -7,11 +7,55 @@ To change this template use File | Settings | File Templates.
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+    //스크립트릿 -> 서버
+    request.setCharacterEncoding("UTF-8");
+    String success = request.getParameter("success");
+
+    UserVO sessUser = (UserVO) session.getAttribute("sessUser");
+    if(sessUser!=null){
+        response.sendRedirect("../list.jsp");
+        return;
+    }
+%>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>login</title>
         <link rel="stylesheet" href="../css/style.css">
+        <script>
+            //javascript -> 브라우저
+            window.onload = function () {
+
+
+                const success = <%=success%>;
+                    document.querySelector('form').addEventListener('submit', function (e) {
+
+                        const uid = document.getElementsByName('uid')[0].value;
+                        const pass = document.getElementsByName('pass')[0].value;
+
+                        if (uid === '') {
+                            alert('아이디를 입력해 주세요.')
+                            e.preventDefault();
+                        } else if (pass === '') {
+                            alert('비밀번호를 입력해 주세요.')
+                            e.preventDefault();
+                        }
+                    })
+
+
+
+                if (100 === success) {
+                    alert('아이디 또는 비밀번호가 일치하지 않습니다.')
+                    return;
+                } else if (101 === success) {
+                    alert('정상적이지 않은 접근입니다. 로그인을 해주세요')
+                    return;
+                }
+
+
+            }
+        </script>
     </head>
     <body>
         <div id="wrapper">
@@ -21,7 +65,7 @@ To change this template use File | Settings | File Templates.
                 </div>
             </header>
             <section id="user" class="login">
-                <form action="../list.jsp">
+                <form action="./loginProc.jsp" method="post" >
                     <table border="0">
                         <tr>
                             <td><img src="../images/login_ico_id.png" alt="아이디"/></td>

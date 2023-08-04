@@ -1,4 +1,4 @@
-package kr.co.Jboard.vo;
+package kr.co.jboard.vo;
 
 public class UserVO {
     private String uid;

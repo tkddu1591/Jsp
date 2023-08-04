@@ -154,7 +154,7 @@ $(function () {
     //휴대폰 중복체크
 
     document.getElementsByName('hp')[0].addEventListener('focusout', function () {
-        const url = '/Jboard_war_exploded/user/checkHp.jsp?hp=' + this.value
+        const url = '/Jboard_war_exploded/user/checkUser.jsp?hp=' + this.value
 
         if (this.value.length !== 13) {
 

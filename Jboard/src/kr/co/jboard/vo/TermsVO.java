@@ -1,4 +1,4 @@
-package kr.co.Jboard.vo;
+package kr.co.jboard.vo;
 
 public class TermsVO {
     private String terms;

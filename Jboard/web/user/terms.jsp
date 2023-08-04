@@ -4,7 +4,8 @@
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.ResultSet" %>
-<%@ page import="kr.co.Jboard.vo.TermsVO" %><%--
+<%@ page import="kr.co.jboard.vo.TermsVO" %>
+<%@ page import="kr.co.jboard.dao.TermsDAO" %><%--
 Created by IntelliJ IDEA.
 User: Java
 Date: 2023-08-02
@@ -15,26 +16,8 @@ To change this template use File | Settings | File Templates.
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%
 
-    TermsVO termsVo = new TermsVO();
-    try {
-        Context initCtx = new InitialContext();
-        Context ctx = (Context) initCtx.lookup("java:comp/env");
-        DataSource ds = (DataSource) ctx.lookup("jdbc/Jboard");
+    TermsVO termsVo = TermsDAO.getInstance().selectTerms();
 
-        Connection conn = ds.getConnection();
-        Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * from jboard.terms");
-        if (rs.next()) {
-            termsVo.setTerms(rs.getString(1));
-            termsVo.setPrivacy(rs.getString(2));
-        }
-
-        stmt.close();
-        rs.close();
-        conn.close();
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
 %>
 <html>
     <head>

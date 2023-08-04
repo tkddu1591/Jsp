@@ -15,7 +15,7 @@ $(function () {
                 "uid": uid
             }
             $.ajax({
-                url: '/Jboard_war_exploded/user/checkUid.jsp',
+                url: '/Jboard_war_exploded/user/checkUser.jsp',
                 type: 'GET',
                 data: jsonData,
                 dataType: 'json',
@@ -51,13 +51,11 @@ $(function () {
             const jsonData = {
                 "nick": nick
             }
-            console.log(jsonData)
-            console.log(nick)
             /*
             $.ajax({
                 url:'./checkNick.jsp?nick='+nick+'$key='+key
             })*/
-            $.get('/Jboard_war_exploded/user/checkNick.jsp', jsonData, function (data) {
+            $.get('/Jboard_war_exploded/user/checkUser.jsp', jsonData, function (data) {
                 if (data.result >= 1) {
                     $('.resultNick').css('color', 'red').text('이미 사용중인 별명입니다.')
                     nickCheck = false;
@@ -87,7 +85,7 @@ $(function () {
         } else {
 
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', '/Jboard_war_exploded/user/checkEmail.jsp?email=' + email);
+            xhr.open('GET', '/Jboard_war_exploded/user/checkUser.jsp?email=' + email);
             xhr.send()
 
             xhr.onreadystatechange = function () {
@@ -97,7 +95,7 @@ $(function () {
                         console.log(data);
 
 
-                        if (data.result >= 1) {
+                        if (data.emailResult >= 1) {
                             $('.resultEmail').css('color', 'red').text('이미 사용중인 이메일입니다.')
                             emailCheck = false;
                             return false
@@ -119,7 +117,7 @@ $(function () {
     //휴대폰 중복체크
 
     document.getElementsByName('hp')[0].addEventListener('focusout', function () {
-        const url = '/Jboard_war_exploded/user/checkHp.jsp?hp=' + this.value
+        const url = '/Jboard_war_exploded/user/checkUser.jsp?hp=' + this.value
 
         if (!this.value.match(reHp)) {
 
@@ -156,7 +154,7 @@ $(function () {
         } else {
 
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', '/Jboard_war_exploded/user/checkHp.jsp?hp=' + hp);
+            xhr.open('GET', '/Jboard_war_exploded/user/checkUser.jsp?hp=' + hp);
             xhr.send()
 
             xhr.onreadystatechange = function () {
@@ -185,7 +183,6 @@ $(function () {
     //주소
     const addr = document.getElementsByName('addr2');
        addr[0].focus = function () {
-        console.log(this.value);
         const addr = document.getElementsByName('addr1');
         if (addr === '') {
             resultAddr[0].innerText = '주소를 입력해 주세요'

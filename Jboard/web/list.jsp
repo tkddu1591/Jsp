@@ -1,4 +1,5 @@
-<%--
+<%@ page import="kr.co.jboard.vo.UserVO" %>
+<%@ page import="org.apache.catalina.User" %><%--
 Created by IntelliJ IDEA.
 User: Java
 Date: 2023-08-02
@@ -7,12 +8,23 @@ To change this template use File | Settings | File Templates.
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%
+    UserVO userVO= (UserVO) session.getAttribute("sessUser");
+    if(userVO==null){
+        response.sendRedirect("user/login.jsp?success=101");
+        return;
+    }
+%>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>글목록</title>
 
         <link rel="stylesheet" href="css/style.css">
+        <script>
+            window.onload = function (){
+            }
+        </script>
     </head>
     <body>
         <div id="wrapper">
@@ -20,8 +32,8 @@ To change this template use File | Settings | File Templates.
                 <div>
                     <h3>Board System v1.0</h3>
                     <p>
-                        OOO님 반갑습니다.
-                        <a href="web/user/login.jsp" class="logout">[로그아웃]</a>
+                        <%=userVO.getNick()%> 님 반갑습니다.
+                        <a href="user/logout.jsp" class="logout">[로그아웃]</a>
                     </p>
                 </div>
             </header>
