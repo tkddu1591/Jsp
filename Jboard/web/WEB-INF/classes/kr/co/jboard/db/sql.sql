@@ -1,0 +1,1 @@
+INSERT into article (title, content, writer, regIp, rDate) value (?,?,?,?,?);
