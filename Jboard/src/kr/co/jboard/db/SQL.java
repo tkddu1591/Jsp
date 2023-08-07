@@ -7,5 +7,6 @@ public class SQL {
     public static final String SELECT_EXISTS_NICK = "select exists(select * from jboard.user where nick=?)";
     public static final String SELECT_EXISTS_HP = "select exists(select * from jboard.user where hp=?)";
     public static final String SELECT_EXISTS_EMAIL = "select exists(select * from jboard.user where email=?)";
+    public static final String INSERT_ARTICLE = "INSERT into article (title, content, writer, regIp, rDate) value (?,?,?,?,NOW());";
 
 }

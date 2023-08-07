@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9e3460d-c8c6-4bf3-b4f3-b0f4ba1ceb15" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/Jboard/src/kr/co/jboard/dao/ArticleDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jboard/src/kr/co/jboard/db/sql.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jboard/src/kr/co/jboard/vo/ArticleVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Jboard/web/writeProc.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jboard/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Jboard/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jboard/.idea/libraries/jsp_api.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Jboard/.idea/libraries/jsp_api.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jboard/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Jboard/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jboard/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Jboard/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jboard/src/kr/co/jboard/db/SQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/Jboard/src/kr/co/jboard/db/SQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jboard/web/write.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Jboard/web/write.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +26,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": -1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2Sztl0zcqOB67CjwVtzfCA78BHf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -31,7 +41,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Java/Desktop/workspace/Jsp/Jboard",
+    "last_opened_file_path": "C:/Users/Administrator/IdeaProjects/Jsp",
+    "settings.editor.selected.configurable": "settings.sync",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -46,6 +57,9 @@
       <workItem from="1690161387986" duration="8000" />
       <workItem from="1691111275101" duration="2000" />
       <workItem from="1691111296164" duration="66000" />
+      <workItem from="1691367182808" duration="41000" />
+      <workItem from="1691367231298" duration="85000" />
+      <workItem from="1691369425662" duration="8000" />
     </task>
     <servers />
   </component>
