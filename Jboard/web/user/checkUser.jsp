@@ -3,7 +3,7 @@
 <%@ page import="java.sql.Connection" %>
 <%@ page import="javax.naming.InitialContext" %>
 <%@ page import="java.sql.PreparedStatement" %>
-<%@ page import="kr.co.jboard.vo.UserVO" %>
+<%@ page import="kr.co.jboard.dto.UserDTO" %>
 <%@ page import="kr.co.jboard.dao.UserDAO" %>
 <%@ page import="com.google.gson.JsonObject" %><%--
   Created by IntelliJ IDEA.
@@ -18,7 +18,7 @@
     request.setCharacterEncoding("UTF-8");
 /*
 아이디 비번 이름 별명 email 휴대폰*/
-    UserVO userVO = new UserVO();
+    UserDTO userDTO = new UserDTO();
     String uid = request.getParameter("uid");
     String nick = request.getParameter("nick");
     String hp = request.getParameter("hp");

@@ -1,4 +1,4 @@
-<%@ page import="kr.co.jboard.vo.UserVO" %><%--
+<%@ page import="kr.co.jboard.dto.UserDTO" %><%--
 Created by IntelliJ IDEA.
 User: Java
 Date: 2023-08-02
@@ -29,7 +29,7 @@ To change this template use File | Settings | File Templates.
                     <td>첨부</td>
                     <td><input type="file" name="file"/></td>
                 </tr>
-                <input type="hidden" name=writer readonly value=<%=userVO.getUid()%>>
+                <input type="hidden" name=writer readonly value=<%=userDTO.getUid()%>>
             </table>
             <div>
                 <a href="list.jsp" class="btnCancel">취소</a>

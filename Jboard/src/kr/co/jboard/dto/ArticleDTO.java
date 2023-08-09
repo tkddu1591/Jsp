@@ -1,6 +1,6 @@
-package kr.co.jboard.vo;
+package kr.co.jboard.dto;
 
-public class ArticleVO {
+public class ArticleDTO {
     private int no;
     private int parent;
     private int comment;
@@ -12,6 +12,16 @@ public class ArticleVO {
     private String writer;
     private String regIp;
     private String rDate;
+
+    private String nick;
+
+    public String getNick() {
+        return nick;
+    }
+
+    public void setNick(String nick) {
+        this.nick = nick;
+    }
 
     public int getNo() {
         return no;
@@ -27,6 +37,9 @@ public class ArticleVO {
 
     public void setParent(int parent) {
         this.parent = parent;
+    }
+    public void setParent(String parent) {
+        this.parent = Integer.parseInt(parent);
     }
 
     public int getComment() {
@@ -94,6 +107,9 @@ public class ArticleVO {
     }
 
     public String getrDate() {
+        return rDate.substring(2,10);
+    }
+    public String getFullRDate() {
         return rDate;
     }
 

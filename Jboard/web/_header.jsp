@@ -1,4 +1,4 @@
-<%@ page import="kr.co.jboard.vo.UserVO" %><%--
+<%@ page import="kr.co.jboard.dto.UserDTO" %><%--
   Created by IntelliJ IDEA.
   User: Administrator
   Date: 2023-08-07
@@ -7,8 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    UserVO userVO= (UserVO) session.getAttribute("sessUser");
-    if(userVO==null){
+    UserDTO userDTO = (UserDTO) session.getAttribute("sessUser");
+    if(userDTO ==null){
         response.sendRedirect("user/login.jsp?success=101");
         return;
     }
@@ -26,7 +26,7 @@
                 <div>
                     <h3>Board System v1.0</h3>
                     <p>
-                        <%=userVO.getNick()%> 님 반갑습니다.
+                        <%=userDTO.getNick()%> 님 반갑습니다.
                         <a href="user/logout.jsp" class="logout">[로그아웃]</a>
                     </p>
                 </div>

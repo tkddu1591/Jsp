@@ -4,8 +4,9 @@
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.ResultSet" %>
-<%@ page import="kr.co.jboard.vo.TermsVO" %>
-<%@ page import="kr.co.jboard.dao.TermsDAO" %><%--
+<%@ page import="kr.co.jboard.dto.TermsDTO" %>
+<%@ page import="kr.co.jboard.dao.TermsDAO" %>
+<%@ page import="kr.co.jboard.dto.TermsDTO" %><%--
 Created by IntelliJ IDEA.
 User: Java
 Date: 2023-08-02
@@ -16,7 +17,7 @@ To change this template use File | Settings | File Templates.
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%
 
-    TermsVO termsVo = TermsDAO.getInstance().selectTerms();
+    TermsDTO termsDTO = TermsDAO.getInstance().selectTerms();
 
 %>
 <html>
@@ -59,7 +60,7 @@ To change this template use File | Settings | File Templates.
                     <caption>사이트 이용약관</caption>
                     <tr>
                         <td>
-                            <textarea readonly><%=termsVo.getTerms()%></textarea>
+                            <textarea readonly><%=termsDTO.getTerms()%></textarea>
                             <p>
                                 <label><input type="checkbox" name="chk1"/>동의합니다.</label>
                             </p>
@@ -70,7 +71,7 @@ To change this template use File | Settings | File Templates.
                     <caption>개인정보 취급방침</caption>
                     <tr>
                         <td>
-                            <textarea readonly><%=termsVo.getPrivacy()%></textarea>
+                            <textarea readonly><%=termsDTO.getPrivacy()%></textarea>
                             <p>
                                 <label><input type="checkbox" name="chk2"/>동의합니다.</label>
                             </p>

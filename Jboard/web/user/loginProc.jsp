@@ -4,7 +4,7 @@
 <%@ page import="javax.naming.InitialContext" %>
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.ResultSet" %>
-<%@ page import="kr.co.jboard.vo.UserVO" %>
+<%@ page import="kr.co.jboard.dto.UserDTO" %>
 <%@ page import="kr.co.jboard.dao.UserDAO" %><%--
   Created by IntelliJ IDEA.
   User: Java
@@ -21,13 +21,13 @@
     String uid = request.getParameter("uid");
     String pass = request.getParameter("pass");
 
-    UserVO userVO = null;
+    UserDTO userDTO = null;
 
 
-    userVO = UserDAO.getInstance().selectUser(uid, pass);
+    userDTO = UserDAO.getInstance().selectUser(uid, pass);
 
-    if (userVO != null) {
-        session.setAttribute("sessUser", userVO);
+    if (userDTO != null) {
+        session.setAttribute("sessUser", userDTO);
         response.sendRedirect("../list.jsp");
     } else {
 

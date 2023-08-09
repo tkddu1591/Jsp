@@ -117,6 +117,25 @@ footer>div{
     color: #111;
 }
 
+#user.login #find {
+    margin-top: 5px;
+    margin-left: 8%;
+    width: 70%;
+    color: #777777;
+}
+
+#user.login #find > a {
+    color: #777777;
+}
+
+#user.login #find > a:nth-of-type(1) {
+    margin-right: 5px;
+
+}
+
+#user.login #find > a:nth-of-type(2) {
+    margin-left: 5px;
+}
 #user.login > .info {
     margin-bottom: 30px;
     padding: 20px;
@@ -317,6 +336,7 @@ footer>div{
     background: #f5f8f9;
     text-align: center;
 }
+
 
 #board table input {
     width: 100%;

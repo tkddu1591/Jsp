@@ -1,4 +1,4 @@
-<%@ page import="kr.co.jboard.vo.UserVO" %><%--
+<%@ page import="kr.co.jboard.dto.UserDTO" %><%--
   Created by IntelliJ IDEA.
   User: Java
   Date: 2023-08-02
@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 
 <%
-    UserVO sessUser = (UserVO) session.getAttribute("sessUser");
+    UserDTO sessUser = (UserDTO) session.getAttribute("sessUser");
     if(sessUser==null){
         response.sendRedirect("user/login.jsp");
 //        pageContext.forward("user/login.jsp");

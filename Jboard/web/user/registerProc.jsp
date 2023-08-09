@@ -1,5 +1,6 @@
-<%@ page import="kr.co.jboard.vo.UserVO" %>
-<%@ page import="kr.co.jboard.dao.UserDAO" %><%--
+<%@ page import="kr.co.jboard.dto.UserDTO" %>
+<%@ page import="kr.co.jboard.dao.UserDAO" %>
+<%@ page import="kr.co.jboard.dto.UserDTO" %><%--
   Created by IntelliJ IDEA.
   User: Java
   Date: 2023-08-02
@@ -12,20 +13,20 @@
     request.setCharacterEncoding("UTF-8");
 /*
 아이디 비번 이름 별명 email 휴대폰*/
-    UserVO userVO = new UserVO();
-    userVO.setUid(request.getParameter("uid"));
-    userVO.setPass(request.getParameter("pass1"));
-    userVO.setNick( request.getParameter("nick"));
-    userVO.setName( request.getParameter("name"));
-    userVO.setEmail( request.getParameter("email"));
-    userVO.setHp( request.getParameter("hp"));
-    userVO.setZip( request.getParameter("zip"));
-    userVO.setAddr1( request.getParameter("addr1"));
-    userVO.setAddr2( request.getParameter("addr2"));
-    userVO.setRegIp(request.getRemoteAddr());
+    UserDTO userDTO = new UserDTO();
+    userDTO.setUid(request.getParameter("uid"));
+    userDTO.setPass(request.getParameter("pass1"));
+    userDTO.setNick( request.getParameter("nick"));
+    userDTO.setName( request.getParameter("name"));
+    userDTO.setEmail( request.getParameter("email"));
+    userDTO.setHp( request.getParameter("hp"));
+    userDTO.setZip( request.getParameter("zip"));
+    userDTO.setAddr1( request.getParameter("addr1"));
+    userDTO.setAddr2( request.getParameter("addr2"));
+    userDTO.setRegIp(request.getRemoteAddr());
 
     int result = 0;
-    UserDAO.getInstance().insertUser(userVO);
+    UserDAO.getInstance().insertUser(userDTO);
 
 
 

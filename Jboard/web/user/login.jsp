@@ -1,4 +1,5 @@
-<%@ page import="kr.co.jboard.vo.UserVO" %><%--
+<%@ page import="kr.co.jboard.dto.UserDTO" %>
+<%@ page import="kr.co.jboard.dto.UserDTO" %><%--
 Created by IntelliJ IDEA.
 User: Java
 Date: 2023-08-02
@@ -7,13 +8,14 @@ To change this template use File | Settings | File Templates.
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+
 <%
     //스크립트릿 -> 서버
     request.setCharacterEncoding("UTF-8");
     String success = request.getParameter("success");
 
-    UserVO sessUser = (UserVO) session.getAttribute("sessUser");
-    if(sessUser!=null){
+    UserDTO sessUser = (UserDTO) session.getAttribute("sessUser");
+    if (sessUser != null) {
         response.sendRedirect("../list.jsp");
         return;
     }
@@ -29,20 +31,19 @@ To change this template use File | Settings | File Templates.
 
 
                 const success = <%=success%>;
-                    document.querySelector('form').addEventListener('submit', function (e) {
+                document.querySelector('form').addEventListener('submit', function (e) {
 
-                        const uid = document.getElementsByName('uid')[0].value;
-                        const pass = document.getElementsByName('pass')[0].value;
+                    const uid = document.getElementsByName('uid')[0].value;
+                    const pass = document.getElementsByName('pass')[0].value;
 
-                        if (uid === '') {
-                            alert('아이디를 입력해 주세요.')
-                            e.preventDefault();
-                        } else if (pass === '') {
-                            alert('비밀번호를 입력해 주세요.')
-                            e.preventDefault();
-                        }
-                    })
-
+                    if (uid === '') {
+                        alert('아이디를 입력해 주세요.')
+                        e.preventDefault();
+                    } else if (pass === '') {
+                        alert('비밀번호를 입력해 주세요.')
+                        e.preventDefault();
+                    }
+                })
 
 
                 if (100 === success) {
@@ -65,7 +66,7 @@ To change this template use File | Settings | File Templates.
                 </div>
             </header>
             <section id="user" class="login">
-                <form action="./loginProc.jsp" method="post" >
+                <form action="./loginProc.jsp" method="post">
                     <table border="0">
                         <tr>
                             <td><img src="../images/login_ico_id.png" alt="아이디"/></td>
@@ -77,6 +78,10 @@ To change this template use File | Settings | File Templates.
                         </tr>
                     </table>
                     <input type="submit" class="btnLogin" value="로그인"/>
+                    <div id="find">
+                        <a href="idFind.jsp">아이디 찾기</a> |
+                        <a href="#">비밀번호 찾기</a>
+                    </div>
                 </form>
 
                 <div class="info">
@@ -96,5 +101,4 @@ To change this template use File | Settings | File Templates.
 
         </div>
     </body>
-</html>
 </html>

@@ -2,13 +2,8 @@ package kr.co.jboard.dao;
 
 import kr.co.jboard.db.DBHelper;
 import kr.co.jboard.db.SQL;
-import kr.co.jboard.vo.UserVO;
+import kr.co.jboard.dto.UserDTO;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 
@@ -23,7 +18,7 @@ public class UserDAO extends DBHelper {
     }
 
 
-    public void insertUser(UserVO vo) {
+    public void insertUser(UserDTO vo) {
         try {
             //JNDI 서비스 객체 생성
             conn = getConnection();
@@ -48,8 +43,8 @@ public class UserDAO extends DBHelper {
 
     }
 
-    public UserVO selectUser(String uid, String pass) {
-        UserVO userVO = null;
+    public UserDTO selectUser(String uid, String pass) {
+        UserDTO userDTO = null;
         try {
             conn = getConnection();
 
@@ -58,20 +53,20 @@ public class UserDAO extends DBHelper {
             psmt.setString(2, pass);
             rs = psmt.executeQuery();
             if (rs.next()) {
-                userVO = new UserVO();
-                userVO.setUid(rs.getString(1));
-                userVO.setPass(rs.getString(2));
-                userVO.setName(rs.getString(3));
-                userVO.setNick(rs.getString(4));
-                userVO.setEmail(rs.getString(5));
-                userVO.setHp(rs.getString(6));
-                userVO.setRole(rs.getString(7));
-                userVO.setZip(rs.getString(8));
-                userVO.setAddr1(rs.getString(9));
-                userVO.setAddr2(rs.getString(10));
-                userVO.setRegIp(rs.getString(11));
-                userVO.setRegDate(rs.getString(12));
-                userVO.setLeaveDate(rs.getString(13));
+                userDTO = new UserDTO();
+                userDTO.setUid(rs.getString(1));
+                userDTO.setPass(rs.getString(2));
+                userDTO.setName(rs.getString(3));
+                userDTO.setNick(rs.getString(4));
+                userDTO.setEmail(rs.getString(5));
+                userDTO.setHp(rs.getString(6));
+                userDTO.setRole(rs.getString(7));
+                userDTO.setZip(rs.getString(8));
+                userDTO.setAddr1(rs.getString(9));
+                userDTO.setAddr2(rs.getString(10));
+                userDTO.setRegIp(rs.getString(11));
+                userDTO.setRegDate(rs.getString(12));
+                userDTO.setLeaveDate(rs.getString(13));
             }
 
 
@@ -81,10 +76,10 @@ public class UserDAO extends DBHelper {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return userVO;
+        return userDTO;
     }
 
-    public List<UserVO> selectUsers() {
+    public List<UserDTO> selectUsers() {
         return null;
     }
 

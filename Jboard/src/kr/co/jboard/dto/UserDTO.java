@@ -1,6 +1,6 @@
-package kr.co.jboard.vo;
+package kr.co.jboard.dto;
 
-public class UserVO {
+public class UserDTO {
     private String uid;
     private String pass;
     private String name;
