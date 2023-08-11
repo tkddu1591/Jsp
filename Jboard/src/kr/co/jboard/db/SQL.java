@@ -15,9 +15,11 @@ public class SQL {
     public static final String UPDATE_ARTICLE_HIT = "update article set hit = hit+1 where no = ?;";
 
     public static final String DELETE_ARTICLE_COMMENT="delete from article where no=?;";
-    public static final String UPDATE_ARTICLE_COMMENT="update article set comment = comment+1 where no = ?;";
+    public static final String UPDATE_ARTICLE_COMMENT_PLUS="update article set comment = comment+1 where no = ?;";
     public static final String UPDATE_ARTICLE_COMMENT_MINUS="update article set comment = comment-1 where no = ?;";
     public static final String SELECT_ARTICLE_COUNT = "select count(no) from article where parent=0;";
     public static final String UPDATE_ARTICLE_CONTENT = "update article set title = ? , content = ? where no = ?;";
+
+    public static final String UPDATE_ARTICLE_COMMENT = "UPDATE Article SET content =? where no =?";
 
 }

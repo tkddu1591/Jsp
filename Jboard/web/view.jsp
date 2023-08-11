@@ -16,27 +16,58 @@ To change this template use File | Settings | File Templates.
 <%@ include file="_header.jsp" %>
 <style>
 
+    #board.view > .commentList > article textarea {
+        width: 100%;
+        height: 60px;
+        padding: 6px;
+        box-sizing: border-box;
+        resize: none;
+        border: 0;
+        background: transparent;
+    }
+
+    #board.view > .commentList > article textarea.modi {
+        border: 1px solid #bbb;
+        background: white;
+    }
+
+    #board.view > .commentList > article div {
+        text-align: right;
+    }
+
+    #board.view > .commentList > article div > .can {
+        display: none;
+    }
+
+    #board.view > .commentList > table {
+
+    }
+
+
+    #board.view > .commentList > article > form > div {
+        text-align: right;
+    }
+
 </style>
 <%
     int no = Integer.parseInt(request.getParameter("no"));
     ArticleDTO vo = ArticleDAO.getInstance().selectArticle(no);
-    ArticleDAO.getInstance().updateArticleHit(no);
     List<ArticleDTO> dtos = ArticleDAO.getInstance().selectArticleComments(no);
 %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <script>
-    /*    $(function () {
-            $('.comment>div>a:nth-of-type(1)').click(function () {
-                let check = confirm('삭제하시겠습니까?')
+    $(function () {
+        $('.comment>div>a:nth-of-type(1)').click(function () {
+            let check = confirm('삭제하시겠습니까?')
 
-                if (check === false) {
-                    return false;
-                }
+            if (check === false) {
+                return false;
+            }
 
-            })
-        })*/
-    window.onload = function () {
-        console.log("<%=vo.getWriter()%>")
+        })
+    })
+    /*  window.onload = function () {
+          console.log("<%=vo.getWriter()%>")
         console.log("<%=userDTO.getUid()%>")
         const deleteBtn = document.querySelector("#board>div>a:nth-of-type(1)");
         const deleteComment = document.querySelector(".comment>div>a:nth-of-type(1)");
@@ -49,7 +80,73 @@ To change this template use File | Settings | File Templates.
         ['click'].forEach(event => deleteComment.addEventListener(event, idCheck));
         deleteBtn.addEventListener('click', idCheck)
 
-    }
+    }*/
+</script>
+<script>
+    // 댓글 수정
+    $(function () {
+        let comment = '';
+        // 댓글 수정
+        $('.mod').click(function (e) {
+            e.preventDefault();
+
+            const txt = $(this).text();
+
+            if (txt == '수정') {
+                comment = $(this).parent().prev().val();
+                $(this).parent().prev().addClass('modi');
+                $(this).parent().prev().attr('readonly', false);
+                $(this).parent().prev().focus();
+                $(this).text('수정완료');
+                $(this).prev().show();
+            } else {
+                // 수정완료 클릭
+                // 수정 데이터 전송
+                let check = confirm('수정하시겠습니까?')
+                if (check === false) {
+
+                    $(this).parent().prev().removeClass('modi');
+                    $(this).parent().prev().attr('readonly', true);
+                    $(this).text('수정');
+                    $(this).prev().hide();
+                    $(this).parent().prev().val(comment);
+                    return false;
+                }
+                $(this).closest('form').submit();
+                // 수정모드 해제
+            }
+
+            $('.can').click(function (e) {
+
+                $(this).parent().prev().removeClass('modi');
+                $(this).parent().prev().attr('readonly', true);
+                $(this).hide();
+                $(this).next().text('수정')
+                $(this).parent().prev().val(comment);
+                e.preventDefault();
+            })
+
+        })
+
+        // 댓글쓰기 취소
+        // Javascript 방식
+        // jQuery 방식
+        $('.btnCancel').click(function (e) {
+            e.preventDefault();
+            $('form > textarea[name=content]').val('');
+        });
+
+        /*    // jQuery 방식
+            $('.btnCancel').click(function(e){
+                e.preventDefault();
+                $('form > textarea[name=content]').val('');
+            });
+    */
+
+
+    })
+    ;
+
 </script>
 <main>
     <section id="board" class="view">
@@ -102,21 +199,24 @@ To change this template use File | Settings | File Templates.
                 for (ArticleDTO dto : dtos) {
             %>
             <article class="comment">
+                <form action="proc/contentUpdate.jsp" method="post">
+                    <input type="hidden" name="no" value=<%=dto.getNo()%>>
+                    <input type="hidden" name="parent" value=<%=vo.getNo()%>>
                     <span>
-                        <span><%=dto.getNick()%></span>
-                        <span><%=dto.getrDate()%></span>
-                    </span>
-                <textarea name="comment" readonly><%=dto.getContent()%></textarea>
-                <%
-                    if (Objects.equals(dto.getWriter(), userDTO.getUid())) {
-                %>
-                <div>
-                    <a href="proc/contentDeleteProc.jsp?no=<%=dto.getNo()%>&parent=<%=dto.getParent()%>">삭제</a>
-                    <a href="#">수정</a>
-                </div>
-                <%
-                    }
-                %>
+	                    <span><%= dto.getNick() %></span>
+	                    <span><%= dto.getrDate() %></span>
+	                </span>
+                    <textarea name="comment" readonly><%= dto.getContent() %></textarea>
+
+                    <% if (userDTO.getUid().equals(dto.getWriter())) { %>
+                    <div>
+                        <a href="proc/contentDeleteProc.jsp?no=<%= dto.getNo() %>&parent=<%= dto.getParent() %>"
+                           class="del">삭제</a>
+                        <a href="#" class="can">취소</a>
+                        <a href="#" class="mod">수정</a>
+                    </div>
+                    <% } %>
+                </form>
             </article>
             <%
                 }

@@ -21,7 +21,7 @@
     dto.setContent(content);
 
     ArticleDAO.getInstance().insertComment(dto);
-    ArticleDAO.getInstance().updateArticleComment(Integer.parseInt(parent));
+    ArticleDAO.getInstance().updateArticleCommentPlus(Integer.parseInt(parent));
 
     response.sendRedirect("../view.jsp?no="+parent);
 %>

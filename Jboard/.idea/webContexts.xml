@@ -5,6 +5,7 @@
       <map>
         <entry key="file://$PROJECT_DIR$/web/user/register.jsp" value="file://$PROJECT_DIR$/web/user" />
         <entry key="file://$PROJECT_DIR$/web/user/terms.jsp" value="file://$PROJECT_DIR$/web/user" />
+        <entry key="file://$PROJECT_DIR$/web/view.jsp" value="file://$PROJECT_DIR$/web" />
       </map>
     </option>
   </component>

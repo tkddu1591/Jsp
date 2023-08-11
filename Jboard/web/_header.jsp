@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     UserDTO userDTO = (UserDTO) session.getAttribute("sessUser");
-    if(userDTO ==null){
+    if (userDTO == null) {
         response.sendRedirect("user/login.jsp?success=101");
         return;
     }
@@ -24,7 +24,7 @@
         <div id="wrapper">
             <header>
                 <div>
-                    <h3>Board System v1.0</h3>
+                    <h3><a href="/Jboard_war_exploded">Board System v1.0</a></h3>
                     <p>
                         <%=userDTO.getNick()%> 님 반갑습니다.
                         <a href="user/logout.jsp" class="logout">[로그아웃]</a>

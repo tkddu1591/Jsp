@@ -15,7 +15,7 @@
 
 
     ArticleDAO.getInstance().deleteArticle(Integer.parseInt(no));
-    ArticleDAO.getInstance().updateArticleCommentMinus(Integer.parseInt(no));
+    ArticleDAO.getInstance().updateArticleCommentMinus(Integer.parseInt(parent));
 
     response.sendRedirect("../view.jsp?no="+parent);
 %>

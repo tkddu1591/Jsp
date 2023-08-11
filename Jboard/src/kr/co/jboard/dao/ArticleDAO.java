@@ -181,10 +181,10 @@ public class ArticleDAO extends DBHelper {
             throw new RuntimeException(e);
         }
     }
-    public void updateArticleComment(int no) {
+    public void updateArticleCommentPlus(int no) {
         try {
             conn = getConnection();
-            psmt = conn.prepareStatement(SQL.UPDATE_ARTICLE_COMMENT);
+            psmt = conn.prepareStatement(SQL.UPDATE_ARTICLE_COMMENT_PLUS);
             psmt.setInt(1, no);
             psmt.executeUpdate();
             cloes();
@@ -229,4 +229,19 @@ public class ArticleDAO extends DBHelper {
             throw new RuntimeException(e);
         }
     }
+    
+    public void updateArticleComment(String content, String no){
+        try {
+            conn = getConnection();
+            psmt = conn.prepareStatement(SQL.UPDATE_ARTICLE_COMMENT);
+            psmt.setString(1,content);
+            psmt.setString(2,no);
+            psmt.executeUpdate();
+            cloes();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    
 }
