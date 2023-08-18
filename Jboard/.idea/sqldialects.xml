@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/src/kr/co/jboard/db/sql.sql" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/kr/co/jboard/db/sql.sql" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/web/sql/query.sql" dialect="MySQL" />
   </component>
 </project>

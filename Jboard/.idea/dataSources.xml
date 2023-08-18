@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="@localhost" uuid="50688656-b877-4b68-b9ea-1045c94729b4">
+    <data-source source="LOCAL" name="@localhost" uuid="4cd2182f-88eb-4a65-b23b-e45b39c06ab5">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="jdbc/Jboard" uuid="9fc72332-1e78-4342-a55f-d1fb456bd0ec">
+    <data-source source="LOCAL" name="Server2" uuid="715fd09e-8e68-4ffd-b769-6dccfcf210b7">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
-      <imported>true</imported>
-      <remarks>Tomcat.Resource
-
-C:/Users/Administrator/IdeaProjects/Jsp/Jboard/web/META-INF/context.xml</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1:3306/jboard</jdbc-url>
+      <jdbc-url>jdbc:mysql://192.168.56.102:3306</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

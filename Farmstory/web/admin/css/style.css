@@ -1,0 +1,385 @@
+/* 전체 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    font: normal 12px '고딕';
+}
+ul, ol {list-style: none;}
+a {text-decoration: none; color: #111;}
+
+#container {
+    position: relative;
+    width: 980px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* 헤더영역 */
+header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-image: url('../images/admin_bg.jpg');
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+header > p {
+    float: right;            
+}
+header > p > a {
+    color: #fff;
+}
+
+/* 왼쪽 사이드 */
+main {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+main > aside {
+    float: left;
+    width: 176px;
+    height: 400px;
+    padding: 10px;
+    box-sizing: border-box;
+}       
+
+main > aside > h3 {            
+    padding: 5px 20px;
+    border-radius: 20px;
+    background-color: rgb(229, 229, 229);
+    border: 1px solid rgb(204, 204, 204);            
+    font-size: 14px;
+}
+
+main > aside > ul {
+    padding: 16px;
+    box-sizing: border-box;
+}
+main > aside > ul > li {
+    line-height: 22px;
+}
+
+main > aside > ul > li.on > a {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+main > aside > ul > li > a:hover {
+    color:#111;
+    text-decoration: underline;
+}
+
+/* 메인 컨텐츠 */
+main > section {
+    float: right;
+    width: 804px;
+    min-height: 400px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+main > section > nav > h3 {
+    font-size: 17px;
+    font-weight: bold;
+    color: #3f3f3f;
+}
+
+main > section > article {
+    margin-top: 12px;
+}
+main > section > article > h3 {
+    margin: 6px 0;
+}
+main > section > article > h3 > .more {
+    float: right;
+}
+main > section > article table {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-top: 2px solid #333;
+    
+}
+main > section > article table tr {
+    border-bottom: 1px dotted #999;
+}
+main > section > article table tr > th {
+    padding: 12px;
+    background-color: #fbfbfb;
+}
+main > section > article table tr > td {
+    padding: 12px;
+    text-align: center;
+}
+
+/* 푸터영역 */
+footer {
+    width: 100%;
+    height: auto;            
+    background-color: #353535;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+footer > p {
+    color: #fff;
+}
+
+/* 상품관리(목록) */
+#productList {}
+#productList > article {}
+#productList > article > table {}
+#productList table {}
+#productList table .thumb {
+    width: 60px;
+}
+#productList > article > p {            
+    padding: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#productList .productDelete {
+    float: left;            
+}
+
+#productList .productRegister {
+    float: right;            
+}
+#productList .productRegister {
+    padding: 6px 12px;            
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+#productList .productRegister:hover {
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#productList .paging {            
+    text-align: center;
+}
+
+#productList .paging > .on {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* 상품관리(등록) */
+#productRegister {}
+#productRegister > article {}
+
+#productRegister table {}
+#productRegister table tr {}
+#productRegister table tr > td {
+    text-align: left;
+}
+#productRegister table tr > td:first-child {
+    width: 12%;
+}
+#productRegister table tr > td > label {
+    margin-right: 16px;
+}
+#productRegister table tr > td > p {
+    margin-bottom: 8px;
+}
+#productRegister table tr > td > p > span {
+    display: block;
+    margin-bottom: 2px;
+}
+
+#productRegister form > p {
+    margin: 12px 0;
+    text-align: center;
+}
+#productRegister form .btnCancel {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+#productRegister form input[type=submit] {
+    padding: 6px 12px;            
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+#productRegister form input[type=submit]:hover {
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+/* 주문관리 */
+#orderList > article > p {            
+    padding: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+#orderList .paging {
+    text-align: center;
+}
+
+#orderList .paging > .on {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#orderPopup {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.8);
+    padding: 4%;
+    box-sizing: border-box;
+}
+
+#orderPopup > section {
+    position: relative;
+    width: 400px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#orderPopup > section > nav {}
+#orderPopup > section > nav > h1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+#orderPopup > section > nav > .btnClose {}
+
+#orderPopup > section > article {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#orderPopup > section > article > h3 {
+    font-weight: bold;
+}
+
+#orderPopup > section > article > table {                     
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    border-top: 2px solid #333;
+}
+
+#orderPopup > section > article > table td {
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+#orderPopup > section > article > table .thumb {
+    width: 10%;
+}
+
+#orderPopup > section > article > table tr {
+    border-bottom: 1px dotted #999;
+}
+
+#orderPopup .btnClose {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images//btnClose.gif');
+    background-size: 16px;
+    font-size: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+/* 회원관리 */        
+#userPopup {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.8);
+    padding: 4%;
+    box-sizing: border-box;
+}
+
+#userPopup > section {
+    position: relative;
+    width: 400px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#userPopup > section > nav {}
+#userPopup > section > nav > h1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+#userPopup > section > nav > .btnClose {}
+
+#userPopup > section > article {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#userPopup > section > article > h3 {
+    font-weight: bold;
+}
+
+#userPopup > section > article > table {                     
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    border-top: 2px solid #333;
+}
+
+#userPopup > section > article > table td {
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+#userPopup > section > article > table .thumb {
+    width: 10%;
+}
+
+#userPopup > section > article > table tr {
+    border-bottom: 1px dotted #999;
+}
+
+#userPopup .btnClose {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    background-image: url('../images//btnClose.gif');
+    background-size: 16px;
+    font-size: 0;
+    border: 0;
+    cursor: pointer;
+}
