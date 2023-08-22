@@ -42,9 +42,9 @@
     dto.setPrice(price);
     dto.setDelivery(delivery);
     dto.setStock(stock);
-    dto.setThumb1(thumb1);
-    dto.setThumb2(thumb2);
-    dto.setThumb3(thumb3);
+    dto.setThumb1ForRename(thumb1);
+    dto.setThumb2ForRename(thumb2);
+    dto.setThumb3ForRename(thumb3);
     dto.setEtc(etc);
     dto.setSeller(seller);
     dao.insertProduct(dto);

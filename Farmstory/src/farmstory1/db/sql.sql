@@ -720,3 +720,15 @@ create table userdb.user6
         unique (hp)
 );
 
+
+SELECT * FROM jboard.product;
+INSERT INTO jboard.product ( type, pName, price, delivery, stock, sold, thumb1, thumb2, thumb3, seller, etc, rDate)
+select type, pName, price, delivery, stock, sold, thumb1, thumb2, thumb3, seller, etc, rDate from jboard.product;
+
+# 게시물 개수 구하기
+select count(pNo) from jboard.product;
+select count(pNo) from jboard.product where type=?;
+
+# 10개씩 나누기
+select * from jboard.product order by jboard.product.pNo desc limit ?, 10 ;
+select * from jboard.product where type=? order by jboard.product.pNo desc limit ?, 10 ;

@@ -487,11 +487,12 @@ main > .info > div > .account {
     font-weight: bold;
 }
 
+
 #sub > .market > .view > .basic {
     width: 100%;
     height: 270px;
     position: relative;
-    overflow: hidden;
+    overflow: revert;
 }
 #sub > .market > .view > .basic > img {
     float: left;
@@ -513,10 +514,11 @@ main > .info > div > .account {
     color: #c20a0a;
 }
 
-#sub > .market > .view > .basic > .btnOrder {
+
+#sub > .market > .view > .basic  .btnOrder {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -40px;
 }
 
 

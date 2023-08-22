@@ -70,6 +70,12 @@ public class SQL {
 
 	public final static String INSERT_PRODUCT ="INSERT INTO jboard.product (type, pName, price, delivery, stock,  thumb1, thumb2, thumb3, seller, etc, rDate) " +
 																				   "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
+	public final static String SELECT_PRODUCTS = "SELECT * FROM jboard.product;";
 
+
+	public final static String SELECT_PRODUCTS_TOTAL_TYPE = "select count(pNo) from jboard.product where type=?;";
+	public final static String SELECT_PRODUCTS_TOTAL_ALL = "select count(pNo) from jboard.product;";
+	public final static String SELECT_PRODUCTS_ALL="select * from jboard.product order by jboard.product.pNo desc limit ?, 10 ;";
+	public final static String SELECT_PRODUCTS_TYPE="select * from jboard.product where type=? order by jboard.product.pNo desc limit ?, 10 ";
 
 }

@@ -25,7 +25,7 @@
         <header>
             <a href="./index.jsp" class="logo"><img src="./images/admin_logo.jpg" alt="로고"/></a>
             <p>
-                <a href="/">HOME |</a>
+                <a href="/Farmstory_war_exploded/">HOME |</a>
                 <a href="#">로그아웃 |</a>
                 <a href="#">고객센터</a>
             </p>

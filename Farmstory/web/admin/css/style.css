@@ -13,7 +13,6 @@ a {text-decoration: none; color: #111;}
     height: auto;
     margin: 0 auto;
 }
-
 /* 헤더영역 */
 header {
     position: relative;
@@ -133,6 +132,7 @@ footer > p {
 #productList > article {}
 #productList > article > table {}
 #productList table {}
+
 #productList table .thumb {
     width: 60px;
 }
@@ -383,3 +383,15 @@ footer > p {
     border: 0;
     cursor: pointer;
 }
+
+
+#sub > .market > .list > table .thumb {
+    width: 120px;
+    height: 120px;
+}
+
+
+#productList table th:nth-child(3) {width: 60px}
+#productList table th:nth-child(5) {width: 40px}
+#productList table th:nth-child(6) {width: 60px}
+#productList table th:nth-child(7) {width: 40px}

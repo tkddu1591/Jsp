@@ -1,15 +1,9 @@
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../_header.jsp" %>
 <div id="sub">
     <div><img src="../images/sub_top_tit2.png" alt="MARKET"></div>
     <section class="market">
-        <aside>
-            <img src="../images/sub_aside_cate2_tit.png" alt="장보기"/>
-
-            <ul class="lnb">
-                <li class="on"><a href="./list.jsp">장보기</a></li>
-            </ul>
-        </aside>
+        <%@include file="_aside.jsp" %>
         <article class="view">
             <nav>
                 <img src="../images/sub_nav_tit_cate2_tit1.png" alt="장보기"/>
@@ -23,7 +17,7 @@
             <div class="basic">
                 <img src="../images/market_item_thumb.jpg" alt="딸기 500g">
 
-                <table border="0">                            
+                <table border="0">
                     <tr>
                         <td>상품명</td>
                         <td>딸기 500g</td>
@@ -73,7 +67,7 @@
                 </p>
             </div>
 
-            <h3>교환/반품</h3>                  
+            <h3>교환/반품</h3>
             <div class="exchange">
                 <table border="0">
                     <tr>

@@ -25,8 +25,9 @@
     <orderEntry type="library" name="gson-2.10.1" level="project" />
     <orderEntry type="library" name="mysql-connector-j-8.0.32" level="project" />
     <orderEntry type="library" name="tomcat-api" level="project" />
-    <orderEntry type="library" name="jsp-api" level="project" />
     <orderEntry type="library" name="activation-1.1.1" level="project" />
     <orderEntry type="library" name="cos-05Nov2002" level="project" />
+    <orderEntry type="library" name="jsp-api" level="project" />
+    <orderEntry type="library" name="servlet-api" level="project" />
   </component>
 </module>

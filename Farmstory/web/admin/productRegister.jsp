@@ -68,7 +68,7 @@
             </table>
 
             <p>
-                <a href="./productList.html" class="btnCancel">취소</a>
+                <a href="./productList.jsp" class="btnCancel">취소</a>
                 <input type="submit" value="상품등록"/>
             </p>
         </form>

@@ -1,15 +1,10 @@
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="../_header.jsp" %>
 <div id="sub">
     <div><img src="../images/sub_top_tit2.png" alt="MARKET"></div>
     <section class="market">
-        <aside>
-            <img src="../images/sub_aside_cate2_tit.png" alt="장보기"/>
 
-            <ul class="lnb">
-                <li class="on"><a href="./list.jsp">장보기</a></li>
-            </ul>
-        </aside>
+        <%@include file="_aside.jsp" %>
         <article class="order">
             <nav>
                 <img src="../images/sub_nav_tit_cate2_tit1.png" alt="장보기"/>
@@ -23,7 +18,7 @@
             <div class="info">
                 <img src="../images/market_item_thumb.jpg" alt="딸기 500g">
 
-                <table border="0">                            
+                <table border="0">
                     <tr>
                         <td>상품명</td>
                         <td>딸기 500g</td>
@@ -64,7 +59,8 @@
                     <tr>
                         <td>배송주소</td>
                         <td>
-                            <input type="text" name="zip" readonly><button id="btnZip">우편번호 검색</button>
+                            <input type="text" name="zip" readonly>
+                            <button id="btnZip">우편번호 검색</button>
                             <input type="text" name="addr1" placeholder="기본주소 검색">
                             <input type="text" name="addr2" placeholder="상세주소 입력">
                         </td>
@@ -83,7 +79,7 @@
                 <a href="#" id="btnShopping"><img src="../images/market_btn_shopping.gif"></a>
             </p>
             <!-- 내용 끝 -->
-            
+
         </article>
     </section>
 </div>
