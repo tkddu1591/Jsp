@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    
+    <!--서블릿 등록-->
+    
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>sub1.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/hello.do</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>WelcomeServlet</servlet-name>
+        <servlet-class>sub1.WelcomeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>WelcomeServlet</servlet-name>
+        <url-pattern>/welcome.do</url-pattern>
+    </servlet-mapping>
+
+    <!--필터 등록/배치-->
+    <filter>
+        <filter-name>FilterA</filter-name>
+        <filter-class>sub2.FilterA</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>FilterA</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>FilterB</filter-name>
+        <filter-class>sub2.FilterB</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>FilterB</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <!--리스너 등록-->
+    <listener>
+        <listener-class>sub3.MyContextListener</listener-class>
+    </listener>
+</web-app>
