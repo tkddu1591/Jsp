@@ -1,5 +1,27 @@
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="farmstory1.dto.ArticleDTO" %>
+<%@ page import="farmstory1.dao.ArticleDAO" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="./_header.jsp" %>
+<%
+    request.setCharacterEncoding("UTF-8");
+
+    List<ArticleDTO> stories = new ArrayList<>();
+    List<ArticleDTO> grows = new ArrayList<ArticleDTO>();
+    List<ArticleDTO> schools = new ArrayList<ArticleDTO>();
+
+    ArticleDAO dao = new ArticleDAO();
+    stories = dao.selectArticles("story", 0);
+    grows = dao.selectArticles("grow", 0);
+    schools = dao.selectArticles("school", 0);
+
+    request.setAttribute("stories", stories);
+    request.setAttribute("grows", grows);
+    request.setAttribute("schools", schools);
+
+
+%>
 <main>
     <div class="slider">
         <ul>
@@ -21,96 +43,81 @@
 
     <div class="latest">
         <div>
-            <a href="#"><img src="images/main_latest1_tit.png" alt="텃밭 가꾸기"/></a>
+            <a href="./board/list.jsp?group=Croptalk&cate=grow"><img src="images/main_latest1_tit.png"
+                                                                      alt="텃밭 가꾸기"/></a>
             <img src="images/main_latest1_img.jpg" alt="이미지"/>
             <table border="0">
+                <%
+                    int count = 0;
+                    for (ArticleDTO article : grows) {
+                        count++;
+                %>
                 <tr>
                     <td>></td>
-                    <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
-                    <td>20-12-22</td>
+                    <td>
+                        <a href="./board/view.jsp?group=Croptalk&cate=grow&no=<%=article.getNo()%>>"><%=article.getTitle()%>
+                        </a></td>
+                    <td><%=article.getRdate()%>
+                    </td>
                 </tr>
-                <tr>
-                    <td>></td>
-                    <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
-                    <td>20-12-22</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
-                    <td>20-12-22</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
-                    <td>20-12-22</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
-                    <td>20-12-22</td>
-                </tr>
+                <%
+                        if (count >4 ) {
+                            break;
+                        }
+                    }
+                %>
             </table>
         </div>
         <div>
-            <a href="#"><img src="./images/main_latest2_tit.png" alt="귀농학교"/></a>
+            <a href="./board/list.jsp?group=Croptalk&cate=school"><img src="./images/main_latest2_tit.png" alt="귀농학교"/></a>
             <img src="./images/main_latest2_img.jpg" alt="이미지"/>
             <table border="0">
+                <%
+                    count = 0;
+                    for (ArticleDTO article : schools) {
+                        count++;
+                %>
                 <tr>
                     <td>></td>
-                    <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
-                    <td>20-12-22</td>
+                    <td>
+                        <a href="./board/view.jsp?group=Croptalk&cate=school&no=<%=article.getNo()%>>"><%=article.getTitle()%>
+                        </a></td>
+                    <td><%=article.getRdate()%>
+                    </td>
                 </tr>
-                <tr>
-                    <td>></td>
-                    <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
-                    <td>20-12-22</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
-                    <td>20-12-22</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
-                    <td>20-12-22</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
-                    <td>20-12-22</td>
-                </tr>
+                <%
+                        if (count >4 ) {
+                            break;
+                        }
+                    }
+                %>
+
             </table>
         </div>
         <div>
-            <a href="#"><img src="./images/main_latest3_tit.png" alt="농작물 이야기"/></a>
+            <a href="./board/list.jsp?group=Croptalk&cate=stroy"><img src="./images/main_latest3_tit.png" alt="농작물 이야기"/></a>
             <img src="./images/main_latest3_img.jpg" alt="이미지"/>
             <table border="0">
+                <%
+                    count = 0;
+                    for (ArticleDTO article : stories) {
+                        count++;
+                %>
                 <tr>
                     <td>></td>
-                    <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
-                    <td>20-12-22</td>
+                    <td>
+                        <a href="./board/view.jsp?group=Croptalk&cate=story&no=<%=article.getNo()%>>"><%=article.getTitle()%>
+                        </a></td>
+                    <td><%=article.getRdate()%>
+                    </td>
                 </tr>
-                <tr>
-                    <td>></td>
-                    <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
-                    <td>20-12-22</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
-                    <td>20-12-22</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
-                    <td>20-12-22</td>
-                </tr>
-                <tr>
-                    <td>></td>
-                    <td><a href="#">토마토! 건강하게 길러서 안심하고 먹자</a></td>
-                    <td>20-12-22</td>
-                </tr>
+                <%
+                        if (count >4 ) {
+                            break;
+                        }
+                    }
+                %>
+
             </table>
         </div>
 
@@ -137,10 +144,10 @@
         <div>
             <img src="./images/main_sub2_account_tit.png" class="tit" alt="계좌안내"/>
             <p class="account">
-                기업은행 123-456789-01-01-012<br />
-                국민은행 01-1234-56789<br />
-                우리은행 123-456789-01-01-012<br />
-                하나은행 123-456789-01-01<br />
+                기업은행 123-456789-01-01-012<br/>
+                국민은행 01-1234-56789<br/>
+                우리은행 123-456789-01-01-012<br/>
+                하나은행 123-456789-01-01<br/>
                 예 금 주 (주)팜스토리
             </p>
         </div>

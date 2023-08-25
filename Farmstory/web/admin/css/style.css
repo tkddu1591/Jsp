@@ -395,3 +395,18 @@ footer > p {
 #productList table th:nth-child(5) {width: 40px}
 #productList table th:nth-child(6) {width: 60px}
 #productList table th:nth-child(7) {width: 40px}
+
+
+
+#sub > .market > .list .thumb1s{
+    width: 100%  ;
+}
+
+#sub > .market > .view > .basic > img {
+    float: left;
+    width: 240px;
+    height: 240px;
+}
+#sub > .market > .view > .detail >img{
+    width: 100%;
+}

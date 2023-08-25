@@ -4,6 +4,11 @@
 <%@ page import="farmstory1.dao.ProductDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="_header.jsp" %>
+<style>
+    #productList .current {
+        font-weight: bolder;
+    }
+</style>
 <%
     request.setCharacterEncoding("UTF-8");
     String type = request.getParameter("type");
@@ -20,7 +25,7 @@
     int start;
     int currentPage = 1;
     int total = 0;
-    int lasPageNum = 0;
+    int lastPageNum = 0;
     int pageGroupCurrent = 1;
     int pageGroupStart = 1;
     int pageGroupEnd = 0;
@@ -38,9 +43,9 @@
 
     //페이지 번호 계산
     if (total % 10 == 0) {
-        lasPageNum = (total / 10);
+        lastPageNum = (total / 10);
     } else {
-        lasPageNum = (total / 10) + 1;
+        lastPageNum = (total / 10) + 1;
     }
 
     //페이지 그룹 계산
@@ -51,17 +56,38 @@
     //페이지 시작번호 계산
     pageStartNum = total - start;
 
-    if (pageGroupEnd > lasPageNum) {
-        pageGroupEnd = lasPageNum;
+    if (pageGroupEnd > lastPageNum) {
+        pageGroupEnd = lastPageNum;
     }
 
-    if (Integer.parseInt(type) == 0) {
-        dtos = dao.selectProductsAll(start);
-    } else {
-        dtos = dao.selectProductsType(Integer.parseInt(type), start);
-    }
+    dtos = dao.selectProductsAll(start);
 
 %>
+<script>
+    $(document).ready(function () {
+
+        $('.allSelect').click(function () {
+            if ($(this).is(':checked')) {
+                $('input:checkbox').prop('checked',true);
+            }
+            else {
+                $('input:checkbox').prop('checked',false);
+            }
+        })
+        $('input:checkbox').click(function () {
+            if ($(this).is(':checked')) {
+                $(this).val(1);
+                const type = $(this).val();
+                alert(type)
+            }
+            else {
+                $(this).val(0);
+                const type = $(this).val();
+                alert(type)
+            }
+        })
+    });
+</script>
 <%@ include file="_aside.jsp" %>
 
 <section id="productList">
@@ -73,7 +99,7 @@
 
         <table border=0>
             <tr>
-                <th><input type="checkbox" name="all"/></th>
+                <th><input type="checkbox" class="allSelect" name="all"/></th>
                 <th>사진</th>
                 <th>상품번호</th>
                 <th>상품명</th>
@@ -87,22 +113,32 @@
             %>
 
             <tr>
-                <td><input type="checkbox" name=""/></td>
+                <td><input type="checkbox" class="select" name=check /></td>
                 <td><img src="../thumb/<%=dto.getThumb1()%>" class="thumb" alt="샘플1"></td>
-                <td><%=dto.getpNo()%></td>
-                <td><%=dto.getpName()%></td>
+                <td><%=dto.getpNo()%>
+                </td>
+                <td><%=dto.getpName()%>
+                </td>
                 <td>
                     <%
                         switch (dto.getType()) {
-                            case 1: out.print("과일"); break;
-                            case 2: out.print("야채"); break;
-                            case 3: out.print("곡물"); break;
+                            case 1:
+                                out.print("과일");
+                                break;
+                            case 2:
+                                out.print("야채");
+                                break;
+                            case 3:
+                                out.print("곡물");
+                                break;
                         }
                     %>
                 </td>
                 <td><%=dto.getPriceWithComma()%>원</td>
-                <td><%=dto.getStock()%></td>
-                <td><%=dto.getrDate()%></td>
+                <td><%=dto.getStock()%>
+                </td>
+                <td><%=dto.getrDate()%>
+                </td>
             </tr>
             <%
                 }
@@ -115,14 +151,20 @@
         </p>
 
         <p class="paging">
-            <a href="#"><</a>
-            <a href="#" class="on">[1]</a>
-            <a href="#">[2]</a>
-            <a href="#">[3]</a>
-            <a href="#">[4]</a>
-            <a href="#">[5]</a>
-            <a href="#">></a>
+            <% if (pageGroupStart > 1) { %>
+            <a href="./productList.jsp?pg=<%= pageGroupStart - 1 %>" class="prev">이전</a>
+            <% } %>
+
+            <% for (int i = pageGroupStart; i <= pageGroupEnd; i++) { %>
+            <a href="./productList.jsp?pg=<%= i %>" class="num <%= (currentPage == i)?"current":"" %>"><%= i %>
+            </a>
+            <% } %>
+
+            <% if (pageGroupEnd < lastPageNum) { %>
+            <a href="./productList.jsp?pg=<%= pageGroupEnd + 1 %>" class="next">다음</a>
+            <% } %>
         </p>
+
 
     </article>
 

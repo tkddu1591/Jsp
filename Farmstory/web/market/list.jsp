@@ -109,6 +109,11 @@
     }
 
 %>
+<style>
+    #sub > .market > .list .thumb1s{
+        width: 100%  ;
+    }
+</style>
 <div id="sub">
     <div><img src="../images/sub_top_tit2.png" alt="MARKET"></div>
     <section class="market">
@@ -144,7 +149,7 @@
                 %>
                 <tr>
                     <td>
-                        <a href="./view.jsp"><img src="../thumb/<%=dto.getThumb1()%>" alt=<%=dto.getpName()%>></a>
+                        <a href="./view.jsp?pNo=<%=dto.getpNo()%>"><img class="thumb1s"  src="../thumb/<%=dto.getThumb1()%>" alt=<%=dto.getpName()%> ></a>
                     </td>
                     <td>
                         <%
@@ -155,7 +160,7 @@
                             }
                         %>
                     </td>
-                    <td><a href="#"><%=dto.getpName()%>
+                    <td><a href="./view.jsp?pNo=<%=dto.getpNo()%>"><%=dto.getpName()%>
                     </a></td>
                     <td><strong><%=dto.getPriceWithComma()%>
                     </strong>원

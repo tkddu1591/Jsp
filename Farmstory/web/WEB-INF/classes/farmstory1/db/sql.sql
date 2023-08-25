@@ -732,3 +732,34 @@ select count(pNo) from jboard.product where type=?;
 # 10개씩 나누기
 select * from jboard.product order by jboard.product.pNo desc limit ?, 10 ;
 select * from jboard.product where type=? order by jboard.product.pNo desc limit ?, 10 ;
+
+
+create table `Order`
+(
+    orderNo       int auto_increment,
+    orderProduct  int          null,
+    orderCount    int          null,
+    orderDelivery int          null,
+    orderPrice    int          null,
+    orderTotal    int          null,
+    receiver      varchar(100) null,
+    hp            varchar(100) null,
+    zip           varchar(100) null,
+    addr1         varchar(100) null,
+    addr2         varchar(100) null,
+    orderEtc      varchar(100) null,
+    orderUser     varchar(100) null,
+    orderDate     datetime     null,
+    constraint Order_pk
+        primary key (orderNo)
+);
+
+SELECT * from jboard.`product` where pNo = 1;
+INSERT INTO jboard.`order` (orderProduct, orderCount, orderDelivery, orderPrice, orderTotal, receiver, hp, zip, addr1,
+                            addr2, orderEtc, orderUser, orderDate)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW());
+
+UPDATE jboard.product set stock=product.stock-1 where pNo= ?;
+
+SELECT * FROM jboard.user order by regDate DESC limit 0,10;
+SELECT * FROM jboard.`order` as a join jboard.product as b on a.orderProduct = b.pNo order by orderNo DESC limit 0,10;

@@ -15,6 +15,7 @@ public class UserDTO {
 	private String regip;
 	private String regDate;
 	private String leaveDate;
+	private String rank;
 	
 	public String getUid() {
 		return uid;
@@ -93,8 +94,26 @@ public class UserDTO {
 	}
 	public void setLeaveDate(String leaveDate) {
 		this.leaveDate = leaveDate;
-	}	
-	
-	
-	
+	}
+
+
+	public String getRank() {
+		return rank;
+	}
+
+	public void setRank(int orderTotal) {
+		if(orderTotal>1000000){
+			this.rank = "DIAMOND";
+		}
+		else if(orderTotal>600000){
+			this.rank = "GOLD";
+		}
+		else if(orderTotal>300000){
+			this.rank = "SILVER";
+		}
+		else {
+			this.rank = "BRONZE";
+		}
+
+	}
 }

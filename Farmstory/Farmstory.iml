@@ -30,4 +30,7 @@
     <orderEntry type="library" name="jsp-api" level="project" />
     <orderEntry type="library" name="servlet-api" level="project" />
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="7f587103-2735-4046-9ae9-4573a6228e57" />
+  </component>
 </module>

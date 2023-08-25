@@ -33,10 +33,35 @@ public class ProductDAO extends DBHelper {
 
     }
 
-    public void selectProduct() {
-
+    public ProductDTO selectProduct(String pNo) {
+        ProductDTO dto = new ProductDTO();
+        try {
+            conn = getConnection();
+            psmt = conn.prepareStatement(SQL.SELECT_PRODUCT);
+            psmt.setString(1, pNo);
+            rs = psmt.executeQuery();
+            if (rs.next()){
+                dto = dtoDataInsertAll();
+            }
+            close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return dto;
     }
 
+    public void updateProductMinus(int pNo, int count){
+        try {
+            conn = getConnection();
+            psmt = conn.prepareStatement(SQL.UPDATE_PRODUCT_MINUS);
+            psmt.setInt(1,count);
+            psmt.setInt(2,count);
+            psmt.executeUpdate();
+            close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public List<ProductDTO> selectProducts() {
         List<ProductDTO> dtos = new ArrayList<>();
         try {

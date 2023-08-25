@@ -63,8 +63,12 @@ public class ProductDTO {
     public void setPrice(String price) {
         this.price = Integer.parseInt(price);
     }
-    public int getDelivery() {
-        return delivery;
+    public String getDeliveryWithComma() {
+        DecimalFormat df = new DecimalFormat("###,###");
+        return df.format(delivery);
+    }
+    public int getDelivery(){
+        return this.delivery;
     }
     public void setDelivery(int delivery) {
         this.delivery = delivery;
@@ -126,8 +130,12 @@ public class ProductDTO {
     public void setEtc(String etc) {
         this.etc = etc;
     }
-    public String getrDate() {
+    public String getrDateFull() {
         return rDate;
+    }
+    public String getrDate() {
+
+        return rDate.substring(0,10);
     }
     public void setrDate(String rDate) {
         this.rDate = rDate;
