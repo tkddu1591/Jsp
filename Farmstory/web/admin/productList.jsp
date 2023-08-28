@@ -113,6 +113,7 @@
             %>
 
             <tr>
+                <input type="hidden" name="productNo" value="dto.productNo">
                 <td><input type="checkbox" class="select" name=check /></td>
                 <td><img src="../thumb/<%=dto.getThumb1()%>" class="thumb" alt="샘플1"></td>
                 <td><%=dto.getpNo()%>

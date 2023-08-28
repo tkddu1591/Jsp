@@ -763,3 +763,5 @@ UPDATE jboard.product set stock=product.stock-1 where pNo= ?;
 
 SELECT * FROM jboard.user order by regDate DESC limit 0,10;
 SELECT * FROM jboard.`order` as a join jboard.product as b on a.orderProduct = b.pNo order by orderNo DESC limit 0,10;
+
+Select a.uid ,sum(orderTotal) from jboard.user as a join jboard.`order` o on a.uid = o.orderUser where orderUser=? group by orderUser;

@@ -1,0 +1,7 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‰İÏ¥8ş­·Ü¢1
+I
+java:S1075—"&Remove this hard-coded path-delimiter.(‚Ò‚Ûúÿÿÿÿ8®·Ü¢1
+D
+java:S1075˜"&Remove this hard-coded path-delimiter.(î–àñ8®·Ü¢1
+Z	java:S899™"=Do something with the "boolean" value returned by "renameTo".(Ş®Üï8®·Ü¢1

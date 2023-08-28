@@ -27,4 +27,7 @@
     <orderEntry type="library" name="postcode.v2" level="application" />
     <orderEntry type="library" name="jsp-api" level="project" />
   </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="0736b797-07ee-4950-827c-040bc9e7ecfb" />
+  </component>
 </module>

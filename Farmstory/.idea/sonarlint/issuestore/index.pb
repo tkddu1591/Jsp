@@ -1,0 +1,47 @@
+
+R
+"src/farmstory1/dto/ArticleDTO.java,f\d\fd053da1d4a92030dc2748b7dd56e1f87d8aceab
+R
+"src/farmstory1/dao/ArticleDAO.java,1\3\137662eeae1b276ab47cd1af9aa28dcbee675111
+G
+web/admin/orderList.jsp,b\d\bdfd84afb859e6fc8e09f0694f0ffd6f596da94c
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+=
+Farmstory.iml,7\f\7f2cfdd779f00b966a552861118325ee27c0384c
+?
+web/_header.jsp,d\9\d93f7a1ce2ef5e49a4307dd5af3ade7a175ab1fb
+C
+web/admin/index.jsp,6\3\63035a370bef98a9d0a1da70b115f3c82c95f721
+=
+web/index.jsp,9\f\9f198ed450f32e45b10ec3c2b1406e609b4a96cd
+C
+web/market/list.jsp,7\5\75a1e87217d9e2d0b8d6d257edebd016688aa78b
+C
+web/user/logout.jsp,4\1\41d472b840f3988512606e6600ab474f6c549550
+D
+web/market/order.jsp,7\d\7de67a23f78adf47594b6733454967fef25cb335
+P
+ src/farmstory1/dao/OrderDAO.java,8\5\85bd9ab249ec0b14b025e6f863640c52eb395866
+P
+ src/farmstory1/dto/OrderDTO.java,5\e\5e4300ae179da92fcae1f02ffa96eeb918002519
+M
+web/market/proc/orderProc.jsp,b\b\bbe0e60ca72dd1da6016b164af8587eede4a3e08
+R
+"src/farmstory1/dao/ProductDAO.java,b\3\b3ce1fb1b090757749cb38d126e3df37c672134a
+R
+"src/farmstory1/dto/ProductDTO.java,b\2\b27145460a7dc4330736097a9e470ff9d5c45eec
+I
+src/farmstory1/db/sql.sql,4\b\4b683a6a290859c8454db040810e1715ebca454a
+Y
+)web/WEB-INF/classes/farmstory1/db/sql.sql,6\1\61d19bdf73678208bfb61641fe1a0624436c23a4
+G
+web/admin/css/style.css,9\6\96370b0a939254801f88a6c70005368f25ab1203
+O
+src/farmstory1/dao/UserDAO.java,9\9\9975a2272e3afc48cdbbb2b8bd1f9afc96710972
+O
+src/farmstory1/dto/UserDTO.java,4\1\415219388e05685865178f33b47e9086d83b6952
+C
+web/market/view.jsp,5\e\5e269d279771b08c9f490a8cf59d0886538c406f
