@@ -1,0 +1,11 @@
+
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ü Íğ¥1
+g	java:S112+"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ü Íğ¥1
+u
+java:S2139"XEither log this exception and handle it, or rethrow it with some contextual information.(É®£8†¡Íğ¥1
+c
+java:S3457"AFormat specifiers should be used instead of string concatenation.(Ü³àúÿÿÿÿ8†¡Íğ¥1
+u
+java:S2139)"XEither log this exception and handle it, or rethrow it with some contextual information.(É®£8‰¡Íğ¥1
+^
+java:S3457*"AFormat specifiers should be used instead of string concatenation.(ß£»8‰¡Íğ¥1

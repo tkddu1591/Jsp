@@ -1,0 +1,12 @@
+
+`	java:S1129"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+`	java:S112K"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+`	java:S112f"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+`	java:S112t"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+o
+java:S2293?"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ç÷Šæ
+o
+java:S1104"TMake instance a static final constant or non-public and provide accessors if needed.(å¿ëýþÿÿÿÿ
+I
+java:S1444".Make this "public static instance" field final(å¿ëýþÿÿÿÿ
+h	java:S100P"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åàÔÐÿÿÿÿÿ

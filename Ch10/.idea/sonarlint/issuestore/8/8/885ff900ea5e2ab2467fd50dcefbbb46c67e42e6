@@ -1,0 +1,20 @@
+
+^
+java:S20951"HUse try-with-resources or close this "Connection" in a "finally" clause.(êØ±¨
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Æº§şÿÿÿÿ
+^
+java:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(êØ±¨
+e
+java:S20952"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ı‰úÜ
+i	java:S116"ORename this field "HOST" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆĞ¨şÿÿÿÿ
+i	java:S116"ORename this field "USER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(í´ÂÒÿÿÿÿÿ
+i	java:S116"ORename this field "PASS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñùàùÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(ÆĞ¨şÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(í´ÂÒÿÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(Ñùàùÿÿÿÿ
+œ
+java:S1186I"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(˜´Õùøÿÿÿÿ

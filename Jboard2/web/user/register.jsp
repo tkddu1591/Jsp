@@ -17,6 +17,8 @@ addr2
 <script type="text/javascript" src="../js/zipCode.js"></script>
 <script type="text/javascript" src="../js/validation.js"></script>
 <script>
+
+    let re = false;
     window.onload = function () {
 
         const inputUid = document.getElementsByName('uid')[0];
@@ -121,7 +123,6 @@ addr2
 
             let preventDoubleClick = false;
             let receivedCode = 0;
-            let re = false;
             $('#btnEmailCode').click(function () {
 
                 const email = $('input[name="email"]').val();
@@ -149,7 +150,7 @@ addr2
                         success: function (result) {
                             receivedCode = result.status;
                             if (result.status >= 1) {
-                                re=true;
+                                re = true;
                                 $('.auth').show();
                                 $('.resultEmail').css('color', 'green').text('인증코드 전송 완료.')
                                 console.log(receivedCode)
@@ -175,7 +176,7 @@ addr2
                     url: '/Jboard2_war_exploded/user/authEmail.do',
                     type: 'POST',
                     dataType: 'json',
-                    data: {code:code},
+                    data: {code: code},
                     success: function (result) {
                         if (result.result >= 1) {
                             $('.resultAuth').css('color', 'green').text('인증코드 확인 완료.')
@@ -186,7 +187,6 @@ addr2
                 })
 
             })
-
 
 
         })

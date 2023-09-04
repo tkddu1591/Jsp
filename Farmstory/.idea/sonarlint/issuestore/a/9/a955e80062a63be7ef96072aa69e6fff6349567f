@@ -1,0 +1,50 @@
+
+f
+java:S1192"KDefine a constant instead of duplicating this literal "`regip`=?," 3 times.(ø±§²úÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(úüÄ¥
+P
+java:S1118":Add a private constructor to hide the implicit public one.(²þœÜ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(²ÑÒèùÿÿÿÿ
+`
+java:S1124""EReorder the modifiers to comply with the Java Language Specification.(Šž™ùüÿÿÿÿ
+Z
+java:S1124*"EReorder the modifiers to comply with the Java Language Specification.(Û³Êd
+[
+java:S1124+"EReorder the modifiers to comply with the Java Language Specification.(¥´þ‹
+`
+java:S11244"EReorder the modifiers to comply with the Java Language Specification.(åÄ¸üÿÿÿÿ
+[
+java:S1124;"EReorder the modifiers to comply with the Java Language Specification.(Üõüæ
+`
+java:S1124>"EReorder the modifiers to comply with the Java Language Specification.(¤Ýìÿûÿÿÿÿ
+[
+java:S1124?"EReorder the modifiers to comply with the Java Language Specification.(£ÙÒ¿
+[
+java:S1124@"EReorder the modifiers to comply with the Java Language Specification.(’û‡Ô
+[
+java:S1124A"EReorder the modifiers to comply with the Java Language Specification.(»†Õå
+`
+java:S1124C"EReorder the modifiers to comply with the Java Language Specification.(¢· Èûÿÿÿÿ
+`
+java:S1124D"EReorder the modifiers to comply with the Java Language Specification.(Àøõ·ÿÿÿÿÿ
+`
+java:S1124F"EReorder the modifiers to comply with the Java Language Specification.(èù¼æùÿÿÿÿ
+[
+java:S1124H"EReorder the modifiers to comply with the Java Language Specification.(€öƒø
+[
+java:S1124I"EReorder the modifiers to comply with the Java Language Specification.(ß²÷õ
+[
+java:S1124L"EReorder the modifiers to comply with the Java Language Specification.(Â¿É³
+[
+java:S1124M"EReorder the modifiers to comply with the Java Language Specification.(ÏùàÐ
+`
+java:S1124N"EReorder the modifiers to comply with the Java Language Specification.(î›¢úüÿÿÿÿ
+[
+java:S1124O"EReorder the modifiers to comply with the Java Language Specification.(÷´”¾
+Z
+java:S1124P"EReorder the modifiers to comply with the Java Language Specification.(¯×Ý
+G
+java:S6126P"2Replace this String concatenation with Text block.(¯×Ý
+[
+java:S1124T"EReorder the modifiers to comply with the Java Language Specification.(£ÄªÒ

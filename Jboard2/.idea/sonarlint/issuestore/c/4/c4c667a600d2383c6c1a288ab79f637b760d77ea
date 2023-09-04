@@ -1,0 +1,14 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¯äŠ8“ÛØÙ£1
+m
+java:S1989#"PHandle the following exception that could be thrown by "getWriter": IOException.(¼½Ù†8™ÛØÙ£1
+‰
+java:S1989)"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(±Œ©À8™ÛØÙ£1
+m
+java:S19891"PHandle the following exception that could be thrown by "getWriter": IOException.(¼½Ù†8’–çÙ£1
+z
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(²Ø¿†øÿÿÿÿ8šÛØÙ£1
+z
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(äüçˆùÿÿÿÿ8šÛØÙ£1
+L
+java:S1068"*Remove this unused "logger" private field.(²Ø¿†øÿÿÿÿ8èÅùÙ£1

@@ -1,0 +1,11 @@
+
+¡
+java:S1845"ŠRename field "service" to prevent any misunderstanding/clash with method "service" defined in superclass "javax.servlet.http.HttpServlet".(êž Õ
+i
+java:S1989"SHandle the following exception that could be thrown by "sendRedirect": IOException.(þöúÚ
+>
+java:S1185"(Remove this method to simply inherit it.(üª¼í
+{
+java:S1989"`Handle the following exceptions that could be thrown by "doPost": ServletException, IOException.(Í†»Öúÿÿÿÿ
+n
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(êž Õ

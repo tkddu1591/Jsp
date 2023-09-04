@@ -1,0 +1,19 @@
+
+¦
+java:S1845"ŠRename field "service" to prevent any misunderstanding/clash with method "service" defined in superclass "javax.servlet.http.HttpServlet".(±ğÛöøÿÿÿÿ
+|
+java:S1989"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ÜÕˆêøÿÿÿÿ
+T
+java:S1854'"9Remove this useless assignment to local variable "rDate".(§Åßõúÿÿÿÿ
+‡
+java:S1989 "lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(áò‰øÿÿÿÿ
+E
+java:S1481'"*Remove this unused "rDate" local variable.(§Åßõúÿÿÿÿ
+n
+java:S19894"SHandle the following exception that could be thrown by "sendRedirect": IOException.(ì’ç˜úÿÿÿÿ
+s
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(±ğÛöøÿÿÿÿ
+s
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ÜöÖ ûÿÿÿÿ
+E
+java:S1068"*Remove this unused "logger" private field.(ÜöÖ ûÿÿÿÿ

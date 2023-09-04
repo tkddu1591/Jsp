@@ -1,0 +1,13 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(í¦êÆ8€áÿÙ£1
+P
+java:S3416".Update this logger to use "UserService.class".(·¨’•şÿÿÿÿ8ˆáÿÙ£1
+¶
+java:S6548"˜A Singleton implementation was detected. Make sure the use of the Singleton pattern is required and the implementation is the right one for the context.(ÔÄëª8ˆáÿÙ£1
+X
+java:S2696?"6Make the enclosing method "static" or remove this set.(ßƒ¡¥ùÿÿÿÿ8‹áÿÙ£1
+j	java:S100m"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø¯²î8áÿÙ£1
+W
+java:S2209n"5Change this instance-reference to a static reference.(Ó»Œ³ıÿÿÿÿ8Ê«Ú£1
+L
+java:S1068"*Remove this unused "logger" private field.(·¨’•şÿÿÿÿ8ÁÊ¢Ú£1

@@ -1,0 +1,19 @@
+
+T
+java:S2629("7Use the built-in formatting to construct this argument.(„©’Ã8íÅíö¥1
+W
+java:S1161":Add the "@Override" annotation above this method signature(¹Â·Š8ñÅíö¥1
+^
+java:S3457("AFormat specifiers should be used instead of string concatenation.(„©’Ã8òÅíö¥1
+m
+java:S1989-"PHandle the following exception that could be thrown by "getWriter": IOException.(¼½Ù†8óÅíö¥1
+W
+java:S11610":Add the "@Override" annotation above this method signature(üª¼í8óÅíö¥1
+
+java:S19891"_Handle the following exceptions that could be thrown by "doGet": ServletException, IOException.(—ôÖ¢øÿÿÿÿ8óÅíö¥1
+Q
+java:S1128"5Remove this unused import 'org.apache.catalina.User'.(›ân8ş›®ø¥1
+z
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(ÃÊ®‹ıÿÿÿÿ8ôÅíö¥1
+z
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"( óŒİÿÿÿÿÿ8ôÅíö¥1
