@@ -171,3 +171,9 @@ B
 web/user/login.jsp,7\c\7cebbe499e4815d015dee70007183412078fff1d
 i
 9src/kr/co/farmstory2/controller/user/LoginController.java,7\e\7e74bd1768a998ba34dd794bbc549a1ded370d0f
+J
+.idea/libraries/logger.xml,f\4\f49a6327cb6e5cb1e3a02916370d2844df69635f
+>
+Farmstory2.iml,3\0\301dc024a09e4420a030421b83eb44be86c561e8
+j
+:src/kr/co/farmstory2/controller/user/LogoutController.java,7\7\7706db2c6032329a665ee14ef434078df0bc3cb1

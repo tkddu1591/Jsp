@@ -65,8 +65,8 @@
                     <li><a href="/Farmstory2_war_exploded/introduction/hello.do">팜스토리소개</a></li>
                     <li><a href="/Farmstory2_war_exploded/market/list.do"><img
                             src="/Farmstory2_war_exploded/images/head_menu_badge.png" alt="30%"/>장보기</a></li>
-                    <li><a href="/Farmstory2_war_exploded/board/list.do?channel=0&cate=0">농작물이야기</a></li>
-                    <li><a href="/Farmstory2_war_exploded/board/list.do?channel=1&cate=0">이벤트</a></li>
-                    <li><a href="/Farmstory2_war_exploded/board/list.do?channel=2&cate=0">커뮤니티</a></li>
+                    <li><a href="/Farmstory2_war_exploded/board/list.do?channel=croptalk&cate=story">농작물이야기</a></li>
+                    <li><a href="/Farmstory2_war_exploded/board/list.do?channel=event&cate=event">이벤트</a></li>
+                    <li><a href="/Farmstory2_war_exploded/board/list.do?channel=community&cate=notice">커뮤니티</a></li>
                 </ul>
             </header>

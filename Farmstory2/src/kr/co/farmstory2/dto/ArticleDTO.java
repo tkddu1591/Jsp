@@ -3,16 +3,26 @@ package kr.co.farmstory2.dto;
 public class ArticleDTO {
 
     private int no;
+    private String download;
     private int parent;
     private int comment;
     private String cate;
     private String title;
     private String content;
-    private int file;
+    private String file;
     private int hit;
-    private String  writer;
-    private String  regIp;
-    private String  rDate;
+    private String writer;
+    private String regIp;
+    private String rDate;
+    private String Nick;
+
+    public String getNick() {
+        return Nick;
+    }
+
+    public void setNick(String nick) {
+        Nick = nick;
+    }
 
     public int getNo() {
         return no;
@@ -62,11 +72,11 @@ public class ArticleDTO {
         this.content = content;
     }
 
-    public int getFile() {
+    public String getFile() {
         return file;
     }
 
-    public void setFile(int file) {
+    public void setFile(String file) {
         this.file = file;
     }
 
@@ -100,5 +110,17 @@ public class ArticleDTO {
 
     public void setrDate(String rDate) {
         this.rDate = rDate;
+    }
+
+    public void setParent(String parent) {
+        this.parent = Integer.parseInt(parent);
+    }
+
+    public String getDownload() {
+        return download;
+    }
+
+    public void setDownload(String download) {
+        this.download = download;
     }
 }
