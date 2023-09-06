@@ -11,6 +11,9 @@ import java.io.IOException;
 public class UserListController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
+        String cate = req.getParameter("cate");
+        req.setAttribute("cate",cate);
         req.getRequestDispatcher("/admin/userList.jsp").forward(req, resp);
 
     }

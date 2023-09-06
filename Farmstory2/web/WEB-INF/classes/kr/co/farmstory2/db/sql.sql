@@ -58,3 +58,53 @@ SELECT * FROM FarmStory.article Left join FarmStory.file f on article.file = f.o
 
 UPDATE FarmStory.article SET hit = hit+1 where no =?;
 UPDATE FarmStory.file SET download = download+1 where fNo =?;
+
+SELECT * FROM FarmStory.article Left join FarmStory.file f on article.no = f.aNo join FarmStory.user u on u.uid = article.writer WHERE article.no = ?;
+
+DELETE FROM  FarmStory.file where fNo=?;
+
+UPDATE FarmStory.article SET `content`=? WHERE `no`=?;
+
+
+SELECT
+a.*,
+b.`nick`
+FROM FarmStory.article AS a
+JOIN FarmStory.user AS b ON a.writer = b.uid
+WHERE `parent`!=0
+ORDER BY `no` DESC LIMIT 1;
+
+
+public final static String INSERT_PRODUCT = "INSERT INTO `Product` SET "
+												+ "`type`=?,"
+												+ "`pName`=?,"
+												+ "`price`=?,"
+												+ "`delivery`=?,"
+												+ "`stock`=?,"
+												+ "`thumb1`=?,"
+												+ "`thumb2`=?,"
+												+ "`thumb3`=?,"
+												+ "`seller`=?,"
+												+ "`etc`=?,"
+												+ "`rdate`=NOW()";
+
+
+SELECT * FROM FarmStory.product WHERE `pNo`=?;
+SELECT * FROM FarmStory.product WHERE `stock` > 0 LIMIT ?, 10;
+SELECT * FROM FarmStory.product WHERE `stock` > 0 AND `type`=? LIMIT ?, 10;
+SELECT COUNT(*) FROM FarmStory.product WHERE `stock` > 0;
+SELECT COUNT(*) FROM FarmStory.product WHERE `stock` > 0 AND `type`=?;
+
+
+INSERT INTO FarmStory.product SET
+												`type`=?,
+												`pName`=?,
+												`price`=?,
+												`delivery`=?,
+												`stock`=?,
+												`thumb1`=?,
+												`thumb2`=?,
+												`thumb3`=?,
+												`seller`=?,
+												`etc`=?,
+												`rDate`=NOW();

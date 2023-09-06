@@ -43,11 +43,15 @@ public class ArticleService {
         // 파일 업로드 경로 구하기
         ServletContext ctx = req.getServletContext();
         String path = ctx.getRealPath("/upload");
-        logger.info(path);
         return path;
     }
-
     // 파일명 수정
+    public String getPath(HttpServletRequest req, String dir) {
+        // 파일 업로드 경로 구하기
+        ServletContext ctx = req.getServletContext();
+        String path = ctx.getRealPath(dir);
+        return path;
+    }
     public String renameToFile(HttpServletRequest req, String oName) {
 
         logger.info(oName);
@@ -92,7 +96,25 @@ public class ArticleService {
 
         return mr;
     }
+    public MultipartRequest uploadFile(HttpServletRequest req, String path) {
+        // 최대 업로드 파일 크기
+        int maxSize = 1024 * 1024 * 10;
 
+        // 파일 업로드 및 Multipart 객체 생성
+        MultipartRequest mr = null;
+
+        try {
+            mr = new MultipartRequest(req,
+                    path,
+                    maxSize,
+                    "UTF-8",
+                    new DefaultFileRenamePolicy());
+        } catch (IOException e) {
+            logger.error("uploadFile : " + e.getMessage());
+        }
+
+        return mr;
+    }
     // 파일 다운로드
     public void downloadFile(HttpServletRequest req, HttpServletResponse resp, FileDTO dto) throws IOException {
         // response 파일 다운로드 헤더 수정
@@ -124,6 +146,15 @@ public class ArticleService {
         bis.close();
     }
 
+    public void deleteFile(String newName, HttpServletRequest req){
+        String fileName = newName; //지울 파일명
+        String filePath =getFilePath(req); //파일이 존재하는 실제경로
+        filePath += "\\"+fileName;
+
+        logger.info(filePath);
+        File f = new File(filePath); // 파일 객체생성
+        if( f.exists()) f.delete(); // 파일이 존재하면 파일을 삭제한다.
+    }
     // 페이지 마지막 번호
     public int getLastPageNum(int total) {
 
@@ -178,8 +209,8 @@ public class ArticleService {
     public int selectCountTotal(String cate) {
         return articleDAO.selectCountTotal(cate);
     }
-    public void insertComment(ArticleDTO articleDTO){
-        articleDAO.insertComment(articleDTO);
+    public ArticleDTO insertComment(ArticleDTO articleDTO){
+        return articleDAO.insertComment(articleDTO);
     }
 
     public List<ArticleDTO> selectComments(String parent) {
@@ -189,7 +220,16 @@ public class ArticleService {
     public void updateCommentPlus(String parent) {
         articleDAO.updateCommentPlus(parent);
     }
+    public void updateCommentMinus(String parent) {
+        articleDAO.updateCommentMinus(parent);
+    }
     public void updateArticleHitPlus(String no) {
         articleDAO.updateArticleHitPlus(no);
+    }
+    public int deleteComment(String no) {
+        return articleDAO.deleteComment(no);
+    }
+    public int updateComment(String no, String content) {
+        return articleDAO.updateComment(no, content);
     }
 }

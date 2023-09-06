@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/board/fileDownload.do")
-public class fileDownloadController extends HttpServlet {
+public class FileDownloadController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -22,7 +22,7 @@ public class fileDownloadController extends HttpServlet {
         ArticleService aService = new ArticleService();
         FileService fService = new FileService();
         FileDTO dto = fService.selectFile(fNo);
-        fService.deleteFile(fNo);
+        fService.updateFileDownloadPLUS(fNo);
 
 
         aService.downloadFile(req,resp,dto);

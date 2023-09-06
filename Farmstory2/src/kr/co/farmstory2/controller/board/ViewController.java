@@ -1,10 +1,7 @@
 package kr.co.farmstory2.controller.board;
 
-import com.oreilly.servlet.MultipartRequest;
 import kr.co.farmstory2.dto.ArticleDTO;
-import kr.co.farmstory2.dto.FileDTO;
 import kr.co.farmstory2.service.ArticleService;
-import kr.co.farmstory2.service.FileService;
 import org.slf4j.Logger;
 
 import javax.servlet.ServletException;

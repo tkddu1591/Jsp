@@ -28,6 +28,7 @@ select * from jboard.article as a join jboard.user as b on a.writer = b.uid orde
 select * from jboard.article as a join jboard.user as b on a.writer = b.uid order by a.no desc limit 10, 10;
 select * from jboard.article as a join jboard.user as b on a.writer = b.uid order by a.no desc limit 20, 10;
 select * from jboard.article as a join jboard.user as b on a.writer = b.uid order by a.no desc limit 30, 10;
+select * from jboard.article as a join jboard.user as b on a.writer = b.uid order by a.no desc limit ?, 10;
 
 select * from jboard.article as a join jboard.user as b on a.writer = b.uid where no=? and parent=0;
 

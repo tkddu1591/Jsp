@@ -22,10 +22,10 @@
     <body>
         <div id="container">
             <header>
-                <a href="index.jsp" class="logo"><img src="./images/admin_logo.jpg" alt="로고"/></a>
+                <a href="/Farmstory2_war_exploded/index.do" class="logo"><img src="./images/admin_logo.jpg" alt="로고"/></a>
                 <p>
-                    <a href="#">HOME |</a>
-                    <a href="#">로그아웃 |</a>
+                    <a href="/Farmstory2_war_exploded/admin/index.do">HOME |</a>
+                    <a href="/Farmstory2_war_exploded/user/logout.do">로그아웃 |</a>
                     <a href="#">고객센터</a>
                 </p>
             </header>

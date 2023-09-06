@@ -857,6 +857,15 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
 }
 
+ .view > .commentList > article > span:nth-of-type(2) {
+     position: absolute;
+     right: 0;
+ }
+.view > .commentList > article  {
+    position: relative;
+    overflow: hidden;
+}
+
 .view > .commentForm > form > textarea {
     width: 100%;
     height: 60px;
@@ -868,7 +877,9 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: right;
 }
 
-
+.cancel{
+    display: none;
+}
 
 /* 글수정 */
 .modify {

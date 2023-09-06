@@ -82,7 +82,16 @@ addr2--%>
                 <tr>
                     <td>휴대폰</td>
                     <td>
-                        <input type="text" name="hp" placeholder="- 포함 13자리 입력" minlength="13" maxlength="13"/>
+                        <script>
+                            const hypenTel = (target) => {
+                                target.value = target.value
+                                    .replace(/[^0-9]/g, '')
+                                    .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, "");
+                            }
+
+                        </script>
+                        <input type="tel" oninput="hypenTel(this)" name="hp" placeholder="휴대폰 번호 입력"
+                               minlength="13" maxlength="13"/>
                         <span class="resultHp"></span>
                     </td>
                 </tr>

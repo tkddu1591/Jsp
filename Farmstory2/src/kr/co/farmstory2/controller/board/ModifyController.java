@@ -39,6 +39,7 @@ public class ModifyController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+
         req.setCharacterEncoding("UTF-8");
         ArticleService aService = new ArticleService();
         FileService fService = new FileService();

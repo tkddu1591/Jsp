@@ -11,6 +11,9 @@ import java.io.IOException;
 public class ProductListController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
+        String cate = req.getParameter("cate");
+        req.setAttribute("cate",cate);
         req.getRequestDispatcher("/admin/productList.jsp").forward(req, resp);
 
     }

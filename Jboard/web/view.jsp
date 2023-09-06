@@ -136,13 +136,6 @@ To change this template use File | Settings | File Templates.
             $('form > textarea[name=content]').val('');
         });
 
-        /*    // jQuery 방식
-            $('.btnCancel').click(function(e){
-                e.preventDefault();
-                $('form > textarea[name=content]').val('');
-            });
-    */
-
 
     })
     ;

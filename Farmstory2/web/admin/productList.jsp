@@ -34,7 +34,7 @@
 
                     <p>
                         <a href="#" class="productDelete">선택삭제</a>
-                        <a href="productRegister.jsp" class="productRegister">상품등록</a>
+                        <a href="productRegister.do" class="productRegister">상품등록</a>
                     </p>
                     
                     <p class="paging">

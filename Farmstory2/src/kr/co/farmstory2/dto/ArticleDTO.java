@@ -1,5 +1,8 @@
 package kr.co.farmstory2.dto;
 
+import java.io.File;
+import java.util.UUID;
+
 public class ArticleDTO {
 
     private int no;
@@ -21,6 +24,7 @@ public class ArticleDTO {
     public String getfNo() {
         return fNo;
     }
+    String path;
 
     public void setfNo(String fNo) {
         this.fNo = fNo;
@@ -133,4 +137,6 @@ public class ArticleDTO {
     public void setDownload(String download) {
         this.download = download;
     }
+
+
 }

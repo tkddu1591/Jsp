@@ -10,8 +10,10 @@
 <aside>
     <h3>주요기능</h3>
     <ul>
-        <li><a href="productList.do">상품관리</a></li>
-        <li class="on"><a href="orderList.do">주문관리</a></li>
-        <li><a href="userList.do">회원관리</a></li>
+
+        <li class="${cate eq 1? 'on':'off'}" ><a href="productList.do?cate=1">상품관리</a></li>
+        <li class="${cate eq 2? 'on':'off'}" ><a href="orderList.do?cate=2">주문관리</a></li>
+        <li class="${cate eq 3? 'on':'off'}" ><a href="userList.do?cate=3">회원관리</a></li>
+
     </ul>
 </aside>

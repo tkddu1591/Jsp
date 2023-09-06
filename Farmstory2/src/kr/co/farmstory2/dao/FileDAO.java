@@ -44,12 +44,6 @@ public class FileDAO extends DBHelper {
                 dto.setDownload(rs.getInt(5));
                 dto.setrDate(rs.getString(6));
 
-                logger.info("selectFile() : " + dto.getOriName());
-                logger.info("selectFile() : " + dto.getNewName());
-                logger.info("selectFile() : " + dto.getDownload());
-                logger.info("selectFile() : " + dto.getrDate());
-                logger.info("selectFile() : " + dto.getfNo());
-                logger.info("selectFile() : " + dto.getaNo());
             }
             close();
         }catch (Exception e) {
@@ -66,12 +60,12 @@ public class FileDAO extends DBHelper {
 
     }
 
-    public int deleteFile(String ano) {
+    public int deleteFile(String fNo) {
         int result = 0;
         try {
             conn = getConnection();
             psmt = conn.prepareStatement(SQL.DELETE_FILE);
-            psmt.setString(1, ano);
+            psmt.setString(1, fNo);
             result = psmt.executeUpdate();
             close();
         }catch (Exception e) {
