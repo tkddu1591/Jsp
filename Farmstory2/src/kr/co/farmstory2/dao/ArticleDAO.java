@@ -62,6 +62,7 @@ public class ArticleDAO extends DBHelper {
                 articleDTO.setRegIp(rs.getString("regIp"));
                 articleDTO.setrDate(rs.getString("rDate"));
                 articleDTO.setDownload(rs.getString("download"));
+                articleDTO.setfNo(rs.getString("fNo"));
             }
             close();
         } catch (SQLException e) {
@@ -224,4 +225,15 @@ public class ArticleDAO extends DBHelper {
         return  articles;
     }
 
+    public void updateArticleHitPlus(String no){
+        try {
+            conn = getConnection();
+            psmt = conn.prepareStatement(SQL.UPDATE_ARTICLE_HIT_PLUS);
+            psmt.setString(1, no);
+            psmt.executeUpdate();
+            close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

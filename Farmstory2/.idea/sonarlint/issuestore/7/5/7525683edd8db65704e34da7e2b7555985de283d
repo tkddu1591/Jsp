@@ -1,3 +1,16 @@
 
-X
-java:S2094"BRemove this empty class, write its code or make it an "interface".(§­œĞ
+
+java:S1488—"^Immediately return this expression instead of assigning it to the temporary variable "result".(ÃŠ¦¾ıÿÿÿÿ8¤Ø£¦1
+s
+java:S2095n"QUse try-with-resources or close this "BufferedInputStream" in a "finally" clause.(œÇúÕùÿÿÿÿ8­Ø£¦1
+C
+java:S1075?"&Remove this hard-coded path-delimiter.(ôç˜î8´Ø£¦1
+C
+java:S1075@"&Remove this hard-coded path-delimiter.(î–àñ8¶Ø£¦1
+Y	java:S899B"=Do something with the "boolean" value returned by "renameTo".(Ş®Üï8¸Ø£¦1
+c
+java:S3457Z"AFormat specifiers should be used instead of string concatenation.(´Ïìÿÿÿÿÿ8¸Ø£¦1
+H
+java:S1075l"&Remove this hard-coded path-delimiter.(“ïÇøÿÿÿÿ8ºØ£¦1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ÚÚª¤¦1

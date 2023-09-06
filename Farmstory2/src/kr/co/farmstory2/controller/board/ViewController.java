@@ -1,7 +1,11 @@
 package kr.co.farmstory2.controller.board;
 
+import com.oreilly.servlet.MultipartRequest;
 import kr.co.farmstory2.dto.ArticleDTO;
+import kr.co.farmstory2.dto.FileDTO;
 import kr.co.farmstory2.service.ArticleService;
+import kr.co.farmstory2.service.FileService;
+import org.slf4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +17,8 @@ import java.util.List;
 
 @WebServlet("/board/view.do")
 public class ViewController extends HttpServlet {
+
+    Logger logger = org.slf4j.LoggerFactory.getLogger(ViewController.class);
     private static final long serialVersionUID = 1L;
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -21,8 +27,9 @@ public class ViewController extends HttpServlet {
         String no = req.getParameter("no");
         String parent = no;
         ArticleService articleService = new ArticleService();
-        ArticleDTO articleDTO = articleService.selectArticle(no);
 
+        ArticleDTO articleDTO = articleService.selectArticle(no);
+        articleService.updateArticleHitPlus(no);
         List<ArticleDTO> comments = articleService.selectComments(parent);
 
         req.setAttribute("cate",cate);
@@ -33,7 +40,6 @@ public class ViewController extends HttpServlet {
        req.getRequestDispatcher("/board/view.jsp").forward(req, resp);
     }
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 
     }
 }

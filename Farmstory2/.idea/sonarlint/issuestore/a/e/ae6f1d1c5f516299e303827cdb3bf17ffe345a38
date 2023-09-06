@@ -1,3 +1,31 @@
 
-]
-java:S2094"BRemove this empty class, write its code or make it an "interface".(¶«Á‹ûÿÿÿÿ
+g	java:S112D"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ø˜Ñ£¦1
+g	java:S112`"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ø˜Ñ£¦1
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ø˜Ñ£¦1
+h	java:S112½"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ù˜Ñ£¦1
+h	java:S112È"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ù˜Ñ£¦1
+h	java:S112Ş"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8Ü¶Ñ£¦1
+{
+java:S2293I"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÅÍ®€ÿÿÿÿÿ8ù˜Ñ£¦1
+{
+java:S2293e"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÅÍ®€ÿÿÿÿÿ8ù˜Ñ£¦1
+|
+java:S2293Í"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÅÍ®€ÿÿÿÿÿ8ù˜Ñ£¦1
+d
+java:S11926"GDefine a constant instead of duplicating this literal "parent" 3 times.(÷‹¡8ù˜Ñ£¦1
+h
+java:S1192?"FDefine a constant instead of duplicating this literal "rDate" 3 times.(…ÃŒîûÿÿÿÿ8ù˜Ñ£¦1
+j
+java:S11927"HDefine a constant instead of duplicating this literal "comment" 3 times.(Æù·ñúÿÿÿÿ8ù˜Ñ£¦1
+d
+java:S1192="GDefine a constant instead of duplicating this literal "writer" 4 times.(õšŠµ8ù˜Ñ£¦1
+c
+java:S11929"FDefine a constant instead of duplicating this literal "title" 4 times.(·õÚ¿8ù˜Ñ£¦1
+c
+java:S1192>"FDefine a constant instead of duplicating this literal "regIp" 4 times.(ŞºÀï8ù˜Ñ£¦1
+j
+java:S1192:"HDefine a constant instead of duplicating this literal "content" 4 times.(î¨ùÑùÿÿÿÿ8ù˜Ñ£¦1
+Ÿ
+java:S1186ƒ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(öËß‡8†™Ñ£¦1
+G
+java:S1068"*Remove this unused "logger" private field.(à»º8™Ñ£¦1

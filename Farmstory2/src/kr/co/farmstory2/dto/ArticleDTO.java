@@ -16,6 +16,16 @@ public class ArticleDTO {
     private String rDate;
     private String Nick;
 
+    private String fNo;
+
+    public String getfNo() {
+        return fNo;
+    }
+
+    public void setfNo(String fNo) {
+        this.fNo = fNo;
+    }
+
     public String getNick() {
         return Nick;
     }

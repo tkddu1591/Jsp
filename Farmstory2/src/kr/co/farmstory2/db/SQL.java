@@ -9,7 +9,7 @@ public class SQL {
     public static final String SELECT_COUNT_HP = "SELECT COUNT(*) FROM FarmStory.user WHERE hp=?";
     public static final String SELECT_USER = "SELECT * from FarmStory.user where FarmStory.user.uid =? and FarmStory.user.pass=SHA2(?, 256);";
 
-    public static final String SELECT_ARTICLE = "SELECT * FROM FarmStory.article join FarmStory.file f on article.file = f.oriName WHERE article.no = ?;";
+    public static final String SELECT_ARTICLE = "SELECT * FROM FarmStory.article Left join FarmStory.file f on article.file = f.oriName WHERE article.no = ?;";
     public static final String SELECT_ARTICLES = "SELECT * FROM FarmStory";
     public static final String SELECT_ARTICLES_CATE = "SELECT\n" +
             " a.*,\n" +
@@ -36,4 +36,8 @@ public class SQL {
     public static final String UPDATE_ARTICLE = "UPDATE FarmStory.article t SET t.title   = ?, t.content = ?, t.file    = ? WHERE t.no = ?;";
 
     public static final String SELECT_COMMENTS = "SELECT * FROM FarmStory.article a join FarmStory.user u on u.uid = a.writer where parent =?";
+
+    public static final String UPDATE_ARTICLE_HIT_PLUS = "UPDATE FarmStory.article SET hit = hit+1 where no =?";
+    public static final String UPDATE_FILE_DOWNLOAD_PLUS = "UPDATE FarmStory.file SET download = download+1 where fNo =?;";
+
 }

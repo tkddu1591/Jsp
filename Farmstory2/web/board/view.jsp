@@ -18,6 +18,10 @@
     <h3>글보기</h3>
     <table>
         <tr>
+            <td>글쓴이</td>
+            <td><input type="text" name="title" value="${articleDTO.writer}" readonly/></td>
+        </tr>
+        <tr>
             <td>제목</td>
             <td><input type="text" name="title" value="${articleDTO.title}" readonly/></td>
         </tr>
@@ -26,8 +30,8 @@
             <tr>
                 <td>첨부파일</td>
                 <td>
-                    <a href="#">${articleDTO.file}</a>
-                    <span>[${articleDTO.download}회 다운로드]</span>
+                        <a href="./fileDownload.do?fNo=${articleDTO.fNo}">${articleDTO.file}</a>
+                        <span>[${articleDTO.download}회 다운로드]</span>
                 </td>
             </tr>
         </c:if>
@@ -40,9 +44,11 @@
         </tr>
     </table>
     <div>
-        <a href="./delete.do?&no=${no}" class="btnDelete">삭제</a>
-        <a href="./modify.do?channel=${channel}&cate=${cate}&no=${articleDTO.no}" class="btnModify">수정</a>
-        <a href="./list.do?channel=${channel}&cate=${cate}" class="btnList">목록</a>
+        <c:if test="${articleDTO.writer eq sessUser.uid}">
+            <a href="./delete.do?&no=${no}" class="btnDelete">삭제</a>
+            <a href="./modify.do?channel=${channel}&cate=${cate}&no=${articleDTO.no}" class="btnModify">수정</a>
+            <a href="./list.do?channel=${channel}&cate=${cate}" class="btnList">목록</a>
+        </c:if>
     </div>
 
     <!-- 댓글리스트 -->

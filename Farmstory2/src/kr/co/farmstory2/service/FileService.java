@@ -25,4 +25,8 @@ public class FileService {
     public int deleteFile(String ano) {
         return dao.deleteFile(ano);
     }
+
+    public void updateFileDownloadPLUS(String fNo) {
+        dao.updateFileDownloadPLUS(fNo);
+    }
 }

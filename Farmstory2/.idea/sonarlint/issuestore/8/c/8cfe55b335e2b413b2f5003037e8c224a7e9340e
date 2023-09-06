@@ -1,3 +1,44 @@
 
-_
-java:S2094"BRemove this empty class, write its code or make it an "interface".(Şğ§¶8ıØÑì¥1
+d
+java:S1192"HDefine a constant instead of duplicating this literal "channel" 3 times.(Šç…8â×÷š¦1
+Y
+java:S2629B"7Use the built-in formatting to construct this argument.(Õ×ˆ²ıÿÿÿÿ8ã×÷š¦1
+T
+java:S2629C"7Use the built-in formatting to construct this argument.(ƒ™òı8ã×÷š¦1
+T
+java:S2629D"7Use the built-in formatting to construct this argument.(µÅØú8ã×÷š¦1
+Y
+java:S2629E"7Use the built-in formatting to construct this argument.(Ó˜Õÿÿÿÿÿ8ã×÷š¦1
+Y
+java:S2629F"7Use the built-in formatting to construct this argument.(Á£˜øÿÿÿÿ8ã×÷š¦1
+T
+java:S3416"2Update this logger to use "WriteController.class".(§„¯úÿÿÿÿ8ê×÷š¦1
+‰
+java:S1989"lHandle the following exception that could be thrown by "setCharacterEncoding": UnsupportedEncodingException.(±Œ©À8ì×÷š¦1
+U
+java:S1481)"3Remove this unused "articleService" local variable.(ìÛƒúÿÿÿÿ8í×÷š¦1
+~
+java:S1989/"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(„âæ¦8í×÷š¦1
+c
+java:S3457B"AFormat specifiers should be used instead of string concatenation.(Õ×ˆ²ıÿÿÿÿ8î×÷š¦1
+^
+java:S3457C"AFormat specifiers should be used instead of string concatenation.(ƒ™òı8î×÷š¦1
+^
+java:S3457D"AFormat specifiers should be used instead of string concatenation.(µÅØú8î×÷š¦1
+c
+java:S3457E"AFormat specifiers should be used instead of string concatenation.(Ó˜Õÿÿÿÿÿ8î×÷š¦1
+c
+java:S3457F"AFormat specifiers should be used instead of string concatenation.(Á£˜øÿÿÿÿ8î×÷š¦1
+u
+java:S1989a"SHandle the following exception that could be thrown by "sendRedirect": IOException.(«å‰øÿÿÿÿ8ï×÷š¦1
+Q
+java:S1128
+"4Remove this unused import 'org.slf4j.LoggerFactory'.(–ÿÚŞ8üìš›¦1
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8üìš›¦1
+z
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(§„¯úÿÿÿÿ8ğ×÷š¦1
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(€Õ£Ä8ğ×÷š¦1
+u
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(½´¾å8ğ×÷š¦1

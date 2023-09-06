@@ -54,4 +54,7 @@ UPDATE FarmStory.article t SET t.title   = ?, t.content = ?, t.file    = ? WHERE
 
 SELECT * FROM FarmStory.article a join FarmStory.user u on u.uid = a.writer where parent =?;
 
-SELECT * FROM FarmStory.article join FarmStory.file f on article.file = f.oriName WHERE article.no = ?;
+SELECT * FROM FarmStory.article Left join FarmStory.file f on article.file = f.oriName WHERE article.no = ?;
+
+UPDATE FarmStory.article SET hit = hit+1 where no =?;
+UPDATE FarmStory.file SET download = download+1 where fNo =?;

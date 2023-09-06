@@ -6,6 +6,7 @@ import kr.co.farmstory2.dto.FileDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class FileDAO extends DBHelper {
@@ -25,22 +26,30 @@ public class FileDAO extends DBHelper {
         }
     }
 
-    public FileDTO selectFile(String fno) {
+    public FileDTO selectFile(String fNo) {
         FileDTO dto = null;
         try {
             conn = getConnection();
             psmt = conn.prepareStatement(SQL.SELECT_FILE);
-            psmt.setString(1, fno);
+            psmt.setString(1, fNo);
             rs = psmt.executeQuery();
 
             if(rs.next()) {
                 dto = new FileDTO();
+
                 dto.setfNo(rs.getInt(1));
                 dto.setaNo(rs.getInt(2));
                 dto.setOriName(rs.getString(3));
                 dto.setNewName(rs.getString(4));
                 dto.setDownload(rs.getInt(5));
                 dto.setrDate(rs.getString(6));
+
+                logger.info("selectFile() : " + dto.getOriName());
+                logger.info("selectFile() : " + dto.getNewName());
+                logger.info("selectFile() : " + dto.getDownload());
+                logger.info("selectFile() : " + dto.getrDate());
+                logger.info("selectFile() : " + dto.getfNo());
+                logger.info("selectFile() : " + dto.getaNo());
             }
             close();
         }catch (Exception e) {
@@ -70,5 +79,17 @@ public class FileDAO extends DBHelper {
         }
 
         return result;
+    }
+
+    public void updateFileDownloadPLUS(String fNo) {
+        try {
+            conn= getConnection();
+            psmt = conn.prepareStatement(SQL.UPDATE_FILE_DOWNLOAD_PLUS);
+            psmt.setString(1, fNo);
+            psmt.executeUpdate();
+            close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

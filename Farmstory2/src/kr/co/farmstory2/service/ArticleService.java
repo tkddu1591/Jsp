@@ -189,4 +189,7 @@ public class ArticleService {
     public void updateCommentPlus(String parent) {
         articleDAO.updateCommentPlus(parent);
     }
+    public void updateArticleHitPlus(String no) {
+        articleDAO.updateArticleHitPlus(no);
+    }
 }
