@@ -14,6 +14,18 @@ public class UserDTO {
     private String regIp;
     private String regDate;
     private String leaveDate;
+    private int total;
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+    public void setTotal(String total) {
+        this.total = Integer.parseInt(total);
+    }
 
     public String getUid() {
         return uid;
@@ -106,6 +118,9 @@ public class UserDTO {
     public String getRegDate() {
         return regDate;
     }
+    public String getRegDateYMD() {
+        return regDate.substring(0,10);
+    }
 
     public void setRegDate(String regDate) {
         this.regDate = regDate;
@@ -121,6 +136,6 @@ public class UserDTO {
 
     @Override
     public String toString() {
-        return getUid();
+        return getUid()+", "+getName()+", "+getNick()+", "+getEmail()+", "+getHp()+", "+getRole()+", "+getZip()+", "+getAddr1()+", "+ getAddr2()+", "+getRegIp()+", "+ getRegDate() +", "+ getLeaveDate()+", "+getTotal();
     }
 }

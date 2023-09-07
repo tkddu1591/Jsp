@@ -19,6 +19,14 @@ public class SQL {
             " WHERE a.parent=0 AND `cate`=?\n" +
             " ORDER BY `no` DESC\n" +
             " LIMIT ?, 10\n";
+    public static final String SELECT_ARTICLES_CATE_PREVIEW = "SELECT\n" +
+            " a.*,\n" +
+            " b.`nick`\n" +
+            " FROM FarmStory.article AS a\n" +
+            " JOIN FarmStory.user AS b ON a.writer = b.uid\n" +
+            " WHERE a.parent=0 AND `cate`=?\n" +
+            " ORDER BY `no` DESC\n" +
+            " LIMIT 0, 5\n";
 
     public static final String INSERT_FILE = "INSERT INTO FarmStory.file SET aNo = ?, oriName = ?, newName =?, rDate=NOW();";
     public static final String SELECT_FILE = "SELECT * FROM  FarmStory.file where fNo=?;";
@@ -65,11 +73,24 @@ public class SQL {
                                                 "`etc`=?," +
                                                 "`rDate`=NOW()";
     public final static String SELECT_PRODUCT = "SELECT * FROM FarmStory.product WHERE `pNo`=?;";
-    public final static String SELECT_PRODUCTS_ALL = "SELECT * FROM FarmStory.product WHERE `stock` > 0 LIMIT ?, 10;";
-    public final static String SELECT_PRODUCTS_TYPE = "SELECT * FROM FarmStory.product WHERE `stock` > 0 AND `type`=? LIMIT ?, 10;";
+    public final static String SELECT_PRODUCTS_ALL = "SELECT * FROM FarmStory.product WHERE `stock` > 0 ORDER BY pNo DESC LIMIT ?, 10;";
+    public final static String SELECT_PRODUCTS_PREVIEW = "SELECT * FROM FarmStory.product WHERE `stock` > 0 ORDER BY pNo DESC LIMIT 0, 3;";
+    public final static String SELECT_PRODUCTS_TYPE = "SELECT * FROM FarmStory.product WHERE `stock` > 0 AND `type`=? ORDER BY pNo DESC LIMIT ?, 10;";
     public final static String SELECT_COUNT_PRODUCTS_ALL = "SELECT COUNT(*) FROM FarmStory.product WHERE `stock` > 0;";
     public final static String SELECT_COUNT_PRODUCTS_TYPE = "SELECT COUNT(*) FROM FarmStory.product WHERE `stock` > 0 AND `type`=?;";
 
+    public final static String UPDATE_PRODUCT_STOCK_MINUS = "UPDATE FarmStory.product SET `stock` = stock-1 WHERE pNo = ?;";
+
+    public final static String INSERT_ORDER = "INSERT INTO FarmStory.`order` (orderProduct, orderCount, orderDelivery, orderPrice, orderTotal, receiver, hp,\n" +
+            "                               zip, addr1, addr2, orderEtc, orderUser, orderDate)\n" +
+            "VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW());";
+
+    public final static String SELECT_ORDERS_PREVIEW ="SELECT * FROM FarmStory.`order` as a join FarmStory.product b on a.orderProduct = b.pNo ORDER BY `orderNo` DESC LIMIT 0,3;";
+    public final static String SELECT_ORDERS ="SELECT * FROM FarmStory.`order` as a join FarmStory.product b on a.orderProduct = b.pNo ORDER BY `orderNo` DESC LIMIT ?,10;";
+
+    public final static String SELECT_USERS_PREVIEW = "SELECT * FROM FarmStory.user ORDER BY `regDate` DESC LIMIT 0,3;";
+    public final static String SELECT_USERS = "SELECT * FROM (SELECT u.uid, u.name, u.nick, u.email, u.hp,  u.regDate,  SUM(o.orderTotal), u.zip, u.addr1, u.addr2, u.regIp, u.role FROM (SELECT * FROM FarmStory.user order by regDate DESC) as u LEFT JOIN FarmStory.`order` o on u.uid = o.orderUser  GROUP BY u.uid LIMIT ?,10)  as a ORDER BY  a.regDate DESC ;";
+    public final static String SELECT_COUNT_USERS = "SELECT COUNT(*) FROM FarmStory.user;";
 
 
 }

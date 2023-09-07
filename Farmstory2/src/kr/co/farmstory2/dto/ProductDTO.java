@@ -1,6 +1,7 @@
 package kr.co.farmstory2.dto;
 
 import java.io.File;
+import java.text.DecimalFormat;
 import java.util.UUID;
 
 public class ProductDTO {
@@ -18,6 +19,55 @@ public class ProductDTO {
     private String etc;
     private String rDate;
     private String path;
+    private String count;
+    private int total;
+    private int finalPrice;
+
+    public String getCount() {
+        return count;
+    }
+
+    public void setCount(String count) {
+        this.count = count;
+    }
+
+    public int  getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+    public void setTotal(String total) {
+        this.total = Integer.parseInt(total);
+    }
+
+    public int getFinalPrice() {
+        return finalPrice;
+    }
+
+
+    public void setFinalPrice(String finalPrice) {
+        this.finalPrice = Integer.parseInt(finalPrice);
+    }
+    public void setFinalPrice(int finalPrice) {
+        this.finalPrice = finalPrice;
+    }
+    public String getFinalPriceWithComma() {
+        DecimalFormat df = new DecimalFormat("###,###");
+        return df.format(finalPrice);
+    }
+
+    public String getrDate() {
+        return rDate;
+    }
+    public String getrDateYMD() {
+        return rDate.substring(0,10);
+    }
+
+    public void setrDate(String rDate) {
+        this.rDate = rDate;
+    }
 
     public ProductDTO() {
 
@@ -52,14 +102,23 @@ public class ProductDTO {
     public int getPrice() {
         return price;
     }
+    public String getPriceWithComma() {
+        DecimalFormat df = new DecimalFormat("###,###");
+        return df.format(price);
+    }
     public void setPrice(int price) {
         this.price = price;
     }
     public void setPrice(String price) {
         this.price = Integer.parseInt(price);
     }
+
     public int getDelivery() {
         return delivery;
+    }
+    public String getDeliveryWithComma() {
+        DecimalFormat df = new DecimalFormat("###,###");
+        return df.format(delivery);
     }
     public void setDelivery(int delivery) {
         this.delivery = delivery;
@@ -147,6 +206,7 @@ public class ProductDTO {
         return "ProductDTO [pNo=" + pNo + ", type=" + type + ", pName=" + pName + ", price=" + price + ", delivery="
                 + delivery + ", stock=" + stock + ", sold=" + sold + ", thumb1=" + thumb1 + ", thumb2=" + thumb2
                 + ", thumb3=" + thumb3 + ", seller=" + seller + ", etc=" + etc + ", rDate=" + rDate + ", path=" + path
-                + "]";
+                + "total= "+ total + ", finalPrice=" + finalPrice + ", count=" + count +
+                 "]";
     }
 }

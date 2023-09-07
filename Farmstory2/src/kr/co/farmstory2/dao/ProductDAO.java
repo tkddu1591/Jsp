@@ -6,12 +6,12 @@ import kr.co.farmstory2.dto.ProductDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDAO extends DBHelper {
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
-
+    private final Logger logger = org.slf4j.LoggerFactory.getLogger(ProductDAO.class);
 
     // 기본 CRUD
     public void insertProduct(ProductDTO dto) {
@@ -31,7 +31,7 @@ public class ProductDAO extends DBHelper {
             psmt.executeUpdate();
             close();
         } catch (Exception e) {
-            logger.error("insertProduct - " + e.getMessage());
+            logger.error("insertProduct - %s".formatted(e.getMessage()));
         }
     }
 
@@ -44,23 +44,11 @@ public class ProductDAO extends DBHelper {
             rs = psmt.executeQuery();
 
             if (rs.next()) {
-                dto.setpNo(rs.getInt(1));
-                dto.setType(rs.getInt(2));
-                dto.setpName(rs.getString(3));
-                dto.setPrice(rs.getInt(4));
-                dto.setDelivery(rs.getInt(5));
-                dto.setStock(rs.getInt(6));
-                dto.setSold(rs.getInt(7));
-                dto.setThumb1(rs.getString(8));
-                dto.setThumb2(rs.getString(9));
-                dto.setThumb3(rs.getString(10));
-                dto.setSeller(rs.getString(11));
-                dto.setEtc(rs.getString(12));
-                dto.setRdate(rs.getString(13));
+                dto = selectProductData();
             }
             close();
         } catch (Exception e) {
-            logger.error("selectProduct - " + e.getMessage());
+            logger.error("selectProduct - %s".formatted(e.getMessage()));
         }
         return dto;
     }
@@ -76,27 +64,36 @@ public class ProductDAO extends DBHelper {
 
             while (rs.next()) {
                 ProductDTO dto = new ProductDTO();
-                dto.setpNo(rs.getInt(1));
-                dto.setType(rs.getInt(2));
-                dto.setpName(rs.getString(3));
-                dto.setPrice(rs.getInt(4));
-                dto.setDelivery(rs.getInt(5));
-                dto.setStock(rs.getInt(6));
-                dto.setSold(rs.getInt(7));
-                dto.setThumb1(rs.getString(8));
-                dto.setThumb2(rs.getString(9));
-                dto.setThumb3(rs.getString(10));
-                dto.setSeller(rs.getString(11));
-                dto.setEtc(rs.getString(12));
-                dto.setRdate(rs.getString(13));
+                dto = selectProductData();
                 products.add(dto);
             }
             close();
         } catch (Exception e) {
-            logger.error("selectProducts - " + e.getMessage());
+            logger.error("selectProducts - %s".formatted(e.getMessage()));
         }
         return products;
     }
+
+    public List<ProductDTO> selectProducts() {
+
+        List<ProductDTO> products = new ArrayList<>();
+        try {
+            conn = getConnection();
+            psmt = conn.prepareStatement(SQL.SELECT_PRODUCTS_PREVIEW);
+            rs = psmt.executeQuery();
+
+            while (rs.next()) {
+                ProductDTO dto = new ProductDTO();
+                dto = selectProductData();
+                products.add(dto);
+            }
+            close();
+        } catch (Exception e) {
+            logger.error("selectProducts - %s".formatted(e.getMessage()));
+        }
+        return products;
+    }
+
 
     public List<ProductDTO> selectProducts(String type, int start) {
 
@@ -117,24 +114,12 @@ public class ProductDAO extends DBHelper {
 
             while (rs.next()) {
                 ProductDTO dto = new ProductDTO();
-                dto.setpNo(rs.getInt(1));
-                dto.setType(rs.getInt(2));
-                dto.setpName(rs.getString(3));
-                dto.setPrice(rs.getInt(4));
-                dto.setDelivery(rs.getInt(5));
-                dto.setStock(rs.getInt(6));
-                dto.setSold(rs.getInt(7));
-                dto.setThumb1(rs.getString(8));
-                dto.setThumb2(rs.getString(9));
-                dto.setThumb3(rs.getString(10));
-                dto.setSeller(rs.getString(11));
-                dto.setEtc(rs.getString(12));
-                dto.setRdate(rs.getString(13));
+                dto = selectProductData();
                 products.add(dto);
             }
             close();
         } catch (Exception e) {
-            logger.error("selectProducts - " + e.getMessage());
+            logger.error("selectProducts - %s".formatted(e.getMessage()));
         }
         return products;
     }
@@ -142,6 +127,17 @@ public class ProductDAO extends DBHelper {
     public void updateProduct(ProductDTO dto) {
     }
 
+    public void updateProductStockMinus(String pNo){
+        try {
+            conn = getConnection();
+            psmt = conn.prepareStatement(SQL.UPDATE_PRODUCT_STOCK_MINUS);
+            psmt.setString(1, pNo);
+            psmt.executeUpdate();
+            close();
+        } catch (SQLException e) {
+            logger.error("updateProductStockMinus - %s".formatted(e.getMessage()));
+        }
+    }
     public void deleteProduct(int pNo) {
     }
 
@@ -160,7 +156,7 @@ public class ProductDAO extends DBHelper {
             close();
 
         } catch (Exception e) {
-            logger.error("selectCountProductsTotal - " + e.getMessage());
+            logger.error("selectCountProductsTotal - %s".formatted(e.getMessage()));
         }
         return total;
     }
@@ -184,9 +180,27 @@ public class ProductDAO extends DBHelper {
             close();
 
         } catch (Exception e) {
-            logger.error("selectCountProductsTotal - " + e.getMessage());
+            logger.error("selectCountProductsTotal - %s".formatted(e.getMessage()));
         }
 
         return total;
+    }
+
+    private ProductDTO selectProductData() throws SQLException {
+        ProductDTO dto = new ProductDTO();
+        dto.setpNo(rs.getInt(1));
+        dto.setType(rs.getInt(2));
+        dto.setpName(rs.getString(3));
+        dto.setPrice(rs.getInt(4));
+        dto.setDelivery(rs.getInt(5));
+        dto.setStock(rs.getInt(6));
+        dto.setSold(rs.getInt(7));
+        dto.setThumb1(rs.getString(8));
+        dto.setThumb2(rs.getString(9));
+        dto.setThumb3(rs.getString(10));
+        dto.setSeller(rs.getString(11));
+        dto.setEtc(rs.getString(12));
+        dto.setRdate(rs.getString(13));
+        return dto;
     }
 }

@@ -1,5 +1,42 @@
 
+d
+java:S1192"HDefine a constant instead of duplicating this literal "SELECT
+" 3 times.(ÇÕ“i8­Ãó¦1
 W
-java:S1118":Add a private constructor to hide the implicit public one.(²şœÜ8Äğ„£¦1
+java:S1118":Add a private constructor to hide the implicit public one.(²şœÜ8°Ãó¦1
 N
-java:S6126"2Replace this String concatenation with Text block.(ÇÕ“i8Çğ„£¦1
+java:S6126"2Replace this String concatenation with Text block.(ÇÕ“i8²Ãó¦1
+T
+java:S6126"2Replace this String concatenation with Text block.(¨ïŠ…øÿÿÿÿ8²Ãó¦1
+N
+java:S61267"2Replace this String concatenation with Text block.(ûõ88²Ãó¦1
+g
+java:S1124?"EReorder the modifiers to comply with the Java Language Specification.(ººÅµùÿÿÿÿ8²Ãó¦1
+g
+java:S1124K"EReorder the modifiers to comply with the Java Language Specification.(Ë œæşÿÿÿÿ8²Ãó¦1
+b
+java:S1124L"EReorder the modifiers to comply with the Java Language Specification.(üß’ü8²Ãó¦1
+g
+java:S1124M"EReorder the modifiers to comply with the Java Language Specification.(ü’ùüÿÿÿÿ8²Ãó¦1
+g
+java:S1124N"EReorder the modifiers to comply with the Java Language Specification.( Š»Áúÿÿÿÿ8²Ãó¦1
+b
+java:S1124O"EReorder the modifiers to comply with the Java Language Specification.(Ä£¶8²Ãó¦1
+b
+java:S1124P"EReorder the modifiers to comply with the Java Language Specification.(¹”ùŸ8²Ãó¦1
+b
+java:S1124R"EReorder the modifiers to comply with the Java Language Specification.(Ü”ı8³Ãó¦1
+b
+java:S1124T"EReorder the modifiers to comply with the Java Language Specification.(”†›¥8³Ãó¦1
+O
+java:S6126T"2Replace this String concatenation with Text block.(”†›¥8³Ãó¦1
+b
+java:S1124X"EReorder the modifiers to comply with the Java Language Specification.(›–ŞØ8³Ãó¦1
+b
+java:S1124Y"EReorder the modifiers to comply with the Java Language Specification.(‚ş¬ñ8³Ãó¦1
+b
+java:S1124["EReorder the modifiers to comply with the Java Language Specification.(µ›ÉÎ8³Ãó¦1
+b
+java:S1124\"EReorder the modifiers to comply with the Java Language Specification.(ÈšÑê8³Ãó¦1
+g
+java:S1124]"EReorder the modifiers to comply with the Java Language Specification.(å€á«ùÿÿÿÿ8³Ãó¦1

@@ -1,16 +1,23 @@
 
-
-java:S1488—"^Immediately return this expression instead of assigning it to the temporary variable "result".(ÃŠ¦¾ıÿÿÿÿ8¤Ø£¦1
-s
-java:S2095n"QUse try-with-resources or close this "BufferedInputStream" in a "finally" clause.(œÇúÕùÿÿÿÿ8­Ø£¦1
+x
+java:S14880"\Immediately return this expression instead of assigning it to the temporary variable "path".(Ø´øY8÷„Õí¦1
+~
+java:S14887"\Immediately return this expression instead of assigning it to the temporary variable "path".(ğ»ƒ£øÿÿÿÿ8÷„Õí¦1
+t
+java:S2095‡"QUse try-with-resources or close this "BufferedInputStream" in a "finally" clause.(œÇúÕùÿÿÿÿ8ÿ„Õí¦1
 C
-java:S1075?"&Remove this hard-coded path-delimiter.(ôç˜î8´Ø£¦1
+java:S1075F"&Remove this hard-coded path-delimiter.(ôç˜î8ƒ…Õí¦1
 C
-java:S1075@"&Remove this hard-coded path-delimiter.(î–àñ8¶Ø£¦1
-Y	java:S899B"=Do something with the "boolean" value returned by "renameTo".(Ş®Üï8¸Ø£¦1
+java:S1075G"&Remove this hard-coded path-delimiter.(î–àñ8ƒ…Õí¦1
+Y	java:S899I"=Do something with the "boolean" value returned by "renameTo".(Ş®Üï8ƒ…Õí¦1
 c
-java:S3457Z"AFormat specifiers should be used instead of string concatenation.(´Ïìÿÿÿÿÿ8¸Ø£¦1
-H
-java:S1075l"&Remove this hard-coded path-delimiter.(“ïÇøÿÿÿÿ8ºØ£¦1
+java:S3457a"AFormat specifiers should be used instead of string concatenation.(´Ïìÿÿÿÿÿ8„…Õí¦1
+c
+java:S3457t"AFormat specifiers should be used instead of string concatenation.(´Ïìÿÿÿÿÿ8„…Õí¦1
+I
+java:S1075…"&Remove this hard-coded path-delimiter.(“ïÇøÿÿÿÿ8……Õí¦1
+X	java:S899Ÿ";Do something with the "boolean" value returned by "delete".(›ÛÙ8†…Õí¦1
+l
+java:S4042Ÿ"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(›ÛÙ8†…Õí¦1
 M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ÚÚª¤¦1
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¼³…ó¦1

@@ -33,9 +33,9 @@ u
 java:S1989a"SHandle the following exception that could be thrown by "sendRedirect": IOException.(«å‰øÿÿÿÿ8ï×÷š¦1
 Q
 java:S1128
-"4Remove this unused import 'org.slf4j.LoggerFactory'.(–ÿÚŞ8üìš›¦1
+"4Remove this unused import 'org.slf4j.LoggerFactory'.(–ÿÚŞ8™ÜÅÄ¦1
 M
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8üìš›¦1
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8™ÜÅÄ¦1
 z
 java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(§„¯úÿÿÿÿ8ğ×÷š¦1
 u

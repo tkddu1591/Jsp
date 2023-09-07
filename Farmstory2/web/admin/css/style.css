@@ -429,3 +429,7 @@ footer > p {
     border: 0;
     cursor: pointer;
 }
+
+.adminIndex>article:nth-of-type(2)>table td:nth-of-type(2){
+    width: 300px;
+}

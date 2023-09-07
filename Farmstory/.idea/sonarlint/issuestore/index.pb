@@ -107,3 +107,11 @@ D
 web/board/modify.jsp,4\4\44e24e8b5fc866e685c7ff96fb7ab8cdf7cbc73b
 P
  web/board/proc/commentInsert.jsp,e\5\e5d900c58da733d4ad1331def2509eae1d9a9584
+D
+web/admin/_aside.jsp,b\2\b26cc583a1615789b063bd1e6cf818507a82249c
+G
+web/admin/_asdieEnd.jsp,c\e\cec643ece4e5cfad4ef193f3b1e50ba17a9849d9
+M
+web/admin/productRegister.jsp,e\0\e0e310872aa7632b78e3957d80e04166e746d9a3
+I
+web/admin/productList.jsp,b\3\b3e10660ad4c3fa6cca97d7b403e320572fdd7ce

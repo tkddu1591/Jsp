@@ -13,7 +13,7 @@
                 <table border="0">
                     <tr>
                         <td>상품명</td>
-                        <td><input type="text" name="productName"/></td>
+                        <td><input type="text" required name="productName"/></td>
                     </tr>
                     <tr>
                         <td>구분</td>
@@ -28,7 +28,7 @@
                     </tr>
                     <tr>
                         <td>가격</td>
-                        <td><input type="text" name="price"/></td>
+                        <td><input type="text" required name="price"/></td>
                     </tr>
                     <tr>
                         <td>배송비</td>
@@ -36,27 +36,27 @@
                             <label><input type="radio" name="delivery" value="2000">2,000원</label>
                             <label><input type="radio" name="delivery" value="3000">3,000원</label>
                             <label><input type="radio" name="delivery" value="5000">5,000원</label>
-                            <label><input type="radio" name="delivery" value="0">무료</label>
+                            <label><input type="radio" name="delivery" value="0" checked>무료</label>
                         </td>
                     </tr>
                     <tr>
                         <td>재고</td>
-                        <td><input type="text" name="stock"/></td>
+                        <td><input type="text" name="stock" required/></td>
                     </tr>
                     <tr>
                         <td>상품이미지</td>
                         <td>
                             <p>
                                 <span>상품목록 이미지(약 120 x 120)</span>
-                                <input type="file" name="thumb1"/>
+                                <input type="file" name="thumb1" required/>
                             </p>
                             <p>
                                 <span>기본정보 이미지(약 240 x 240)</span>
-                                <input type="file" name="thumb2"/>
+                                <input type="file" name="thumb2" required/>
                             </p>
                             <p>
                                 <span>상품설명 이미지(약 750 x Auto)</span>
-                                <input type="file" name="thumb3"/>
+                                <input type="file" name="thumb3" required/>
                             </p>
                         </td>
                     </tr>

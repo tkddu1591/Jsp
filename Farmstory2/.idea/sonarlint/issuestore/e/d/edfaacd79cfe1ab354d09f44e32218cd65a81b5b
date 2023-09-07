@@ -1,0 +1,14 @@
+
+e
+java:S11929"HDefine a constant instead of duplicating this literal "###,###" 3 times.(‰èõÀ8“Ğºë¦1
+t
+java:S1845·"VRename method "getRdate" to prevent any misunderstanding/clash with method "getrDate".(‘·ñÑ8ÍÈê¦1
+y
+java:S1845º"VRename method "setRdate" to prevent any misunderstanding/clash with method "setrDate".(È±ÎŒüÿÿÿÿ8ÏÈê¦1
+{
+java:S4144º"XUpdate this method so that its implementation is not identical to "setrDate" on line 68.(È±ÎŒüÿÿÿÿ8ÏÈê¦1
+I
+java:S1075Å"&Remove this hard-coded path-delimiter.(‚Ò‚Ûúÿÿÿÿ8ÕÓÆê¦1
+D
+java:S1075Æ"&Remove this hard-coded path-delimiter.(î–àñ8ÖÓÆê¦1
+Z	java:S899Ç"=Do something with the "boolean" value returned by "renameTo".(Ş®Üï8ÖÓÆê¦1

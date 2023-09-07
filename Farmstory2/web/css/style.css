@@ -436,6 +436,9 @@ main > .info > div > .account {
 #sub > .market .lnb > li:nth-child(1) > a:hover {background-image: url('../images/sub_cate2_lnb1_ov.png');}
 #sub > .market .lnb > li:nth-child(1).on > a {background-image: url('../images/sub_cate2_lnb1_ov.png');}
 
+#sub > .market > .list .thumb1s{
+    width: 100%;
+}
 #sub > .market > .list > .sort > a {
     color: #999;
 }
@@ -591,6 +594,13 @@ input[type=number]::-webkit-outer-spin-button {
     position: absolute;
     right: 0;
     bottom: 0;
+}
+#sub > .market > .order > .info > img {
+    float: left;
+    width: 240px;
+}
+#sub > .market > .order > .info  td:nth-child(1) {
+    width: 60px;
 }
 
 
@@ -1168,3 +1178,4 @@ input[type=number]::-webkit-outer-spin-button {
     display: none;
     margin-top: 6px;
 }
+

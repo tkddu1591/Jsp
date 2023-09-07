@@ -1,5 +1,45 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="../_header.jsp" %>
+<style>
+    #sub > .market > .view > .basic > img {
+        float: left;
+        width: 240px;
+        height: 240px;
+    }
+
+    #sub > .market > .view > .detail > img {
+        width: 100%;
+    }
+
+</style>
+<script>
+
+    const price = ${productDTO.price};
+    const delivery = ${productDTO.delivery};
+
+    $(function () {
+
+        $('input[name=count]').change(function () {
+
+            let count = $(this).val();
+            let total = price * count;
+            let finalPrice = total + delivery;
+
+            $('input[name=count]').val(count);
+            $('input[name=total]').val(total);
+            $('input[name=final]').val(finalPrice);
+
+            $('.total').text(total.toLocaleString() + ' 원');
+
+        });
+
+        // 주문하기
+        $('.btnOrder').click(function (e) {
+            e.preventDefault();
+            $('#formOrder').submit();
+        });
+    });
+</script>
 <div id="sub">
     <div><img src="../images/sub_top_tit2.png" alt="MARKET"></div>
     <section class="market">
@@ -16,27 +56,26 @@
             <!-- 내용 시작 -->
             <h3>기본정보</h3>
             <div class="basic">
-                <img src="../images/market_item_thumb.jpg" alt="딸기 500g">
+                <img src="../thumb/${productDTO.thumb2}" alt="${productDTO.pName}">
 
                 <table border="0">
                     <tr>
                         <td>상품명</td>
-                        <td>딸기 500g</td>
+                        <td>${productDTO.pName}</td>
                     </tr>
                     <tr>
                         <td>상품코드</td>
-                        <td>01</td>
+                        <td>${productDTO.type}</td>
                     </tr>
                     <tr>
                         <td>배송비</td>
                         <td>
-                            <span>5,000</span>원
-                            <em>3만원 이상 무료배송</em>
+                            <span>${productDTO.deliveryWithComma ne '0' ? productDTO.deliveryWithComma+='원'+=' <em>3만원 이상 무료배송</em>': '무료' }</span>
                         </td>
                     </tr>
                     <tr>
                         <td>판매가격</td>
-                        <td>4,000원</td>
+                        <td>${productDTO.priceWithComma}</td>
                     </tr>
                     <tr>
                         <td>구매수량</td>
@@ -46,10 +85,19 @@
                     </tr>
                     <tr>
                         <td>합계</td>
-                        <td class="total">4,000원</td>
+                        <td class="total">${productDTO.priceWithComma} 원</td>
                     </tr>
-
-                    <a href="order.jsp" class="btnOrder">
+                    <form id="formOrder" action="/Farmstory2_war_exploded/market/order.do" method="post">
+                        <input type="hidden" name="thumb2" value="${productDTO.thumb2}">
+                        <input type="hidden" name="pName" value="${productDTO.pName}">
+                        <input type="hidden" name="pNo" value="${productDTO.pNo}">
+                        <input type="hidden" name="delivery" value="${productDTO.delivery}">
+                        <input type="hidden" name="price" value="${productDTO.price}">
+                        <input type="hidden" name="count" value="1">
+                        <input type="hidden" name="total" value="${productDTO.total}">
+                        <input type="hidden" name="final" value="${productDTO.price + productDTO.delivery}">
+                    </form>
+                    <a href="#" class="btnOrder">
                         <img src="../images/market_btn_order.gif" alt="바로 구매하기"/>
                     </a>
 
@@ -57,8 +105,7 @@
             </div>
             <h3>상품설명</h3>
             <div class="detail">
-                <img src="../images/market_detail_sample.jpg" alt="">
-
+                <img src="../thumb/${productDTO.thumb3}" alt="">
             </div>
 
             <h3>배송정보</h3>

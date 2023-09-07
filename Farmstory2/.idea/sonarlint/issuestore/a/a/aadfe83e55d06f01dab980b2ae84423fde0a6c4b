@@ -1,3 +1,7 @@
 
-d
-java:S2094"BRemove this empty class, write its code or make it an "interface".(Ì…ÉÏüÿÿÿÿ8šÊÙì¥1
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¦À‘µıÿÿÿÿ8Ô©ì¦1
+
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(éÕãÊ8Ô©ì¦1
+L
+java:S1068"*Remove this unused "logger" private field.(é’îıÿÿÿÿ8’Ô©ì¦1

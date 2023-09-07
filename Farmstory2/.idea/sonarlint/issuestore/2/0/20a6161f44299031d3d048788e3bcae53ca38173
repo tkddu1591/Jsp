@@ -1,8 +1,11 @@
 
-g	java:S112>"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ıÌåø¥1
+g	java:S112V"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ù„¥ó¦1
+g	java:S112g"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ú„¥ó¦1
+v
+java:S22939"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ï¶Óˆ8ü„¥ó¦1
+v
+java:S2293["YReplace the type specification in this constructor call with the diamond operator ("<>").(Ï¶Óˆ8ı„¥ó¦1
 
-java:S1186G"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Ö¼8¹Ÿâö¥1
+java:S1186l"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Ö¼8‡…¥ó¦1
 
-java:S1186J"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(±èÏÓ8¹Ÿâö¥1
-H
-java:S1168D"+Return an empty collection instead of null.(¥¹ï8½Ÿâö¥1
+java:S1186o"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(±èÏÓ8‡…¥ó¦1

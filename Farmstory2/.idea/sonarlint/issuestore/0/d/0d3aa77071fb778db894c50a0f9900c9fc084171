@@ -1,7 +1,13 @@
 
+{
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ð×ñ†úÿÿÿÿ8ÚœÝí¦1
+v
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").( ›ïŸ8ÛœÝí¦1
+v
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ùÓÇ±8ÛœÝí¦1
 O
-java:S1481"-Remove this unused "sessUser" local variable.(°Ê þùÿÿÿÿ8Ôü‘ù¥1
+java:S1481"-Remove this unused "sessUser" local variable.(°Ê þùÿÿÿÿ8ÞœÝí¦1
 ƒ
-java:S1989"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ÇêÛýúÿÿÿÿ8ŠùÔñ¥1
+java:S1989("aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ÇêÛýúÿÿÿÿ8ßœÝí¦1
 }
-java:S1989"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ÈŒÊ8ÕžØñ¥1
+java:S1989-"aHandle the following exceptions that could be thrown by "forward": ServletException, IOException.(ÈŒÊ8àœÝí¦1

@@ -1,5 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="../_header.jsp" %>
+<style>
+</style>
 <div id="sub">
     <div><img src="../images/sub_top_tit2.png" alt="MARKET"></div>
     <section class="market">
@@ -14,87 +16,47 @@
 
             <!-- 내용 시작 -->
             <p class="sort">
-                <a href="#" class="on">전체(10) |</a>
-                <a href="#">과일 |</a>
-                <a href="#">야채 |</a>
-                <a href="#">곡류</a>
+                    <a href="./list.do" class="${type eq 0 ? 'on': 'off'}">전체${type eq 0 ? ('('+=total+=')'): ''} |</a>
+                    <a href="./list.do?type=1" class="${type eq 1 ? 'on': 'off'}">과일${type eq 1 ? ('('+=total+=')'): ''} |</a>
+                    <a href="./list.do?type=2" class="${type eq 2 ? 'on': 'off'}">야채${type eq 2 ? ('('+=total+=')'): ''} |</a>
+                    <a href="./list.do?type=3" class="${type eq 3 ? 'on': 'off'}">곡류${type eq 3 ? ('('+=total+=')'): ''}</a>
+
             </p>
             <table border="0">
-                <tr>
-                    <td>
-                        <a href="view.jsp"><img src="../images/market_item1.jpg" alt="사과 500g"></a>
-                    </td>
-                    <td>과일</td>
-                    <td><a href="#">사과 500g</a></td>
-                    <td><strong>4,000</strong>원</td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="view.jsp"><img src="../images/market_item2.jpg" alt="배 5kg"></a>
-                    </td>
-                    <td>과일</td>
-                    <td><a href="#">배 5kg</a></td>
-                    <td><strong>30,000</strong>원</td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="view.jsp"><img src="../images/market_item3.jpg" alt="방울토마토"></a>
-                    </td>
-                    <td>야채</td>
-                    <td><a href="#">방울토마토</a></td>
-                    <td><strong>5,000</strong>원</td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="view.jsp"><img src="../images/market_item4.jpg" alt="딸기 500g"></a>
-                    </td>
-                    <td>과일</td>
-                    <td><a href="#">딸기 500g</a></td>
-                    <td><strong>4,000</strong>원</td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="view.jsp"><img src="../images/market_item5.jpg" alt="ㅊ"></a>
-                    </td>
-                    <td>과일</td>
-                    <td><a href="#">오렌지</a></td>
-                    <td><strong>8,000</strong>원</td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="view.jsp"><img src="../images/market_item6.jpg" alt="무농약현미"></a>
-                    </td>
-                    <td>곡류</td>
-                    <td><a href="#">무농약현미</a></td>
-                    <td><strong>39,000</strong>원</td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="view.jsp"><img src="../images/market_item7.jpg" alt="팜스토리 하루야채 샐러드"></a>
-                    </td>
-                    <td>야채</td>
-                    <td><a href="#">팜스토리 하루야채 샐러드</a></td>
-                    <td><strong>9,900</strong>원</td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="view.jsp"><img src="../images/market_item8.jpg" alt="바나나"></a>
-                    </td>
-                    <td>과일</td>
-                    <td><a href="#">바나나</a></td>
-                    <td><strong>3,000</strong>원</td>
-                </tr>
+                <c:forEach items="${productDTOS}" var="productDTO">
+                    <tr>
+                        <td>
+                            <a href="view.do?pNo=${productDTO.pNo}"><img src="../thumb/${productDTO.thumb1}" alt="${productDTO.pName}"
+                                                    class="thumb1s"></a>
+                        </td>
+
+                        <td>
+                            <c:choose>
+                                <c:when test="${productDTO.type eq 1}">과일</c:when>
+                                <c:when test="${productDTO.type eq 2}">야채</c:when>
+                                <c:when test="${productDTO.type eq 3}">곡물</c:when>
+                            </c:choose>
+                        </td>
+                        <td><a href="view.do?pNo=${productDTO.pNo}">${productDTO.pName}</a></td>
+                        <td><strong>${productDTO.priceWithComma}</strong>원</td>
+                    </tr>
+                </c:forEach>
             </table>
 
-            <p class="paging">
-                <a href="#"><</a>
-                <a href="#" class="on">[1]</a>
-                <a href="#">[2]</a>
-                <a href="#">[3]</a>
-                <a href="#">[4]</a>
-                <a href="#">[5]</a>
-                <a href="#">></a>
-            </p>
+            <!-- 페이지 네비게이션 -->
+            <div class="paging">
+                <c:if test="${pageGroupStart > 1}">
+                    <a href="/Farmstory2_war_exploded/market/list.do?pg=1" class="start">처음으로</a>
+                    <a href="/Farmstory2_war_exploded/market/list.do?pg=${pageGroupStart - 1}" class="prev">이전</a>
+                </c:if>
+                <c:forEach var="i" begin="${pageGroupStart}" end="${pageGroupEnd}">
+                    <a href="/Farmstory2_war_exploded/market/list.do?pg=${i}&" class="num ${currentPage == i?'current':'off'}">${i}</a>
+                </c:forEach>
+                <c:if test="${pageGroupEnd < lastPageNum}">
+                    <a href="/Farmstory2_war_exploded/market/list.do?pg=${pageGroupEnd + 1}" class="next">다음</a>
+                    <a href="/Farmstory2_war_exploded/market/list.do?pg=${lastPageNum}" class="last">마지막</a>
+                </c:if>
+            </div>
 
             <!-- 내용 끝 -->
 

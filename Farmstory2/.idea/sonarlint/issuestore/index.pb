@@ -177,8 +177,6 @@ I
 web/board/_eventAside.jsp,3\a\3aa32172bd8e7f1a089810bcb693bb79093e29e8
 a
 1src/kr/co/farmstory2/filter/CheckLoginFilter.java,6\1\61ff540534aeef299567802d100f09d7200ddb7d
-r
-Bsrc/kr/co/farmstory2/controller/board/commentInsertController.java,a\9\a9ec874363564ba1ab5e611e6fbc95d83ffa53b5
 B
 web/board/list.jsp,c\f\cf858bc147bb5ca29d0dfaf5bc8bacb149c8787e
 D
@@ -189,3 +187,11 @@ C
 web/board/write.jsp,7\1\71f7b1f78c826638754dcff427efee7894d55515
 B
 web/board/view.jsp,4\a\4a6419a4d00a48a9e97b91abfae5c93cf0f83112
+l
+<src/kr/co/farmstory2/controller/board/CommentController.java,a\a\aa4f33f6042e37e6b204b397ef53df7e6367cdc1
+k
+;src/kr/co/farmstory2/controller/board/DeleteController.java,c\2\c2e8bb34877ba8601dd420128ef6870aaaafb391
+q
+Asrc/kr/co/farmstory2/controller/board/FileDownloadController.java,0\1\01995b2cf1ef3c3aba7654504ef4473d2c20cf4b
+]
+-src/kr/co/farmstory2/service/PageService.java,f\1\f18a9225ed05a91aeb05f3e6e791f9ce2a8c9719

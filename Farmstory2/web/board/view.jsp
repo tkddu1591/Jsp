@@ -90,7 +90,7 @@
         // 댓글삭제(동적 이벤트 바인딩 처리 -> 동적 생성되는 새로운 댓글목록 삭제링크가 동작함)
         ////////////////////////////////////////////////////////////////////////
         document.addEventListener('click', function (e) {
-            if (e.target && e.target.classList.value == 'remove') {
+            if (e.target && e.target.classList.value === 'remove') {
                 e.preventDefault();
 
                 if (!confirm('정말 삭제 하시겠습니까?')) {
@@ -121,6 +121,7 @@
                             const article = e.target.parentNode.closest('article');
                             commentList.removeChild(article);
 
+                            console.log($('.remove').length === 0)
                             if ($('.remove').length === 0) {
                                 $('.empty').text('등록된 댓글이 없습니다.');
                             }
@@ -143,12 +144,12 @@
             const modify = article.getElementsByClassName('modify')[0];
 
             // 수정&수정완료
-            if (e.target && e.target.classList.value == 'modify') {
+            if (e.target && e.target.classList.value === 'modify') {
                 e.preventDefault();
 
                 const txt = e.target.innerText;
 
-                if (txt == '수정') {
+                if (txt === '수정') {
                     // 수정모드
                     const value = textarea.value;
                     textarea.style.border = '1px solid #e4eaec';
@@ -160,7 +161,7 @@
                     cancel.style.display = 'inline';
                     modify.innerText = '수정완료';
 
-                } else if (txt == '수정완료') {
+                } else if (txt === '수정완료') {
 
                     const text = textarea.value;
                     if (text === '') {

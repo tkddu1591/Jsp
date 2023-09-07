@@ -1,16 +1,17 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="_header.jsp" %>
 <main>
-    <%@include file="_aside.jsp"%>
-    <section>
+    <%@include file="_aside.jsp" %>
+    <section class="adminIndex">
         <nav>
             <h3>관리자 메인</h3>
         </nav>
 
         <article>
             <h3>
-                <a href="#">상품현황</a>
-                <a href="#" class="more">+ 더보기</a>
+                <a href="./productList.do?cate=1">상품현황</a>
+                <a href="./productList.do?cate=1" class="more">+ 더보기</a>
             </h3>
             <table border="0">
                 <tr>
@@ -21,37 +22,23 @@
                     <th>재고</th>
                     <th>등록일</th>
                 </tr>
-                <tr>
-                    <td>1011</td>
-                    <td>사과 500g</td>
-                    <td>과일</td>
-                    <td>4,000원</td>
-                    <td>100</td>
-                    <td>2023-01-01</td>
-                </tr>
-                <tr>
-                    <td>1011</td>
-                    <td>사과 500g</td>
-                    <td>과일</td>
-                    <td>4,000원</td>
-                    <td>100</td>
-                    <td>2023-01-01</td>
-                </tr>
-                <tr>
-                    <td>1011</td>
-                    <td>사과 500g</td>
-                    <td>과일</td>
-                    <td>4,000원</td>
-                    <td>100</td>
-                    <td>2023-01-01</td>
-                </tr>
+                <c:forEach var="dto" items="${productDTOS}">
+                    <tr>
+                        <td>${dto.pNo}</td>
+                        <td>${dto.pName}</td>
+                        <td>${dto.type}</td>
+                        <td>${dto.price}</td>
+                        <td>${dto.stock}</td>
+                        <td>${dto.rDateYMD}</td>
+                    </tr>
+                </c:forEach>
             </table>
         </article>
 
         <article>
             <h3>
-                <a href="#">주문현황</a>
-                <a href="#" class="more">+ 더보기</a>
+                <a href="./orderList.do?cate=2">주문현황</a>
+                <a href="./orderList.do?cate=2" class="more">+ 더보기</a>
             </h3>
             <table border="0">
                 <tr>
@@ -64,43 +51,26 @@
                     <th>주문자</th>
                     <th>주문일</th>
                 </tr>
-                <tr>
-                    <td>1011</td>
-                    <td>사과 500g</td>
-                    <td>4,000원</td>
-                    <td>2개</td>
-                    <td>3,000원</td>
-                    <td>8,000원</td>
-                    <td>홍길동</td>
-                    <td>2023-01-01</td>
-                </tr>
-                <tr>
-                    <td>1011</td>
-                    <td>사과 500g</td>
-                    <td>4,000원</td>
-                    <td>2개</td>
-                    <td>3,000원</td>
-                    <td>8,000원</td>
-                    <td>홍길동</td>
-                    <td>2023-01-01</td>
-                </tr>
-                <tr>
-                    <td>1011</td>
-                    <td>사과 500g</td>
-                    <td>4,000원</td>
-                    <td>2개</td>
-                    <td>3,000원</td>
-                    <td>8,000원</td>
-                    <td>홍길동</td>
-                    <td>2023-01-01</td>
-                </tr>
+                <c:forEach var="dto" items="${orderDTOS}">
+                    <tr>
+                        <td>${dto.orderNo}</td>
+                        <td>${dto.orderProductName}</td>
+                        <td>${dto.orderPrice}</td>
+                        <td>${dto.orderCount}</td>
+                        <td>${dto.orderDelivery}</td>
+                        <td>${dto.orderTotal}</td>
+                        <td>${dto.orderUser}</td>
+                        <td>${dto.orderDateYMD}</td>
+                    </tr>
+                </c:forEach>
             </table>
         </article>
         <article>
             <h3>
-                <a href="#">회원현황</a>
-                <a href="#" class="more">+ 더보기</a>
+                <a href="./userList.do?cate=3">회원현황</a>
+                <a href="./userList.do?cate=3" class="more">+ 더보기</a>
             </h3>
+
             <table border="0">
                 <tr>
                     <th>회원아이디</th>
@@ -111,33 +81,18 @@
                     <th>등급</th>
                     <th>회원가입일</th>
                 </tr>
-                <tr>
-                    <td>a101</td>
-                    <td>김유신</td>
-                    <td>유신123</td>
-                    <td>010-1234-1001</td>
-                    <td>yusin123@naver.com</td>
-                    <td>2</td>
-                    <td>2023-01-01</td>
-                </tr>
-                <tr>
-                    <td>a101</td>
-                    <td>김유신</td>
-                    <td>유신123</td>
-                    <td>010-1234-1001</td>
-                    <td>yusin123@naver.com</td>
-                    <td>2</td>
-                    <td>2023-01-01</td>
-                </tr>
-                <tr>
-                    <td>a101</td>
-                    <td>김유신</td>
-                    <td>유신123</td>
-                    <td>010-1234-1001</td>
-                    <td>yusin123@naver.com</td>
-                    <td>2</td>
-                    <td>2023-01-01</td>
-                </tr>
+
+                <c:forEach var="dto" items="${userDTOS}">
+                    <tr>
+                        <td>${dto.uid}</td>
+                        <td>${dto.name}</td>
+                        <td>${dto.nick}</td>
+                        <td>${dto.hp}</td>
+                        <td>${dto.email}</td>
+                        <td>2</td>
+                        <td>${dto.regDateYMD}</td>
+                    </tr>
+                </c:forEach>
             </table>
         </article>
     </section>

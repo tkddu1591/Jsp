@@ -3,6 +3,7 @@ package kr.co.farmstory2.controller.board;
 
 import kr.co.farmstory2.dto.ArticleDTO;
 import kr.co.farmstory2.service.ArticleService;
+import kr.co.farmstory2.service.PageService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,28 +23,29 @@ public class ListController extends HttpServlet {
         String cate = req.getParameter("cate");
         String pg = req.getParameter("pg");
         ArticleService articleService = new ArticleService();
+        PageService pageService = new PageService();
 
         req.setAttribute("channel", channel);
         req.setAttribute("cate", cate);
 
 
         // 현재 페이지 번호
-        int currentPage = articleService.getCurrentPage(pg);
+        int currentPage = pageService.getCurrentPage(pg);
 
         // 전체 게시물 갯수
         int total = articleService.selectCountTotal(cate);
 
         // 마지막 페이지 번호
-        int lastPageNum = articleService.getLastPageNum(total);
+        int lastPageNum = pageService.getLastPageNum(total);
 
         // 페이지 그룹 start, end 번호
-        int[] result = articleService.getPageGroupNum(currentPage, lastPageNum);
+        int[] result = pageService.getPageGroupNum(currentPage, lastPageNum);
 
         // 페이지 시작번호
-        int pageStartNum = articleService.getPageStartNum(total, currentPage);
+        int pageStartNum = pageService.getPageStartNum(total, currentPage);
 
         // 시작 인덱스
-        int start = articleService.getStartNum(currentPage);
+        int start = pageService.getStartNum(currentPage);
 
         // 현재 페이지 게시물 조회
         List<ArticleDTO> articles = articleService.selectArticlesCate(cate, start);

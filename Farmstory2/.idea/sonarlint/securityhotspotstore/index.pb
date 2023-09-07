@@ -165,8 +165,6 @@ _
 Q.idea/sonarlint/securityhotspotstore/f/4/f49a6327cb6e5cb1e3a02916370d2844df69635f,f\4\f485b7e295d3ca582f4f3cf9023be3fb1631d92a
 a
 1src/kr/co/farmstory2/filter/CheckLoginFilter.java,6\1\61ff540534aeef299567802d100f09d7200ddb7d
-r
-Bsrc/kr/co/farmstory2/controller/board/commentInsertController.java,a\9\a9ec874363564ba1ab5e611e6fbc95d83ffa53b5
 Å
 Q.idea/sonarlint/securityhotspotstore/3/0/301dc024a09e4420a030421b83eb44be86c561e8,1\f\1f0804fe850c2d2f2848ac8293550a1e1ab8ee8f
 B
@@ -189,3 +187,11 @@ L
 web/board/_croptalkAside.jsp,5\4\54fd5104fd75d18eaff530c70aedc90a3f1fe8a4
 w
 G.idea/sonarlint/issuestore/f/4/f49a6327cb6e5cb1e3a02916370d2844df69635f,5\0\50674ac9e850ba96d554f2ef2f704b786e4f22ab
+k
+;src/kr/co/farmstory2/controller/board/DeleteController.java,c\2\c2e8bb34877ba8601dd420128ef6870aaaafb391
+l
+<src/kr/co/farmstory2/controller/board/CommentController.java,a\a\aa4f33f6042e37e6b204b397ef53df7e6367cdc1
+q
+Asrc/kr/co/farmstory2/controller/board/FileDownloadController.java,0\1\01995b2cf1ef3c3aba7654504ef4473d2c20cf4b
+]
+-src/kr/co/farmstory2/service/PageService.java,f\1\f18a9225ed05a91aeb05f3e6e791f9ce2a8c9719

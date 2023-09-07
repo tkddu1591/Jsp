@@ -101,6 +101,26 @@ public class ArticleDAO extends DBHelper {
         }
         return articles;
     }
+    public List<ArticleDTO> selectArticlesCatePreview(String cate){
+        List<ArticleDTO> articles = new ArrayList<>();
+
+        try {
+            conn = getConnection();
+            psmt = conn.prepareStatement(SQL.SELECT_ARTICLES_CATE_PREVIEW);
+            psmt.setString(1, cate);
+            rs = psmt.executeQuery();
+            while (rs.next()) {
+                ArticleDTO article = new ArticleDTO();
+                article= articleDataInsert();
+                article.setNick(rs.getString("nick"));
+                articles.add(article);
+            }
+            close();
+        } catch (SQLException e) {
+            logger.error(e.getMessage(), e);
+        }
+        return articles;
+    }
     public void deleteArticle(String no){
         try {
             conn =getConnection();

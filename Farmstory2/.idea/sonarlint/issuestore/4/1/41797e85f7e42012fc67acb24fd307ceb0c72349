@@ -1,2 +1,6 @@
 
-k	java:S116"ORename this field "Nick" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êİ³¬8¶ì¡¦1
+k	java:S116"ORename this field "Nick" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êİ³¬8¶ì¡¦1
+F
+java:S1128")Remove this unused import 'java.io.File'.(†Ğ¥Å8ÀÚëí¦1
+M
+java:S1128"+Remove this unused import 'java.util.UUID'.(ÀãÄ£úÿÿÿÿ8ÁÚëí¦1

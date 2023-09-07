@@ -121,7 +121,9 @@ public class ArticleDTO {
     public String getrDate() {
         return rDate;
     }
-
+    public String getrDateMiny() {
+        return rDate.substring(2, 10);
+    }
     public void setrDate(String rDate) {
         this.rDate = rDate;
     }

@@ -1,0 +1,34 @@
+
+h
+java:S1301$"KReplace this "switch" statement by "if" statements to increase readability.(ÜŸ•8²©ÝÈ¦1
+Y
+java:S2629 "7Use the built-in formatting to construct this argument.(³òÓéøÿÿÿÿ8²©ÝÈ¦1
+Y
+java:S2629!"7Use the built-in formatting to construct this argument.(ýÉ¿Þÿÿÿÿÿ8²©ÝÈ¦1
+T
+java:S2629="7Use the built-in formatting to construct this argument.(âúËŸ8²©ÝÈ¦1
+T
+java:S2629>"7Use the built-in formatting to construct this argument.(ƒ™òý8²©ÝÈ¦1
+T
+java:S2629?"7Use the built-in formatting to construct this argument.(µÅØú8²©ÝÈ¦1
+Y
+java:S2629@"7Use the built-in formatting to construct this argument.(ŽÁ£˜øÿÿÿÿ8²©ÝÈ¦1
+c
+java:S3457 "AFormat specifiers should be used instead of string concatenation.(³òÓéøÿÿÿÿ8¸©ÝÈ¦1
+c
+java:S3457!"AFormat specifiers should be used instead of string concatenation.(ýÉ¿Þÿÿÿÿÿ8¸©ÝÈ¦1
+>	java:S131$""Add a default case to this switch.(ÜŸ•8¸©ÝÈ¦1
+r
+java:S19891"PHandle the following exception that could be thrown by "getWriter": IOException.(…ôŽàüÿÿÿÿ8¹©ÝÈ¦1
+^
+java:S3457="AFormat specifiers should be used instead of string concatenation.(âúËŸ8º©ÝÈ¦1
+^
+java:S3457>"AFormat specifiers should be used instead of string concatenation.(ƒ™òý8º©ÝÈ¦1
+^
+java:S3457?"AFormat specifiers should be used instead of string concatenation.(µÅØú8º©ÝÈ¦1
+c
+java:S3457@"AFormat specifiers should be used instead of string concatenation.(ŽÁ£˜øÿÿÿÿ8º©ÝÈ¦1
+m
+java:S1989R"PHandle the following exception that could be thrown by "getWriter": IOException.(¥ãÜÕ8¼©ÝÈ¦1
+z
+java:S2226"XRemove this misleading mutable servlet instance field or make it "static" and/or "final"(¯íæþýÿÿÿÿ8¼©ÝÈ¦1
