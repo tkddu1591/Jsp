@@ -139,6 +139,15 @@ public class ProductDAO extends DBHelper {
         }
     }
     public void deleteProduct(int pNo) {
+        try {
+            conn=getConnection();
+            psmt = conn.prepareStatement(SQL.DELETE_PRODUCT);
+            psmt.setInt(1, pNo);
+            psmt.executeUpdate();
+            close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     // 추가

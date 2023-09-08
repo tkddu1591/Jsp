@@ -23,7 +23,9 @@ public class OrderService {
         return orderDAO.selectOrders();
     }
     public void updateOrder(OrderDTO orderDTO) {}
-    public void deleteOrder(OrderDTO orderDTO) {}
+    public void deleteOrder(int orderNo) {
+        orderDAO.deleteOrder(orderNo);
+    }
     public List<OrderDTO> selectOrders(int start){
         return orderDAO.selectOrders(start);
     }

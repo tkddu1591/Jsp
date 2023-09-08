@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Farmstory2">
+    <output-path>$PROJECT_DIR$/out/artifacts/Farmstory2</output-path>
+    <root id="archive" name="Farmstory2.war">
+      <element id="artifact" artifact-name="Farmstory2:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="logger" />
+          <element id="library" level="project" name="activation-1.1.1" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

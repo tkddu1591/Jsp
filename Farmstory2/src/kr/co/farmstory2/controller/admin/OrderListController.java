@@ -60,6 +60,7 @@ public class OrderListController extends HttpServlet {
         req.setAttribute("pageGroupEnd", result[1]);
         req.setAttribute("pageStartNum", pageStartNum + 1);
 
+        logger.info(String.valueOf(orderDTOS));
 
         req.setAttribute("orderDTOS", orderDTOS);
         req.setAttribute("total", total);
@@ -70,6 +71,17 @@ public class OrderListController extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        req.setCharacterEncoding("utf-8");
+        String[] orderNos = req.getParameterValues("orderNos");
+        OrderService orderService = new OrderService();
+        for(int i = 0; i < orderNos.length; i++) {
+            orderService.deleteOrder(Integer.parseInt(orderNos[i]));
+        }
+
+
+
+        resp.sendRedirect("./orderList.do");
 
     }
 }

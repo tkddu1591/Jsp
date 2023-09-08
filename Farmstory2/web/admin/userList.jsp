@@ -17,7 +17,6 @@
 
             if (typeof(ele.length) != "undefined") {// checkbox가 배열일경우
                 for (var i = 0; i < ele.length; i++) {
-                    console.log(ele[i]);
                     // hidden객체생성, 이름은 checkbox와 같게한다.
                     ele_h = document.createElement("input");
                     ele_h.setAttribute("type","hidden");
@@ -70,16 +69,16 @@
                     tear[i].style.background = '#FFFFFF';
                 }
 
-                let check = $('input:checkbox')
-                check.prop('checked', false).val(0);
-
                 // form 액션 구현하기
+
                 const form = document.getElementById('formCheck');
                 let chks = document.getElementsByClassName('chks');
-
                 CheckboxToHidden(form,chks);
+
                 alert('수정되었습니다.')
-                /*$('#formCheck').submit();*/
+                $('#formCheck').submit();
+/*                let check = $('input:checkbox')
+                check.prop('checked', false).val(0);*/
                 e.preventDefault();
             }
         }

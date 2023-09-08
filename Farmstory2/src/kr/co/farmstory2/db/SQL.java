@@ -95,6 +95,8 @@ public class SQL {
     public final static String SELECT_COUNT_ORDERS = "SELECT COUNT(*) FROM FarmStory.order;";
 
     public final static String UPDATE_USER_ROLE = "UPDATE FarmStory.user u SET role = ? WHERE u.uid = ?;";
+    public final static String DELETE_ORDER = "DELETE FROM  FarmStory.`order` where orderNo=?;";
+    public final static String DELETE_PRODUCT = "DELETE FROM  FarmStory.`product` where pNo=?;";
 
 }
 

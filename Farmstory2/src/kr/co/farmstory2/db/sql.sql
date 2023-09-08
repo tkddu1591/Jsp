@@ -129,3 +129,5 @@ SELECT * FROM (SELECT u.uid, u.name, u.nick, u.email, u.hp,  u.regDate,  SUM(o.o
 UPDATE FarmStory.user u SET role = ? WHERE u.uid = ?;
 SELECT * FROM FarmStory.order as a join FarmStory.product b on a.orderProduct = b.pNo join FarmStory.user u on a.orderUser = u.uid
          ORDER BY a.orderNo DESC LIMIT ?,10;
+
+DELETE FROM  FarmStory.`order` where orderNo=?;

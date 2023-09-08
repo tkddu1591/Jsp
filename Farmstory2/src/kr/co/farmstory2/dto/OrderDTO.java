@@ -18,6 +18,15 @@ public class OrderDTO {
     private String orderDate;
     private String orderProductName;
     private String orderUserName;
+    private String thumb1;
+
+    public String getThumb1() {
+        return thumb1;
+    }
+
+    public void setThumb1(String thumb1) {
+        this.thumb1 = thumb1;
+    }
 
     public String getOrderUserName() {
         return orderUserName;
@@ -151,4 +160,9 @@ public class OrderDTO {
         this.hp = hp;
     }
 
+
+    @Override
+    public String toString() {
+        return getThumb1()+"|"+getOrderProduct()+"|"+getOrderProductName()+"|"+getOrderPrice()+"|"+getOrderCount()+"|"+getOrderDelivery()+"|"+getOrderTotal()+"|"+getOrderUserName()+"|"+getReceiver()+"|"+getZip()+"|"+getAddr1()+"|"+getAddr2();
+    }
 }

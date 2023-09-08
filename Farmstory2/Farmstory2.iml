@@ -22,9 +22,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="activation-1.1.1" level="project" />
-    <orderEntry type="library" name="jsp-api" level="project" />
     <orderEntry type="library" name="logger" level="project" />
-    <orderEntry type="library" name="catalina" level="project" />
+    <orderEntry type="library" name="catalina (2)" level="project" />
   </component>
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="8a49a83d-6020-4545-a2bd-12243c3ccfc0" />

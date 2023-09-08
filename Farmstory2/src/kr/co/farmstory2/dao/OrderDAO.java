@@ -88,6 +88,7 @@ public class OrderDAO extends DBHelper {
                 orderDTO=selectOrderData();
                 orderDTO.setOrderProductName(rs.getString("pName"));
                 orderDTO.setOrderUserName(rs.getString("name"));
+                orderDTO.setThumb1(rs.getString("thumb1"));
                 orderDTOS.add(orderDTO);
 
             }
@@ -99,7 +100,17 @@ public class OrderDAO extends DBHelper {
         return orderDTOS;
     }
     public void updateOrder(OrderDTO orderDTO) {}
-    public void deleteOrder(OrderDTO orderDTO) {}
+    public void deleteOrder(int orderNo) {
+        try {
+            conn=getConnection();
+            psmt = conn.prepareStatement(SQL.DELETE_ORDER);
+            psmt.setInt(1, orderNo);
+            psmt.executeUpdate();
+            close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
     private OrderDTO selectOrderData() throws SQLException {
 
         OrderDTO orderDTO = new OrderDTO();

@@ -10,6 +10,8 @@
         alert('아이디, 비밀번호를 다시 확인하십시요.');
     }else if(success == 101){
         alert('로그인 후 시도해주십시오.');
+    }else if(success == 102){
+        alert('관리자 로그인 후 시도해주십시오.');
     }else if(success == 200){
         alert('정상적으로 로그아웃 되었습니다.');
     }else if(success == 300){
