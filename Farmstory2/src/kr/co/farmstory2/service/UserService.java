@@ -26,8 +26,8 @@ public class UserService {
         return userDAO.selectUsers();
     }
 
-    public void updateUser(String uid) {
-        userDAO.updateUser(uid);
+    public void updateUserRole(List<UserDTO> userDTOS) {
+        userDAO.updateUserRole(userDTOS);
     }
 
     public void deleteUser(String uid) {

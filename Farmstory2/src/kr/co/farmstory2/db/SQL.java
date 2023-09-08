@@ -86,12 +86,15 @@ public class SQL {
             "VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW());";
 
     public final static String SELECT_ORDERS_PREVIEW ="SELECT * FROM FarmStory.`order` as a join FarmStory.product b on a.orderProduct = b.pNo ORDER BY `orderNo` DESC LIMIT 0,3;";
-    public final static String SELECT_ORDERS ="SELECT * FROM FarmStory.`order` as a join FarmStory.product b on a.orderProduct = b.pNo ORDER BY `orderNo` DESC LIMIT ?,10;";
+    public final static String SELECT_ORDERS ="SELECT * FROM FarmStory.order as a join FarmStory.product b on a.orderProduct = b.pNo join FarmStory.user u on a.orderUser = u.uid\n" +
+            "         ORDER BY a.orderNo DESC LIMIT ?,10";
 
     public final static String SELECT_USERS_PREVIEW = "SELECT * FROM FarmStory.user ORDER BY `regDate` DESC LIMIT 0,3;";
     public final static String SELECT_USERS = "SELECT * FROM (SELECT u.uid, u.name, u.nick, u.email, u.hp,  u.regDate,  SUM(o.orderTotal), u.zip, u.addr1, u.addr2, u.regIp, u.role FROM (SELECT * FROM FarmStory.user order by regDate DESC) as u LEFT JOIN FarmStory.`order` o on u.uid = o.orderUser  GROUP BY u.uid LIMIT ?,10)  as a ORDER BY  a.regDate DESC ;";
     public final static String SELECT_COUNT_USERS = "SELECT COUNT(*) FROM FarmStory.user;";
+    public final static String SELECT_COUNT_ORDERS = "SELECT COUNT(*) FROM FarmStory.order;";
 
+    public final static String UPDATE_USER_ROLE = "UPDATE FarmStory.user u SET role = ? WHERE u.uid = ?;";
 
 }
 

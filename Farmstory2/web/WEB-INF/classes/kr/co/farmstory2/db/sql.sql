@@ -126,3 +126,6 @@ SELECT * FROM FarmStory.`order` as a join FarmStory.product b on a.orderProduct 
 SELECT * FROM (SELECT u.uid, u.name, u.nick, u.email, u.hp,  u.regDate,  SUM(o.orderTotal), u.zip, u.addr1, u.addr2, u.regIp, u.role FROM (SELECT * FROM FarmStory.user order by regDate DESC) as u LEFT JOIN FarmStory.`order` o on u.uid = o.orderUser  GROUP BY u.uid LIMIT ?,10)  as a ORDER BY  a.regDate DESC ;
 
 
+UPDATE FarmStory.user u SET role = ? WHERE u.uid = ?;
+SELECT * FROM FarmStory.order as a join FarmStory.product b on a.orderProduct = b.pNo join FarmStory.user u on a.orderUser = u.uid
+         ORDER BY a.orderNo DESC LIMIT ?,10;

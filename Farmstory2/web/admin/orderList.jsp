@@ -1,5 +1,20 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="_header.jsp" %>
+<style>
+
+</style>
+<script>
+    orderData = (target) => {
+
+        dto = target.getAttribute('data-value');
+        /*return getUid()+", "+getName()+", "+getNick()+", "+getEmail()+", "+getHp()+", "+getRole()+", "+getZip()+", "+getAddr1()+", "+ getAddr2()+", "+getRegIp()+", "+ getRegDate() +", "+ getLeaveDate();*/
+        user = dto.split(',', 13)
+
+
+            document.getElementsByClassName('userData')[i].innerText = user[i];
+        }
+</script>
 <main>
     <%@include file="_aside.jsp"%>
     <section id="orderList">
@@ -22,18 +37,20 @@
                     <th>주문일</th>
                     <th>확인</th>
                 </tr>
+                <c:forEach var="dto" items="${orderDTOS}">
                 <tr>
                     <td><input type="checkbox" name=""/></td>
-                    <td>1001</td>
-                    <td>사과 500g</td>
-                    <td>4,000원</td>
-                    <td>2</td>
-                    <td>3,000원</td>
-                    <td>11,000원</td>
-                    <td>김유신</td>
-                    <td>2023-01-01 13:06:14</td>
-                    <td><a href="#" class="showPopup">[상세확인]</a></td>
+                    <td>${dto.orderNo}</td>
+                    <td>${dto.orderProductName}</td>
+                    <td>${dto.orderPrice}</td>
+                    <td>${dto.orderCount}</td>
+                    <td>${dto.orderDelivery}</td>
+                    <td>${dto.orderTotal}</td>
+                    <td>${dto.orderUserName}</td>
+                    <td>${dto.orderDate}</td>
+                    <td><a href="#" class="showPopup" onclick="userData(this)" data-value="${dto}">[상세확인]</a>
                 </tr>
+                </c:forEach>
             </table>
 
             <p>

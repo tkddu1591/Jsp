@@ -3,6 +3,7 @@ package kr.co.farmstory2.controller.admin;
 import kr.co.farmstory2.dto.UserDTO;
 import kr.co.farmstory2.service.PageService;
 import kr.co.farmstory2.service.UserService;
+import org.slf4j.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,11 +16,13 @@ import java.util.List;
 
 @WebServlet("/admin/userList.do")
 public class UserListController extends HttpServlet {
+    private final Logger logger = org.slf4j.LoggerFactory.getLogger(UserListController.class);
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("utf-8");
         String cate = req.getParameter("cate");
-        req.setAttribute("cate",cate);
+        req.setAttribute("cate", cate);
 
         String pg = req.getParameter("pg");
 
@@ -59,12 +62,35 @@ public class UserListController extends HttpServlet {
         req.setAttribute("userDTOS", userDTOS);
         req.setAttribute("total", total);
 
-        
+
         req.getRequestDispatcher("/admin/userList.jsp").forward(req, resp);
 
     }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        req.setCharacterEncoding("utf-8");
+        String[] roles = req.getParameterValues("role");
+        String[] uids = req.getParameterValues("uids");
+        String[] chks = req.getParameterValues("chks");
+
+        logger.info(roles.length + " " + uids.length + " "+ chks.length);
+        List<UserDTO> userDTOS = new ArrayList<>();
+
+        for (int i = 0; i < uids.length; i++) {
+
+            logger.info(chks[i]);
+            if (chks[i].equals("1")) {
+                UserDTO userDTO = new UserDTO();
+                userDTO.setRole(roles[i]);
+                userDTO.setUid(uids[i]);
+                userDTOS.add(userDTO);
+            }
+        }
+        UserService userService = new UserService();
+        userService.updateUserRole(userDTOS);
+
+        resp.sendRedirect("./userList.do");
     }
 }

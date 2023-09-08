@@ -58,7 +58,6 @@ public class UserDAO extends DBHelper {
         try {
             conn = getConnection();
             psmt = conn.prepareStatement(SQL.SELECT_USERS);
-            logger.info(start);
             int i=0;
             psmt.setInt(1, Integer.parseInt(start));
             rs = psmt.executeQuery();
@@ -78,7 +77,6 @@ public class UserDAO extends DBHelper {
                 userDTO.setRegIp(rs.getString(11));
                 userDTO.setRole(rs.getString(12));
                 userDTO.setTotal(i);
-                logger.info(userDTO.toString());
                 userDTOS.add(userDTO);
                 i++;
             }
@@ -106,7 +104,19 @@ public class UserDAO extends DBHelper {
         return userDTOS;
     }
 
-    public void updateUser(String uid) {
+    public void updateUserRole(List<UserDTO> userDTOS) {
+        try {
+            for(UserDTO userDTO : userDTOS) {
+                conn = getConnection();
+                psmt = conn.prepareStatement(SQL.UPDATE_USER_ROLE);
+                psmt.setString(1, userDTO.getRole());
+                psmt.setString(2, userDTO.getUid());
+                psmt.executeUpdate();
+                close();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void deleteUser(String uid) {

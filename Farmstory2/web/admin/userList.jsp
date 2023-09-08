@@ -6,24 +6,58 @@
     let user;
     let grade;
 
+    //체크박스 히든으로 타입 변경
+
+
     $(document).ready(function () {
+
+        function CheckboxToHidden(f,ele) {
+            var ele_h;
+            var val;
+
+            if (typeof(ele.length) != "undefined") {// checkbox가 배열일경우
+                for (var i = 0; i < ele.length; i++) {
+                    console.log(ele[i]);
+                    // hidden객체생성, 이름은 checkbox와 같게한다.
+                    ele_h = document.createElement("input");
+                    ele_h.setAttribute("type","hidden");
+                    ele_h.setAttribute("name",ele[i].name);
+                    ele[i].checked ? val = "1" : val = "0";
+                    ele_h.setAttribute("value",val);
+                    f.appendChild(ele_h);
+                    let is_checked = ele[i].checked;
+
+                    // 3. 결과를 출력합니다.
+
+                    // 기존 checkbox의 이름을 이름_dummy로 변경한후 checked = false해준다.
+                    ele[i].checked = false;
+                    ele[i].setAttribute("name",ele[i].name + "_dummy");
+                }
+            } else {// checkbox가 한개
+                ele_h = document.createElement("input");
+                ele_h.setAttribute("type","hidden");
+                ele_h.setAttribute("name",ele.name);
+                ele.checked ? val = "1" : val = "0";
+                ele_h.setAttribute("value",val);
+                f.appendChild(ele_h);
+
+                ele.checked = false;
+                ele.setAttribute("name",ele.name + "_dummy");
+            }
+        }
 
         //전체 선택
         $('.allSelect').click(function () {
             if ($(this).is(':checked')) {
                 let check = $('input:checkbox')
-                check.prop('checked', true).val(1);
+                check.prop('checked', true);
+                $('.chks').val(1);
+                console.log(check.eq(2).checked);
             } else {
                 let check = $('input:checkbox')
-                check.prop('checked', false).val(0);
-            }
-        })
-        //개별 선택
-        $('input:checkbox').click(function () {
-            if ($(this).is(':checked')) {
-                $(this).val(1);
-            } else {
-                $(this).val(0);
+                check.prop('checked', false);
+                $('.chks').val(0);
+                console.log(check.eq(2).checked);
             }
         })
 
@@ -36,14 +70,32 @@
                     tear[i].style.background = '#FFFFFF';
                 }
 
-                alert('수정되었습니다.')
+                let check = $('input:checkbox')
+                check.prop('checked', false).val(0);
+
                 // form 액션 구현하기
+                const form = document.getElementById('formCheck');
+                let chks = document.getElementsByClassName('chks');
+
+                CheckboxToHidden(form,chks);
+                alert('수정되었습니다.')
+                /*$('#formCheck').submit();*/
                 e.preventDefault();
             }
         }
 
 
     });
+
+    //개별 선택
+    checkClick = (target) => {
+        console.log(target.value)
+        if ($(this).is(':checked')) {
+            target.val(1);
+        } else {
+            target.val(0);
+        }
+    }
 
 
     //등급 수정
@@ -69,11 +121,11 @@
             if (i === 5) {
                 if (user[i] === (' USER')) {
                     user[i] = "1등급 (일반 유저)";
-                } else if (user[i] === ('SILVER')) {
+                } else if (user[i] === (' SILVER')) {
                     user[i] = "2등급 (실버 유저)"
-                } else if (user[i] === ('GOLD')) {
+                } else if (user[i] === (' GOLD')) {
                     user[i] = "3등급 (골드 유저)"
-                } else if (user[i] === ('DIAMOND')) {
+                } else if (user[i] === (' DIAMOND')) {
                     user[i] = "4등급 (다이아 유저)"
                 } else {
                     user[i] = "관리자";
@@ -105,28 +157,32 @@
                     <th>가입일</th>
                     <th>확인</th>
                 </tr>
-                <c:forEach var="dto" items="${userDTOS}" varStatus="status">
-                    <tr>
-                        <td><input type="checkbox" name="chk" value="${dto.uid}"/></td>
-                        <td>${dto.uid}</td>
-                        <td>${dto.name}</td>
-                        <td>${dto.nick}</td>
-                        <td>${dto.email}</td>
-                        <td>${dto.hp}</td>
-                        <td>
-                            <select class="tear" onchange="gradeChange(this)">
-                                <option ${dto.role eq 'USER'? 'selected':''} value="USER">1</option>
-                                <option ${dto.role eq 'SILVER'? 'selected':''} value="SILVER">2</option>
-                                <option ${dto.role eq 'GOLD'? 'selected':''} value="GOLD">3</option>
-                                <option ${dto.role eq 'DIAMOND'? 'selected':''} value="DIAMOND">4</option>
-                                <option ${dto.role eq 'ADMIN'? 'selected':''} value="ADMIN">5</option>
-                            </select>
-                        </td>
-                        <td>${dto.regDate}</td>
-                        <td><a href="#" class="showPopup" onclick="userData(this)" data-value="${dto}">[상세확인]</a></td>
+                <form action="./userList.do" method="post" id="formCheck" onclick="checkClick(this)">
+                    <c:forEach var="dto" items="${userDTOS}" varStatus="status">
+                        <tr class="userDataPreview">
+                            <td><input type="checkbox" class="chks" name="chks" value="0"/></td>
+                            <input type="hidden" name="uids" value="${dto.uid}"/>
+                            <td>${dto.uid}</td>
+                            <td>${dto.name}</td>
+                            <td>${dto.nick}</td>
+                            <td>${dto.email}</td>
+                            <td>${dto.hp}</td>
+                            <td>
+                                <select class="tear" onchange="gradeChange(this)" name="role">
+                                    <option ${dto.role eq 'USER'? 'selected':''} value="USER">1</option>
+                                    <option ${dto.role eq 'SILVER'? 'selected':''} value="SILVER">2</option>
+                                    <option ${dto.role eq 'GOLD'? 'selected':''} value="GOLD">3</option>
+                                    <option ${dto.role eq 'DIAMOND'? 'selected':''} value="DIAMOND">4</option>
+                                    <option ${dto.role eq 'ADMIN'? 'selected':''} value="ADMIN">5</option>
+                                </select>
+                            </td>
+                            <td>${dto.regDate}</td>
+                            <td><a href="#" class="showPopup" onclick="userData(this)" data-value="${dto}">[상세확인]</a>
+                            </td>
 
-                    </tr>
-                </c:forEach>
+                        </tr>
+                    </c:forEach>
+                </form>
             </table>
 
 
@@ -134,14 +190,22 @@
                 <a href="#" class="userConfirm">선택수정</a>
             </p>
 
+
             <p class="paging">
-                <a href="#"><</a>
-                <a href="#" class="on">[1]</a>
-                <a href="#">[2]</a>
-                <a href="#">[3]</a>
-                <a href="#">[4]</a>
-                <a href="#">[5]</a>
-                <a href="#">></a>
+                <c:if test="${pageGroupStart > 1}">
+                    <a href="/Farmstory2_war_exploded/admin/userList.do?cate=3&pg=1" class="start">처음으로</a>
+                    <a href="/Farmstory2_war_exploded/admin/userList.do?cate=3&pg=${pageGroupStart - 1}"
+                       class="prev">이전</a>
+                </c:if>
+                <c:forEach var="i" begin="${pageGroupStart}" end="${pageGroupEnd}">
+                    <a href="/Farmstory2_war_exploded/admin/userList.do?cate=3&pg=${i}&"
+                       class="num ${currentPage == i?'on':'off'}">${i}</a>
+                </c:forEach>
+                <c:if test="${pageGroupEnd < lastPageNum}">
+                    <a href="/Farmstory2_war_exploded/admin/userList.do?cate=3&pg=${pageGroupEnd + 1}"
+                       class="next">다음</a>
+                    <a href="/Farmstory2_war_exploded/admin/userList.do?cate=3&pg=${lastPageNum}" class="last">마지막</a>
+                </c:if>
             </p>
         </article>
     </section>
