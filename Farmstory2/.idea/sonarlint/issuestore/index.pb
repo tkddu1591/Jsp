@@ -195,3 +195,11 @@ q
 Asrc/kr/co/farmstory2/controller/board/FileDownloadController.java,0\1\01995b2cf1ef3c3aba7654504ef4473d2c20cf4b
 ]
 -src/kr/co/farmstory2/service/PageService.java,f\1\f18a9225ed05a91aeb05f3e6e791f9ce2a8c9719
+Å
+Q.idea/sonarlint/securityhotspotstore/f/1/f18a9225ed05a91aeb05f3e6e791f9ce2a8c9719,4\8\48f12df04eacdf90c0f395b1b6462d075743ad60
+Å
+Q.idea/sonarlint/securityhotspotstore/a/a/aa4f33f6042e37e6b204b397ef53df7e6367cdc1,0\d\0ddaa8c984b3c2425cf3b7fea604d276943bd3de
+Å
+Q.idea/sonarlint/securityhotspotstore/c/2/c2e8bb34877ba8601dd420128ef6870aaaafb391,5\9\599edc15df6461955d67cd0e6380df7dcb0976cf
+Å
+Q.idea/sonarlint/securityhotspotstore/0/1/01995b2cf1ef3c3aba7654504ef4473d2c20cf4b,1\9\1906cef9c38f8e8f86acf0eaa13b9ddf2a9472c8

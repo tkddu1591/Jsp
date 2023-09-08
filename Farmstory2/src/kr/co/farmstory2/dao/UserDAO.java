@@ -78,6 +78,7 @@ public class UserDAO extends DBHelper {
                 userDTO.setRegIp(rs.getString(11));
                 userDTO.setRole(rs.getString(12));
                 userDTO.setTotal(i);
+                logger.info(userDTO.toString());
                 userDTOS.add(userDTO);
                 i++;
             }
