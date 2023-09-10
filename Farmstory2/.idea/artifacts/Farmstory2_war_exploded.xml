@@ -1,11 +1,12 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="Farmstory2:war exploded">
-    <output-path>$PROJECT_DIR$/web</output-path>
-    <root id="root">
-      <element id="javaee-facet-resources" facet="Farmstory2/web/Web" />
+  <artifact type="war" name="Farmstory2_war_exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Farmstory2_war_exploded</output-path>
+    <root id="archive" name="Farmstory2_war_exploded.war">
+      <element id="artifact" artifact-name="Farmstory2" />
       <element id="directory" name="WEB-INF">
-        <element id="directory" name="classes">
-          <element id="module-output" name="Farmstory2" />
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="logger" />
+          <element id="library" level="project" name="activation-1.1.1" />
         </element>
       </element>
     </root>

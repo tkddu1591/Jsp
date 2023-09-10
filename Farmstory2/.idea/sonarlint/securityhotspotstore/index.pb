@@ -71,8 +71,6 @@ C
 web/WEB-INF/web.xml,c\d\cdcc12da5c4054f6995aab32914d7e0243194c05
 H
 web/META-INF/context.xml,0\b\0b5ed5dfc48d40f738ad3c8e8ec06325e849a9f7
-O
-src/kr/co/farmstory2/db/sql.sql,f\d\fd39781e97e471afd7ee834eda20f3a417537468
 k
 ;src/kr/co/farmstory2/controller/board/ModifyController.java,c\f\cff9863976dc3e350d86f4d2fefe97a934b02694
 i
@@ -159,8 +157,6 @@ j
 Q.idea/sonarlint/securityhotspotstore/7/7/7706db2c6032329a665ee14ef434078df0bc3cb1,e\1\e144f3b054f73358cfd2d0fd46d1cf5835f6cef7
 B
 web/board/view.jsp,4\a\4a6419a4d00a48a9e97b91abfae5c93cf0f83112
-_
-/web/WEB-INF/classes/kr/co/farmstory2/db/sql.sql,b\0\b0f051a41b32229fa42a6d70f0230434d0e74071
 Å
 Q.idea/sonarlint/securityhotspotstore/f/4/f49a6327cb6e5cb1e3a02916370d2844df69635f,f\4\f485b7e295d3ca582f4f3cf9023be3fb1631d92a
 a

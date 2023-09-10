@@ -69,8 +69,6 @@ O
 web/WEB-INF/classes/logback.xml,f\9\f923548d00869675fe103957255d9e098a79539a
 H
 web/META-INF/context.xml,0\b\0b5ed5dfc48d40f738ad3c8e8ec06325e849a9f7
-O
-src/kr/co/farmstory2/db/sql.sql,f\d\fd39781e97e471afd7ee834eda20f3a417537468
 U
 %src/kr/co/farmstory2/db/DBHelper.java,7\0\7084b29b5dc10c61360ecf0fdc378b4549313cf2
 i
@@ -181,8 +179,6 @@ B
 web/board/list.jsp,c\f\cf858bc147bb5ca29d0dfaf5bc8bacb149c8787e
 D
 web/board/modify.jsp,4\4\44e24e8b5fc866e685c7ff96fb7ab8cdf7cbc73b
-_
-/web/WEB-INF/classes/kr/co/farmstory2/db/sql.sql,b\0\b0f051a41b32229fa42a6d70f0230434d0e74071
 C
 web/board/write.jsp,7\1\71f7b1f78c826638754dcff427efee7894d55515
 B
